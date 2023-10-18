@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "17912701119",
+    "project_id": "vegitrace-1eb5e",
+    "storage_bucket": "vegitrace-1eb5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17912701119:android:4d5fe170e75a413981660a",
+        "android_client_info": {
+          "package_name": "com.example.vegitrace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiUmK0lIdGWP40108_Xzx_3fTyCUXaJ8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
