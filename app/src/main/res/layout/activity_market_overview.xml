@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MarketOverview">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="402dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="-400dp"
+        android:layout_marginTop="16dp"
+        android:text="Select Your Economic Centre...."
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="412dp"
+        android:layout_height="675dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/map" />
+
+    <ImageView
+        android:id="@+id/meegodaloc"
+        android:layout_width="38dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="-40dp"
+        android:layout_marginTop="107dp"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/baseline_location_on_24" />
+
+    <ImageView
+        android:id="@+id/dambullaloc"
+        android:layout_width="38dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="-138dp"
+        android:layout_marginTop="-390dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/baseline_location_on_24" />
+
+    <ImageView
+        android:id="@+id/paliyagodalock"
+        android:layout_width="38dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="-70dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:srcCompat="@drawable/baseline_location_on_24" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="157dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="-400dp"
+        android:text="Dambulla Centre"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="-270dp"
+        android:text="Paliyagoda Centre"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="-20dp"
+        android:text="Meegoda  Centre"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paliyagodalock"
+        android:layout_width="150dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
