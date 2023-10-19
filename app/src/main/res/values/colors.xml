@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#8692f7</color>
     <color name="grey">#ff424242</color>
+    <color name="TextBackground">#ABFDCC</color>
+    <color name="DarkGreenBackground">#2F852C</color>
 </resources>

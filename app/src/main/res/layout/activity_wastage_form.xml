@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WastageForm">
+
+    <TextView
+        android:id="@+id/BookingFormTitle"
+        android:layout_width="413dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/DarkGreenBackground"
+        android:text="Booking Form"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/WastageFormName"
+        android:layout_width="112dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Name -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BookingFormTitle" />
+
+    <TextView
+        android:id="@+id/WastageFormNumber"
+        android:layout_width="117dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        android:text="Phone Number -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageFormName" />
+
+    <TextView
+        android:id="@+id/WastageFormWeight"
+        android:layout_width="115dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Weight in KGs -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageFormNumber" />
+
+    <TextView
+        android:id="@+id/WastageFormDate"
+        android:layout_width="112dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Date -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageFormWeight" />
+
+    <EditText
+        android:id="@+id/WastageNameEdit"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="45dp"
+        android:textSize="23sp"
+        android:hint="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BookingFormTitle" />
+
+    <EditText
+        android:id="@+id/WastagePhoneEdit"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="44dp"
+        android:hint="Phone Number"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageNameEdit" />
+
+    <EditText
+        android:id="@+id/WastageWeightEdit"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="44dp"
+        android:hint="Weight in KGs"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastagePhoneEdit" />
+
+    <EditText
+        android:id="@+id/WastageDateEdit"
+        android:layout_width="187dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="44dp"
+        android:hint="Enter Date"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageWeightEdit" />
+
+    <Button
+        android:id="@+id/WastageConfirmBtn"
+        android:layout_width="151dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="65dp"
+        android:text="Confirm"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageFormDate" />
+
+    <Button
+        android:id="@+id/wastageGoBack"
+        android:layout_width="154dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="22dp"
+        android:text="Go Back"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageConfirmBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
