@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WastageProfile">
+
+    <TextView
+        android:id="@+id/MyProfileWast"
+        android:layout_width="413dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/DarkGreenBackground"
+        android:gravity="center"
+        android:text="My Profile"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/WastageUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:text="Username -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MyProfileWast" />
+
+    <TextView
+        android:id="@+id/WastageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Name -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageUsername" />
+
+    <TextView
+        android:id="@+id/WastageAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:text="Address -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageName" />
+
+    <TextView
+        android:id="@+id/WastageTelephone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:text="Telephone -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageAddress" />
+
+    <TextView
+        android:id="@+id/WastageVechicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:text="Vechicle No -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageTelephone" />
+
+    <TextView
+        android:id="@+id/WastagePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Password -"
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageVechicle" />
+
+    <TextView
+        android:id="@+id/WastageNic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="NIC - "
+        android:textSize="23sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastagePassword" />
+
+    <TextView
+        android:id="@+id/WastageUsername1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="113dp"
+        android:text="Udana456"
+        android:textSize="23sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/WastageUsername"
+        app:layout_constraintTop_toBottomOf="@+id/MyProfileWast" />
+
+    <TextView
+        android:id="@+id/WastageName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="40dp"
+        android:text="M.H.Udana"
+        android:textSize="23sp"
+        app:layout_constraintStart_toEndOf="@+id/WastageName"
+        app:layout_constraintTop_toBottomOf="@+id/WastageUsername1" />
+
+    <TextView
+        android:id="@+id/WastageAddress1"
+        android:layout_width="208dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="47dp"
+        android:text="28/8 Sama Uyana Rd, Malabe"
+        android:textSize="21sp"
+        app:layout_constraintStart_toEndOf="@+id/WastageAddress"
+        app:layout_constraintTop_toBottomOf="@+id/WastageName1" />
+
+    <TextView
+        android:id="@+id/WastageTelephone1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="38dp"
+        android:text="0718865379"
+        android:textSize="23sp"
+        app:layout_constraintStart_toEndOf="@+id/WastageTelephone"
+        app:layout_constraintTop_toBottomOf="@+id/WastageAddress1" />
+
+    <TextView
+        android:id="@+id/WastageVechicle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="52dp"
+        android:text="NB 5683"
+        android:textSize="23sp"
+        app:layout_constraintStart_toEndOf="@+id/WastageVechicle"
+        app:layout_constraintTop_toBottomOf="@+id/WastageTelephone1" />
+
+    <TextView
+        android:id="@+id/WastagePassword1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="39dp"
+        android:text="23423457"
+        android:textSize="23sp"
+        app:layout_constraintStart_toEndOf="@+id/WastagePassword"
+        app:layout_constraintTop_toBottomOf="@+id/WastageVechicle1" />
+
+    <TextView
+        android:id="@+id/WastageNic1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="34dp"
+        android:text="20004578357"
+        android:textSize="23sp"
+        app:layout_constraintStart_toEndOf="@+id/WastageNic"
+        app:layout_constraintTop_toBottomOf="@+id/WastagePassword1" />
+
+    <Button
+        android:id="@+id/WastageUpdatePro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="44dp"
+        android:text="Update Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageNic1" />
+
+    <Button
+        android:id="@+id/WastageLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="16dp"
+        android:text="Log Out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageUpdatePro" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
