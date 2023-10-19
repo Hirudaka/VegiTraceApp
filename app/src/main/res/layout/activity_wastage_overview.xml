@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WastageOverview">
+
+    <TextView
+        android:id="@+id/wastageOverview"
+        android:layout_width="411dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/DarkGreenBackground"
+        android:text="Wastage Overview"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="412dp"
+        android:layout_height="494dp"
+        android:layout_marginTop="17dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wastageOverview">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="278dp"
+            android:layout_height="136dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/TextBackground"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="79dp">
+
+                <TextView
+                    android:id="@+id/wastageDate1"
+                    android:layout_width="91dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="19dp"
+                    android:text="Date -"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/wastageDate2"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="12dp"
+                    android:text="2023 Aug 12"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="278dp"
+            android:layout_height="146dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/TextBackground"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="79dp">
+
+                <TextView
+                    android:id="@+id/wastageTotal1"
+                    android:layout_width="240dp"
+                    android:layout_height="68dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="13dp"
+                    android:text="Current Total Garbage Amount -"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/wastageTotal2"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="12dp"
+                    android:text="837KG"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="278dp"
+            android:layout_height="146dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/TextBackground"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                tools:layout_editor_absoluteX="37dp"
+                tools:layout_editor_absoluteY="79dp">
+
+                <TextView
+                    android:id="@+id/wastageShops1"
+                    android:layout_width="232dp"
+                    android:layout_height="68dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="13dp"
+                    android:text="Number Of Shops Contributed -"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/wastageShops2"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="12dp"
+                    android:text="341"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/wastageBookNow"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="15dp"
+        android:text="Book Now"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/wastageGoBack"
+        android:layout_width="116dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="13dp"
+        android:text="Go Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wastageBookNow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
