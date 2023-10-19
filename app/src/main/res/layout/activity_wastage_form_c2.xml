@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WastageFormC2">
+
+
+    <TextView
+        android:id="@+id/BookingsTitle"
+        android:layout_width="412dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/DarkGreenBackground"
+        android:text="Bookings"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/greenTick"
+        android:layout_width="250dp"
+        android:layout_height="242dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="68dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BookingsTitle"
+        app:srcCompat="@drawable/greentick" />
+
+    <TextView
+        android:id="@+id/bookingCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="40dp"
+        android:text="Booking Completed !"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/greenTick" />
+
+    <Button
+        android:id="@+id/wastageOkBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="80dp"
+        android:text="OK"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookingCompleted" />
+</androidx.constraintlayout.widget.ConstraintLayout>

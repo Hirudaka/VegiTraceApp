@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WastageFormC">
+
+    <TextView
+        android:id="@+id/BookingsTitle"
+        android:layout_width="413dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="33dp"
+        android:background="@color/DarkGreenBackground"
+        android:text="Bookings"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="33sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bookingconfirmtext"
+        android:layout_width="314dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="62dp"
+        android:text="Do You Want To Confirm Your Pickup ?"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BookingsTitle" />
+
+    <Button
+        android:id="@+id/bookingconfirm1"
+        android:layout_width="116dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="116dp"
+        android:text="Yes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookingconfirmtext" />
+
+    <Button
+        android:id="@+id/bookingconfirm2"
+        android:layout_width="116dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="56dp"
+        android:text="No"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookingconfirm1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
