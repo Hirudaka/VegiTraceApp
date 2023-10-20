@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="12dp"
-                    android:text="2023 Aug 12"
+                    android:text=""
                     android:textSize="28sp" />
 
             </LinearLayout>
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="12dp"
-                    android:text="341"
+                    android:text=""
                     android:textSize="28sp" />
 
             </LinearLayout>

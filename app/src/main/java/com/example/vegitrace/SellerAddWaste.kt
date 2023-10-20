@@ -67,13 +67,11 @@ class SellerAddWaste : AppCompatActivity() {
                         totalWasteWeight += it
                     }
                 }
-
                 // Create an Intent to navigate to WastageOverview activity
                 val intent = Intent(this@SellerAddWaste, WastageOverview::class.java)
                 intent.putExtra("totalWasteWeight", totalWasteWeight)
                 startActivity(intent)
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@SellerAddWaste, "Failed to calculate total waste weight", Toast.LENGTH_LONG).show()
             }
