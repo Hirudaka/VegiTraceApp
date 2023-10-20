@@ -25,6 +25,7 @@
             android:name=".AddReserves"
             android:exported="false" />
         <activity
+
             android:name=".DBtesting"
             android:exported="true" />
         <activity
@@ -41,6 +42,24 @@
             android:exported="true" />
         <activity
             android:name=".WastageOverview"
+
+            android:name=".AddOrderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OrdersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DambullaCentre"
+            android:exported="true" />
+        <activity
+            android:name=".MeegodaCentre"
+            android:exported="true" />
+        <activity
+            android:name=".PaliyagodaCentre"
+            android:exported="true" />
+        <activity
+            android:name=".MarketOverview"
+
             android:exported="true" />
         <activity
             android:name=".WastageMain"
