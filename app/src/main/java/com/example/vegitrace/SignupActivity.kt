@@ -7,6 +7,7 @@ import android.util.Base64
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.databinding.ActivitySignupBinding
+import com.example.vegitrace.model.Farmer
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.zxing.BarcodeFormat
@@ -141,13 +142,6 @@ class SignupActivity : AppCompatActivity() {
     }
 }
 
-data class Farmer(
-    val name: String,
-    val email: String,
-    val address: String,
-    val phoneNumber: String,
-    val vehicleRegNo: String,
-    val qrCodeBase64: String // Add this field for the QR code
-)
+
 
 
