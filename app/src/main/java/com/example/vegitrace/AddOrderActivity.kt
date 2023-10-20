@@ -21,6 +21,7 @@ class AddOrderActivity : AppCompatActivity() {
     private lateinit var addVegetableButton: Button
     private lateinit var vegetableNameTextView: TextView
     private lateinit var imageView2: ImageView
+    private lateinit var centreEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,7 @@ class AddOrderActivity : AppCompatActivity() {
         addVegetableButton = findViewById(R.id.addVegetableButton)
         vegetableNameTextView = findViewById(R.id.VegetableNameTextView)
         imageView2 = findViewById(R.id.imageView2)
+        centreEditText = findViewById(R.id.CentreeditTextText)
 
         // Create an ArrayAdapter for the Spinner and set values from resources
         val vegetableTypes = resources.getStringArray(R.array.vegetable_types)
@@ -61,9 +63,10 @@ class AddOrderActivity : AppCompatActivity() {
             val vegetableType = vegetableTypeSpinner.selectedItem.toString()
             val quantity = quantityEditText.text.toString()
             val price = priceEditText.text.toString()
+            val centre = centreEditText.text.toString()
 
             // Create an Order object with default values
-            val order = Order(orderId, supplier, vegetableType, quantity, price, "Pending", null)
+            val order = Order(orderId, supplier, vegetableType, quantity, price,centre, "Pending", "")
 
             // Get a reference to your Firebase database
             val database = FirebaseDatabase.getInstance()
@@ -104,6 +107,7 @@ data class Order(
     val vegetableType: String,
     val quantity: String,
     val price: String,
+    val centre: String,
     val status: String, // Default to "Pending"
-    val farmer: String? // Default to null
+    val farmer: String, // Default to null
 )
