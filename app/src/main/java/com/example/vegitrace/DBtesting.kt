@@ -27,7 +27,7 @@ class DBtesting : AppCompatActivity() {
                 binding.testname1.text.clear()
                 binding.testpass1.text.clear()
 
-                Toast.makeText(this,"Succesfully added",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Successfully added",Toast.LENGTH_LONG).show()
             }.addOnFailureListener{
                 Toast.makeText(this,"Failed",Toast.LENGTH_LONG).show()
             }
