@@ -6,4 +6,120 @@
     android:layout_height="match_parent"
     tools:context=".WastageMain">
 
+    <TextView
+        android:id="@+id/marketOverview"
+        android:layout_width="411dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="32dp"
+        android:text="Markets Overview"
+        android:textAlignment="center"
+        android:background="@color/DarkGreenBackground"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selectAmarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="12dp"
+        android:text="select a market"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marketOverview" />
+
+    <ImageView
+        android:id="@+id/NarahenpitaM"
+        android:layout_width="156dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/peliyagodaM"
+        app:srcCompat="@drawable/narahenpita" />
+
+    <ImageView
+        android:id="@+id/DambullaM"
+        android:layout_width="157dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NarahenpitaM"
+        app:srcCompat="@drawable/dambulla" />
+
+    <ImageView
+        android:id="@+id/KandyM"
+        android:layout_width="158dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DambullaM"
+        app:srcCompat="@drawable/kandy" />
+
+    <ImageView
+        android:id="@+id/peliyagodaM"
+        android:layout_width="156dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectAmarket"
+        app:srcCompat="@drawable/peliyagoda"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="paliyagoda market image"/>
+
+    <TextView
+        android:id="@+id/peliyagodaMTitle"
+        android:layout_width="156dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="43dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Peliyagoda Market"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/peliyagodaM"
+        app:layout_constraintTop_toBottomOf="@+id/selectAmarket" />
+
+    <TextView
+        android:id="@+id/NarahenpitaMTitle"
+        android:layout_width="159dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Narahenpita Market"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/NarahenpitaM"
+        app:layout_constraintTop_toBottomOf="@+id/peliyagodaMTitle" />
+
+    <TextView
+        android:id="@+id/DambullaMTitle"
+        android:layout_width="143dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="62dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Dambulla Market"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/DambullaM"
+        app:layout_constraintTop_toBottomOf="@+id/NarahenpitaMTitle" />
+
+    <TextView
+        android:id="@+id/KandyMTitle"
+        android:layout_width="131dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="81dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Kandy Market"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/KandyM"
+        app:layout_constraintTop_toBottomOf="@+id/DambullaMTitle" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

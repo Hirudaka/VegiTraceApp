@@ -4,5 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#8692f7</color>
     <color name="grey">#ff424242</color>
+
+    <color name="TextBackground">#ABFDCC</color>
+    <color name="DarkGreenBackground">#2F852C</color>
+
     <color name="green">#005b41</color>
+
 </resources>

@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "17912701119",
     "project_id": "vegitrace-1eb5e",
+    "firebase_url": "https://vegitrace-1eb5e-default-rtdb.asia-southeast1.firebasedatabase.app",
     "storage_bucket": "vegitrace-1eb5e.appspot.com"
   },
   "client": [
