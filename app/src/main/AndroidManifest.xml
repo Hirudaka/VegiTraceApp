@@ -22,6 +22,39 @@
             android:name=".WasteProfileEdit"
             android:exported="true" />
         <activity
+            android:name=".ShopOwnerProfile"
+            android:exported="true" />
+        <activity
+            android:name=".shopReg"
+            android:exported="true" />
+        <activity
+            android:name=".shopLogin"
+            android:exported="true" />
+        <activity
+            android:name=".AddReview"
+            android:exported="true" />
+        <activity
+            android:name=".QRscanner"
+            android:exported="true" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Reviews"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerProfile"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerReserves"
+            android:exported="false" />
+        <activity
+            android:name=".AddReserves"
+            android:exported="false" />
+        <activity
+            android:name=".MyOrdersActivity"
+            android:exported="false" />
+        <activity
             android:name=".DBtesting"
             android:exported="true" />
         <activity
@@ -40,17 +73,38 @@
             android:name=".WastageOverview"
             android:exported="true" />
         <activity
+            android:name=".AddOrderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OrdersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DambullaCentre"
+            android:exported="true" />
+        <activity
+            android:name=".MeegodaCentre"
+            android:exported="true" />
+        <activity
+            android:name=".PaliyagodaCentre"
+            android:exported="true" />
+        <activity
+            android:name=".MarketOverview"
+            android:exported="true" />
+        <activity
             android:name=".WastageMain"
             android:exported="true" />
         <activity
+            android:name=".SignupActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TestForm"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
     </application>
 
 </manifest>
