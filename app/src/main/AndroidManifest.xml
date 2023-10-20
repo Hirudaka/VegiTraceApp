@@ -62,7 +62,8 @@
             android:exported="true" />
         <activity
             android:name=".WastageOverview"
-
+            android:exported="true" />
+        <activity
             android:name=".AddOrderActivity"
             android:exported="true" />
         <activity
@@ -90,9 +91,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-        <activity
-            android:name=".TestForm"
-            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
