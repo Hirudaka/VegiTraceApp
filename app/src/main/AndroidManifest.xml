@@ -13,6 +13,12 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
+            android:name=".AddOrderActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OrdersActivity"
+            android:exported="true" />
+        <activity
             android:name=".DambullaCentre"
             android:exported="true" />
         <activity
