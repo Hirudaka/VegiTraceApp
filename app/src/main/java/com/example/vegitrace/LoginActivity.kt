@@ -1,5 +1,6 @@
 package com.example.vegitrace
 
+
 import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase

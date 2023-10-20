@@ -26,7 +26,7 @@ class TestForm : AppCompatActivity() {
             val name = nameEditText.text.toString()
             val email = emailEditText.text.toString()
 
-            val user = User(name, email) // Create a data class to hold the data
+            val user = Users(name, email) // Create a data class to hold the data
 
             // Push data to the database
             val dataKey = dataReference.push().key
@@ -37,4 +37,4 @@ class TestForm : AppCompatActivity() {
     }
 }
 
-data class User(val name: String, val email: String)
+data class Users(val name: String, val email: String)

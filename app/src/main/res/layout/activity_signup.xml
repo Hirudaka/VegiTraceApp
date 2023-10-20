@@ -27,7 +27,7 @@
                 android:background="@drawable/lavender_border"
                 android:padding="8dp"
                 android:hint="Enter name"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:drawableLeft="@drawable/baseline_people_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
@@ -39,7 +39,7 @@
                 android:background="@drawable/lavender_border"
                 android:padding="8dp"
                 android:hint="Enter Address"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:drawableLeft="@drawable/baseline_add_location_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
@@ -51,7 +51,7 @@
                 android:background="@drawable/lavender_border"
                 android:padding="8dp"
                 android:hint="Enter Contact Number"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:drawableLeft="@drawable/baseline_local_phone_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
@@ -63,7 +63,7 @@
                 android:background="@drawable/lavender_border"
                 android:padding="8dp"
                 android:hint="Enter Vehicle Registration"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:drawableLeft="@drawable/baseline_drive_eta_24"
                 android:drawablePadding="8dp"
                 android:textColor="@color/grey"/>
