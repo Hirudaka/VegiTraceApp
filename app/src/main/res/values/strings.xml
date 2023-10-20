@@ -10,7 +10,6 @@
         <item>Dabulla</item>
         <!-- Add more market options as needed -->
     </string-array>
-
     <string-array name="vegetable_types">
         <item>Carrot</item>
         <item>Beans</item>
