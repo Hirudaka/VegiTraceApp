@@ -1,18 +1,19 @@
 package com.example.vegitrace
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.ImageView
-import com.google.firebase.database.FirebaseDatabase
-import android.widget.ArrayAdapter
-import android.widget.AdapterView
-import android.view.View
 import android.widget.Toast
-import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.auth.FirebaseUser
+import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.model.Order
 
 class AddOrderActivity : AppCompatActivity() {
@@ -26,6 +27,9 @@ class AddOrderActivity : AppCompatActivity() {
     private lateinit var imageView2: ImageView
     private lateinit var centreEditText: EditText
 
+    private lateinit var currentUser: FirebaseUser
+    private lateinit var auth: FirebaseAuth // Add this variable to store the Firebase Authentication instance
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_order)
@@ -38,6 +42,20 @@ class AddOrderActivity : AppCompatActivity() {
         vegetableNameTextView = findViewById(R.id.VegetableNameTextView)
         imageView2 = findViewById(R.id.imageView2)
         centreEditText = findViewById(R.id.CentreeditTextText)
+
+        // Initialize Firebase Authentication
+        //auth = FirebaseAuth.getInstance()
+
+        // Get the current user
+        //currentUser = auth.currentUser!!
+
+        // Check if a user is signed in
+       // if (currentUser == null) {
+            // Handle the case when no user is signed in, such as showing a login screen
+           // Toast.makeText(this, "Please sign in to create an order", Toast.LENGTH_SHORT).show()
+            // Optionally, navigate to a login screen or display a login dialog
+
+        //}
 
         // Create an ArrayAdapter for the Spinner and set values from resources
         val vegetableTypes = resources.getStringArray(R.array.vegetable_types)
@@ -67,19 +85,22 @@ class AddOrderActivity : AppCompatActivity() {
         addVegetableButton.setOnClickListener {
             // Retrieve data from UI elements
             val orderId = orderIdEditText.text.toString()
-            val supplier = supplierEditText.text.toString()
+            val shopowner = supplierEditText.text.toString()
             val vegetableType = vegetableTypeSpinner.selectedItem.toString()
             val quantity = quantityEditText.text.toString()
             val price = priceEditText.text.toString()
             val centre = centreEditText.text.toString()
 
             // Check if any of the fields is empty
-            if (orderId.isEmpty() || supplier.isEmpty() || quantity.isEmpty() || price.isEmpty()) {
+            if (orderId.isEmpty() || shopowner.isEmpty() || quantity.isEmpty() || price.isEmpty()) {
                 // Display a toast message indicating that all fields must be filled
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             } else {
-                // Create an Order object with default values
-                val order = Order(orderId, supplier, vegetableType, quantity, price, centre, "Pending", "")
+                // Get the user's unique ID (UID)
+                val userId = currentUser.uid
+
+                // Use the user information to create a unique order
+                val order = Order(orderId, shopowner, vegetableType, quantity, price, centre, "Pending", userId)
 
                 // Get a reference to your Firebase database
                 val database = FirebaseDatabase.getInstance()
