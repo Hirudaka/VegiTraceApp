@@ -13,8 +13,9 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
-
-
+            android:name=".MyOrderDetail"
+            android:exported="true" />
+        <activity
             android:name=".ShopOwnerProfile"
             android:exported="true" />
         <activity
@@ -33,23 +34,20 @@
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
-
             android:name=".Reviews"
             android:exported="false" />
         <activity
             android:name=".FarmerProfile"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".FarmerReserves"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AddReserves"
-            android:exported="false" />
+            android:exported="true" />
         <activity
-
-
             android:name=".MyOrdersActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".DBtesting"
             android:exported="true" />
@@ -95,7 +93,6 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true" />
