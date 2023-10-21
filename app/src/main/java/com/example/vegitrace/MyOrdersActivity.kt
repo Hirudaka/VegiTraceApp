@@ -5,26 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Order
-import com.example.vegitrace.view.OrderAdapter
+import com.example.vegitrace.view.MyOrderAdapter
 import com.google.firebase.database.*
 
-class OrdersActivity : AppCompatActivity() {
-    private lateinit var orderAdapter: OrderAdapter
+class MyOrdersActivity : AppCompatActivity() {
+    private lateinit var myOrderAdapter: MyOrderAdapter
     private val orderList = ArrayList<Order>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_orders)
+        setContentView(R.layout.activity_my_orders)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.oRecycler)
+        val recyclerView = findViewById<RecyclerView>(R.id.myRecycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
         // Set up the RecyclerView adapter
-        orderAdapter = OrderAdapter(this, orderList)
-        recyclerView.adapter = orderAdapter
+        myOrderAdapter = MyOrderAdapter(this, orderList)
+        recyclerView.adapter = myOrderAdapter
 
         // Read data from Firebase and populate the orderList
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -36,7 +36,7 @@ class OrdersActivity : AppCompatActivity() {
                         orderList.add(it)
                     }
                 }
-                orderAdapter.notifyDataSetChanged()
+                myOrderAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {

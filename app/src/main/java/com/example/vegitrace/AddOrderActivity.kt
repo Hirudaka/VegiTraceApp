@@ -1,4 +1,5 @@
 package com.example.vegitrace
+
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -10,7 +11,9 @@ import com.google.firebase.database.FirebaseDatabase
 import android.widget.ArrayAdapter
 import android.widget.AdapterView
 import android.view.View
-
+import android.widget.Toast
+import android.util.Log
+import com.example.vegitrace.model.Order
 
 class AddOrderActivity : AppCompatActivity() {
     private lateinit var orderIdEditText: EditText
@@ -21,6 +24,7 @@ class AddOrderActivity : AppCompatActivity() {
     private lateinit var addVegetableButton: Button
     private lateinit var vegetableNameTextView: TextView
     private lateinit var imageView2: ImageView
+    private lateinit var centreEditText: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +37,7 @@ class AddOrderActivity : AppCompatActivity() {
         addVegetableButton = findViewById(R.id.addVegetableButton)
         vegetableNameTextView = findViewById(R.id.VegetableNameTextView)
         imageView2 = findViewById(R.id.imageView2)
+        centreEditText = findViewById(R.id.CentreeditTextText)
 
         // Create an ArrayAdapter for the Spinner and set values from resources
         val vegetableTypes = resources.getStringArray(R.array.vegetable_types)
@@ -41,7 +46,12 @@ class AddOrderActivity : AppCompatActivity() {
         vegetableTypeSpinner.adapter = adapter
 
         vegetableTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 // Get the selected vegetable type
                 val selectedVegetableType = vegetableTypeSpinner.selectedItem.toString()
 
@@ -61,20 +71,39 @@ class AddOrderActivity : AppCompatActivity() {
             val vegetableType = vegetableTypeSpinner.selectedItem.toString()
             val quantity = quantityEditText.text.toString()
             val price = priceEditText.text.toString()
+            val centre = centreEditText.text.toString()
 
-            // Create an Order object with default values
-            val order = Order(orderId, supplier, vegetableType, quantity, price, "Pending", null)
+            // Check if any of the fields is empty
+            if (orderId.isEmpty() || supplier.isEmpty() || quantity.isEmpty() || price.isEmpty()) {
+                // Display a toast message indicating that all fields must be filled
+                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            } else {
+                // Create an Order object with default values
+                val order = Order(orderId, supplier, vegetableType, quantity, price, centre, "Pending", "")
 
-            // Get a reference to your Firebase database
-            val database = FirebaseDatabase.getInstance()
-            val ordersReference = database.getReference("orders")
+                // Get a reference to your Firebase database
+                val database = FirebaseDatabase.getInstance()
+                val ordersReference = database.getReference("orders")
 
-            // Push the data to the "orders" node, creating a new child node with a unique ID
-            val newOrderReference = ordersReference.push()
-            newOrderReference.setValue(order)
+                // Push the data to the "orders" node, creating a new child node with a unique ID
+                val newOrderReference = ordersReference.push()
+                newOrderReference.setValue(order)
+                    .addOnSuccessListener {
+                        // Order insertion successful, display a success message
+                        Toast.makeText(this, "Order inserted successfully", Toast.LENGTH_SHORT).show()
 
-            // Optionally, display a message to confirm the insertion
-            // You can add a TextView to your layout to display a confirmation message
+                        // Optionally, clear the input fields
+                        orderIdEditText.text.clear()
+                        supplierEditText.text.clear()
+                        quantityEditText.text.clear()
+                        priceEditText.text.clear()
+                        centreEditText.text.clear()
+                    }
+                    .addOnFailureListener { e ->
+                        // Order insertion failed, display an error message
+                        Toast.makeText(this, "Order insertion failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
+            }
         }
     }
 
@@ -85,10 +114,12 @@ class AddOrderActivity : AppCompatActivity() {
                 vegetableNameTextView.text = "Carrot"
                 imageView2.setImageResource(R.drawable.carrots)
             }
+
             "Beans" -> {
                 vegetableNameTextView.text = "Beans"
                 imageView2.setImageResource(R.drawable.greenbeans)
             }
+
             "Cabbage" -> {
                 vegetableNameTextView.text = "Cabbage"
                 imageView2.setImageResource(R.drawable.cabbage)
@@ -96,14 +127,3 @@ class AddOrderActivity : AppCompatActivity() {
         }
     }
 }
-
-
-data class Order(
-    val orderId: String,
-    val supplier: String,
-    val vegetableType: String,
-    val quantity: String,
-    val price: String,
-    val status: String, // Default to "Pending"
-    val farmer: String? // Default to null
-)

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".OrdersActivity">
+    tools:context=".MyOrdersActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/oRecycler"
+        android:id="@+id/myRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
