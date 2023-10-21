@@ -2,7 +2,6 @@
     <string name="app_name">VegiTrace</string>
 
 
-
     <string-array name="market_options">
         <item>Select market place</item>
         <item>Paliyagoda</item>
