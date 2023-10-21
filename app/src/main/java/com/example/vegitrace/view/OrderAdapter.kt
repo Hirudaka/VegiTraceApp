@@ -29,7 +29,7 @@ class OrderAdapter(private val context: Context, private val orderList: ArrayLis
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val order = orderList[position]
-        holder.name.text = order.supplier
+        holder.name.text = order.shopOwner
         holder.quantity.text = order.quantity
         holder.price.text = order.price
     }
