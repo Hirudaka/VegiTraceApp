@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.example.vegitrace.databinding.ActivityLoginBinding
 
-class shopLogin : AppCompatActivity() {
+class RecyclerLogin : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
 
@@ -28,7 +28,7 @@ class shopLogin : AppCompatActivity() {
                             // User successfully logged in
                             val userId = authResult.result?.user?.uid
                             if (userId != null) {
-                                val intent = Intent(this, QRscanner::class.java)
+                                val intent = Intent(this, RecyclerProfile::class.java)
                                 intent.putExtra("userId", userId)
                                 startActivity(intent)
                                 finish() // Close the login activity
@@ -46,7 +46,7 @@ class shopLogin : AppCompatActivity() {
         }
 
         binding.signupRedirectText.setOnClickListener {
-            val signupIntent = Intent(this, shopReg::class.java)
+            val signupIntent = Intent(this, RecyclerSignup::class.java)
             startActivity(signupIntent)
         }
     }
