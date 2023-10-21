@@ -13,6 +13,16 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
+
+            android:name=".RecyclerProfile"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerLogin"
+            android:exported="true" />
+        <activity
+            android:name=".RecyclerSignup"
+                  android:exported="true" />
+ <activity
             android:name=".MyOrderDetail"
                   android:exported="true"/>
         <activity
@@ -23,6 +33,7 @@
             android:exported="true" />
         <activity
             android:name=".WasteProfileEdit"
+
             android:exported="true" />
         <activity
             android:name=".ShopOwnerProfile"
