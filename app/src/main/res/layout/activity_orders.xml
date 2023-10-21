@@ -7,18 +7,8 @@
     android:orientation="vertical"
     tools:context=".OrdersActivity">
 
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="24dp"
-        android:text="TextView" />
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/oRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-
+        android:layout_height="match_parent" />
 </LinearLayout>
