@@ -22,6 +22,10 @@ class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener
         // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
+        val vegetableName = intent.getStringExtra("vegetableName")
+        val centerName = intent.getStringExtra("centerName")
+
+
         // Set up the RecyclerView adapter
         myOrderAdapter = MyOrderAdapter(this, orderList, this)
         recyclerView.adapter = myOrderAdapter

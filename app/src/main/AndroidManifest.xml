@@ -29,9 +29,7 @@
         <activity
             android:name=".RecyclerSignup"
                   android:exported="true" />
- <activity
-            android:name=".MyOrderDetail"
-                  android:exported="true"/>
+
         <activity
             android:name=".SellerAddWaste"
             android:exported="true" />
@@ -63,11 +61,10 @@
         <activity
             android:name=".ShopReview"
             android:exported="true" />
+        <activity
             android:name=".Reviews"
             android:exported="true" />
-        <activity
-            android:name=".FarmerProfile"
-            android:exported="true" />
+
         <activity
             android:name=".FarmerReserves"
             android:exported="true" />
