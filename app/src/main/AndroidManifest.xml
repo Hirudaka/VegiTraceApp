@@ -101,14 +101,9 @@
         <activity
             android:name=".OrdersActivity"
             android:exported="true" />
+
         <activity
-            android:name=".DambullaCentre"
-            android:exported="true" />
-        <activity
-            android:name=".MeegodaCentre"
-            android:exported="true" />
-        <activity
-            android:name=".PaliyagodaCentre"
+            android:name=".Centers"
             android:exported="true" />
         <activity
             android:name=".MarketOverview"

@@ -1,7 +1,7 @@
 package com.example.vegitrace.view
 
 
-import Review
+
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.R
+import com.example.vegitrace.model.Review
 
 
 class ReviewAdapter(private val context: Context, private val reviews: List<Review>) :

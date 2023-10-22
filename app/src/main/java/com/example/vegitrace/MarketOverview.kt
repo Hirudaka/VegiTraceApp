@@ -19,24 +19,14 @@ class MarketOverview : AppCompatActivity() {
         meegodaImageView = findViewById(R.id.meegodaloc)
         paliyagodaImageView = findViewById(R.id.paliyagodalock)
 
-        // Set up OnClickListener for Dambulla ImageView
-        dambullaImageView.setOnClickListener {
-            // Navigate to the DambullaActivity
-            val intent = Intent(this, DambullaCentre::class.java)
-            startActivity(intent)
-        }
 
-        // Set up OnClickListener for Meegoda ImageView
-        meegodaImageView.setOnClickListener {
-            // Navigate to the MeegodaActivity
-            val intent = Intent(this, MeegodaCentre::class.java)
-            startActivity(intent)
-        }
+
+
 
         // Set up OnClickListener for Paliyagoda ImageView
         paliyagodaImageView.setOnClickListener {
             // Navigate to the PaliyagodaActivity
-            val intent = Intent(this, PaliyagodaCentre::class.java)
+            val intent = Intent(this, Centers::class.java)
             startActivity(intent)
         }
     }

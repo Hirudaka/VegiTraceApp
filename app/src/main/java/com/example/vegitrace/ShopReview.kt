@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.view.ReviewAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import Review
+
+import com.example.vegitrace.model.Review
 
 class ShopReview : AppCompatActivity() {
 

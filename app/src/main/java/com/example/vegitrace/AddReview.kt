@@ -9,8 +9,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
-import Review
 import com.example.vegitrace.model.FarmerData
+import com.example.vegitrace.model.Review
 import com.example.vegitrace.model.ShopOwner
 
 class AddReview : AppCompatActivity() {
