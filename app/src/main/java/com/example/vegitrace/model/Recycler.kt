@@ -1,6 +1,6 @@
 package com.example.vegitrace.model
 
-class Recycle{
+class Recycler{
 var name: String? = null
 var address: String? = null
 var phone: String? = null

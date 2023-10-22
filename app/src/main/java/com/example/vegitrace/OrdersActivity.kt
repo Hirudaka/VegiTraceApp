@@ -1,6 +1,8 @@
 package com.example.vegitrace
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,31 +21,36 @@ class OrdersActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.oRecycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val vegetableName = intent.getStringExtra("vegetableName")
+        val centerName = intent.getStringExtra("centerName")
 
-
-        // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
-        // Set up the RecyclerView adapter
         orderAdapter = OrderAdapter(this, orderList)
         recyclerView.adapter = orderAdapter
 
-        // Read data from Firebase and populate the orderList
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                orderList.clear()
-                for (snapshot in dataSnapshot.children) {
-                    val order = snapshot.getValue(Order::class.java)
-                    order?.let {
-                        orderList.add(it)
+        databaseReference
+            .orderByChild("centerName")
+            .equalTo(centerName)
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                @SuppressLint("NotifyDataSetChanged")
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    orderList.clear()
+                    for (snapshot in dataSnapshot.children) {
+                        val order = snapshot.getValue(Order::class.java)
+                        order?.let {
+                            if (it.vegetableType == vegetableName) {
+                                Log.d("VegetableClick", "Selected Vegetable: $vegetableName")
+                                orderList.add(it)
+                            }
+                        }
                     }
+                    orderAdapter.notifyDataSetChanged()
                 }
-                orderAdapter.notifyDataSetChanged()
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors here
-            }
-        })
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle any errors here
+                }
+            })
     }
 }
