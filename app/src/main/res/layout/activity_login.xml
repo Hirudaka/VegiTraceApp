@@ -44,8 +44,10 @@
                     android:background="@drawable/lavender_border"
                     android:padding="8dp"
                     android:hint="Password"
+                    android:inputType="textPassword"
                     android:drawableLeft="@drawable/baseline_lock_24"
                     android:drawablePadding="8dp"
+
                     android:textColor="@color/grey"/>
 
 
@@ -58,16 +60,7 @@
                     android:textSize="18sp"
                     app:cornerRadius = "30dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/forgot_password"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="6dp"
-                    android:padding="8dp"
-                    android:text="Forgot Password?"
-                    android:textColor="@color/lavender"
-                    android:textSize="16sp"/>
+
 
                 <TextView
                     android:layout_width="wrap_content"
