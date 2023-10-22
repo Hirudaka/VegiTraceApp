@@ -8,7 +8,7 @@ import com.example.vegitrace.model.Order
 import com.example.vegitrace.view.MyOrderAdapter
 import com.google.firebase.database.*
 
-class MyOrdersActivity : AppCompatActivity() {
+class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener {
     private lateinit var myOrderAdapter: MyOrderAdapter
     private val orderList = ArrayList<Order>()
 
@@ -23,7 +23,7 @@ class MyOrdersActivity : AppCompatActivity() {
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
         // Set up the RecyclerView adapter
-        myOrderAdapter = MyOrderAdapter(this, orderList)
+        myOrderAdapter = MyOrderAdapter(this, orderList, this)
         recyclerView.adapter = myOrderAdapter
 
         // Read data from Firebase and populate the orderList
@@ -37,6 +37,30 @@ class MyOrdersActivity : AppCompatActivity() {
                     }
                 }
                 myOrderAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle any errors here
+            }
+        })
+    }
+
+    override fun onItemClick(position: Int) {
+        val orderId = orderList[position].orderId
+        removeOrderFromDatabase(orderId, position)
+    }
+
+    private fun removeOrderFromDatabase(orderId: String, position: Int) {
+        val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
+        val orderQuery = databaseReference.orderByChild("orderId").equalTo(orderId)
+
+        orderQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (snapshot in dataSnapshot.children) {
+                    snapshot.ref.removeValue()
+                    orderList.removeAt(position)
+                    myOrderAdapter.itemRemovedAtUpdatedList(position)
+                }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
