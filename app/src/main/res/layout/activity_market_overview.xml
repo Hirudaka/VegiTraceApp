@@ -28,7 +28,9 @@
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/map" />
+        app:srcCompat="@drawable/map"
+        android:onClick="onCenterClicked"
+        android:tag="Meegoda"/>
 
     <ImageView
         android:id="@+id/meegodaloc"
@@ -38,7 +40,9 @@
         android:layout_marginTop="107dp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/baseline_location_on_24" />
+        app:srcCompat="@drawable/baseline_location_on_24"
+        android:onClick="onCenterClicked"
+        android:tag="Dambulla"/>
 
     <ImageView
         android:id="@+id/dambullaloc"
@@ -48,6 +52,7 @@
         android:layout_marginTop="-390dp"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:onClick="onCenterClicked"
         app:srcCompat="@drawable/baseline_location_on_24" />
 
     <ImageView
@@ -58,7 +63,8 @@
         android:layout_marginTop="100dp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/baseline_location_on_24" />
+        app:srcCompat="@drawable/baseline_location_on_24"
+        android:tag="Paliyagoda"/>
 
     <TextView
         android:id="@+id/textView2"
