@@ -51,9 +51,23 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
         holder.removebtn.setOnClickListener {
             listener.onItemClick(position)
         }
+        val imageResId = getImageResourceForVegetable(order.vegetableType)
+        holder.image.setImageResource(imageResId)
     }
 
     fun itemRemovedAtUpdatedList(position: Int) {
         notifyItemRemoved(position)
+    }
+    private fun getImageResourceForVegetable(vegetableName: String): Int {
+        // Define a mapping of vegetable names to image resource IDs
+        val vegetableImageMap = mapOf(
+            "Carrot" to R.drawable.carrots,
+            "Beans" to R.drawable.greenbeans,
+            "Cabbage" to R.drawable.cabbage,
+            // Add more vegetable-to-image mappings as needed
+        )
+
+        // Look up the image resource ID for the given vegetable name
+        return vegetableImageMap[vegetableName] ?: 0
     }
 }
