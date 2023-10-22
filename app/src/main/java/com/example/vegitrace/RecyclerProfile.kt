@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vegitrace.model.Recycle
+import com.example.vegitrace.model.Recycler
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -45,7 +45,7 @@ class RecyclerProfile : AppCompatActivity() {
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    val recycler = dataSnapshot.getValue(Recycle::class.java)
+                    val recycler = dataSnapshot.getValue(Recycler::class.java)
 
                     if (recycler != null) {
                         // Update the TextViews with retrieved data
