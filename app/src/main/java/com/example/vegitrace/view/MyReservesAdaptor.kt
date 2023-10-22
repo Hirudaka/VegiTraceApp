@@ -45,7 +45,7 @@ class MyReserveAdaptor(private val context: Context,
 
     override fun onBindViewHolder(holder: MyReserveViewHolder, position: Int) {
         val rev = reservedList[position]
-        holder.owner.text = rev.supplier
+        holder.owner.text = rev.shopOwner
         holder.veg.text = rev.vegetableType
         holder.price.text = rev.price
         holder.qty.text = rev.quantity

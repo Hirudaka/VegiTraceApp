@@ -39,7 +39,7 @@ class AddReserveAdaptor(private val context: Context,
 
     override fun onBindViewHolder(holder: AddReserveViewHolder, position: Int) {
         val order = orderList[position]
-        holder.name.text = order.supplier
+        holder.name.text = order.shopOwner
         holder.quantity.text = order.quantity
         holder.price.text = order.price
 
