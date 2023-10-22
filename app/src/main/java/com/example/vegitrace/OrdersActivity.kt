@@ -1,6 +1,5 @@
 package com.example.vegitrace
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -22,25 +21,31 @@ class OrdersActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val vegetableName = intent.getStringExtra("vegetableName")
+
         val centerName = intent.getStringExtra("centerName")
 
+        Log.d("VegetableClick", "Selected Vegetable: $vegetableName")
+
+
+
+        // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
+        // Set up the RecyclerView adapter
         orderAdapter = OrderAdapter(this, orderList)
         recyclerView.adapter = orderAdapter
 
+        // Read data from Firebase and populate the orderList
         databaseReference
-            .orderByChild("centerName")
-            .equalTo(centerName)
-            .addListenerForSingleValueEvent(object : ValueEventListener {
-                @SuppressLint("NotifyDataSetChanged")
+            .orderByChild("vegetableType")
+            .equalTo(vegetableName)
+            .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     orderList.clear()
                     for (snapshot in dataSnapshot.children) {
                         val order = snapshot.getValue(Order::class.java)
                         order?.let {
-                            if (it.vegetableType == vegetableName) {
-                                Log.d("VegetableClick", "Selected Vegetable: $vegetableName")
+                            if (it.centre == centerName) {
                                 orderList.add(it)
                             }
                         }
