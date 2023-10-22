@@ -13,8 +13,12 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
+            android:name=".MyReserves"
+            android:exported="false" />
+
+        <activity
             android:name=".MyOrderDetail"
-                  android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".SellerAddWaste"
             android:exported="true" />
@@ -44,7 +48,7 @@
             android:exported="true" />
         <activity
             android:name=".Reviews"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".FarmerProfile"
             android:exported="true" />

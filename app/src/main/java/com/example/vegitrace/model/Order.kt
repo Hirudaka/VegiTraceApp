@@ -7,8 +7,8 @@ data class Order(
     val quantity: String,
     val price: String,
     val centre: String,
-    val status: String,
-    val farmer: String
+    var status: String,
+    var farmer: String
 ) {
     constructor() : this("", "", "", "", "", "", "Pending", "")
 }
