@@ -6,78 +6,154 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="0dp"
     tools:context=".ShopOwnerProfile">
 
     <TextView
-        android:id="@+id/profileNameLabel"
-        android:layout_width="wrap_content"
+        android:id="@+id/MyProfileWast"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/DarkGreenBackground"
+        android:gravity="center"
+        android:text="Seller Profile"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Shop Owner Name: "
-        android:textSize="18sp"
+        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/profileNameLabel"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:text="Shop Owner: "
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/profileName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Edit Shop Owner Name" />
+        android:hint="Edit Shop Owner Name"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <TextView
         android:id="@+id/profileEmailLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:text="Email: "
-        android:textSize="18sp"
+        android:text="Marketplace: "
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="19sp"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/profileEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Edit Email" />
+        android:hint="Edit Email"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <TextView
         android:id="@+id/profileAddressLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:text="Address: "
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
         android:textStyle="bold" />
 
-    <EditText
+    <TextView
         android:id="@+id/profileAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Edit Address" />
+        android:hint="Edit Address"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <TextView
         android:id="@+id/profileShopNoLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:text="Shop Number: "
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="Shop No: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"/>
 
-    <EditText
+    <TextView
         android:id="@+id/profileShopNo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Edit Shop Number" />
+        android:hint="Edit Shop Number"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <TextView
         android:id="@+id/profileMarketPositionLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:text="Market Position: "
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="E-mail: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"/>
 
-    <EditText
+    <TextView
         android:id="@+id/profileMarketPosition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Edit Market Position" />
+        android:hint="Edit Market Position"
+        android:layout_marginTop="30dp"
+
+        android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sellerEditPro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:text="Edit Profile" />
 
 
 </LinearLayout>
