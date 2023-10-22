@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/blogtitle"
+        android:id="@+id/owner"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
@@ -22,7 +22,7 @@
         tools:text="Shop Name" />
 
     <TextView
-        android:id="@+id/docName"
+        android:id="@+id/price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -32,7 +32,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/veg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vege"
@@ -50,7 +50,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quantity"
@@ -68,12 +68,21 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/stat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pending"
         tools:layout_editor_absoluteX="153dp"
         tools:layout_editor_absoluteY="210dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="194dp"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 
-class AllBlogs : AppCompatActivity() {
+class Reviews : AppCompatActivity() {
 
     private lateinit var dbRef : DatabaseReference
     private lateinit var user : String
