@@ -58,6 +58,6 @@ dependencies {
     // Use only one version of ZXing library
     implementation ("com.google.zxing:core:3.4.1")
     implementation ("com.journeyapps:zxing-android-embedded:4.1.0")
-    implementation ("com.google.code.gson:gson:2.8.8")
+    implementation ("com.google.code.gson:gson:2.8.9")
 
 }

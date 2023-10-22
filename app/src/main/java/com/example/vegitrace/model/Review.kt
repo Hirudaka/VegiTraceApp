@@ -1,3 +1,5 @@
+package com.example.vegitrace.model
+
 data class Review(
     val farmername: String = "",
     val owneremail: String = "",
@@ -5,3 +7,8 @@ data class Review(
     val email: String = "",
     val review: String = ""
 )
+
+
+
+
+
