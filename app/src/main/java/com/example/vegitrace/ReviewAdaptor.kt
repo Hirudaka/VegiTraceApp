@@ -28,7 +28,7 @@ class ReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapt
 
         val currentItem = revList[position]
 
-        holder.shopNum.text = currentItem.name
+        holder.shopNum.text = currentItem.shopno
         holder.Owner.text = currentItem.email
         holder.review.text = currentItem.review
 

@@ -11,6 +11,9 @@ import com.example.vegitrace.model.Order
 
 class OrderAdapter(private val context: Context, private val orderList: ArrayList<Order>) : RecyclerView.Adapter<OrderAdapter.OrderViewHolder>() {
 
+
+
+
     inner class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.oTitle)
         val quantity: TextView = itemView.findViewById(R.id.oSubTitle1)
@@ -20,6 +23,10 @@ class OrderAdapter(private val context: Context, private val orderList: ArrayLis
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.order_item, parent, false)
+
+
+
+
         return OrderViewHolder(view)
     }
 
@@ -29,7 +36,7 @@ class OrderAdapter(private val context: Context, private val orderList: ArrayLis
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val order = orderList[position]
-        holder.name.text = order.supplier
+        holder.name.text = order.shopOwner
         holder.quantity.text = order.quantity
         holder.price.text = order.price
     }

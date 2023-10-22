@@ -9,8 +9,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
+import com.google.firebase.database.*
 
-class MyOrderAdapter(private val context: Context, private val orderList: ArrayList<Order>) : RecyclerView.Adapter<MyOrderAdapter.OrderViewHolder>() {
+class MyOrderAdapter(private val context: Context, private val orderList: ArrayList<Order>, private val listener: OnItemClickListener) : RecyclerView.Adapter<MyOrderAdapter.OrderViewHolder>() {
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
 
     inner class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val oId: TextView = itemView.findViewById(R.id.OIdtextView)
@@ -20,6 +25,7 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
         val price: TextView = itemView.findViewById(R.id.PricetextView)
         val status: TextView = itemView.findViewById(R.id.StatustextView)
         val image: ImageView = itemView.findViewById(R.id.VegimageView)
+        val removebtn: ImageView = itemView.findViewById(R.id.removebtn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -34,18 +40,24 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val order = orderList[position]
+
         holder.oId.text = order.orderId
-        holder.name.text = order.supplier
+        holder.name.text = order.shopOwner
         holder.vegetable.text = order.vegetableType
         holder.quantity.text = order.quantity
         holder.price.text = order.price
         holder.status.text = order.status
 
-        // Map vegetable names to image resources in your app
+        holder.removebtn.setOnClickListener {
+            listener.onItemClick(position)
+        }
         val imageResId = getImageResourceForVegetable(order.vegetableType)
         holder.image.setImageResource(imageResId)
     }
 
+    fun itemRemovedAtUpdatedList(position: Int) {
+        notifyItemRemoved(position)
+    }
     private fun getImageResourceForVegetable(vegetableName: String): Int {
         // Define a mapping of vegetable names to image resource IDs
         val vegetableImageMap = mapOf(
