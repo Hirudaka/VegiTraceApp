@@ -5,23 +5,28 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Order
-import com.example.vegitrace.view.AddReserveAdaptor
+import com.example.vegitrace.view.MyReserveAdaptor
 import com.google.firebase.auth.FirebaseAuth
 
 import com.google.firebase.database.*
 
-class AddReserves : AppCompatActivity(),  AddReserveAdaptor.OnButtonClickListener {
-    private lateinit var reserverAdapter: AddReserveAdaptor
-    private val orderList = ArrayList<Order>()
+class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener {
+    private lateinit var MyreserverAdapter: MyReserveAdaptor
+    private val revList = ArrayList<Order>()
     private lateinit var user : String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_reserves)
+        setContentView(R.layout.activity_my_reserves)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
+
+
+        val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
+
+        user = currentFirebaseUser!!.email.toString()
 
 
 
@@ -31,20 +36,21 @@ class AddReserves : AppCompatActivity(),  AddReserveAdaptor.OnButtonClickListene
         // Set up the RecyclerView adapter
 
 
-        reserverAdapter = AddReserveAdaptor(this, orderList, this)
-        recyclerView.adapter = reserverAdapter
+        MyreserverAdapter = MyReserveAdaptor(this, revList, this)
+        recyclerView.adapter = MyreserverAdapter
 
         // Read data from Firebase and populate the orderList
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                orderList.clear()
+                revList.clear()
                 for (snapshot in dataSnapshot.children) {
                     val order = snapshot.getValue(Order::class.java)
+                    if (order?.farmer == user && order?.status == "Preparing"){
                     order?.let {
-                        orderList.add(it)
-                    }
+                        revList.add(it)
+                    }}
                 }
-                reserverAdapter.notifyDataSetChanged()
+                MyreserverAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -60,13 +66,13 @@ class AddReserves : AppCompatActivity(),  AddReserveAdaptor.OnButtonClickListene
         val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
 
         user = currentFirebaseUser!!.email.toString()
-        val orderToUpdate = orderList.find { it.orderId == order.orderId }
+        val orderToUpdate = revList.find { it.orderId == order.orderId }
         if (orderToUpdate != null) {
-            orderToUpdate.status = "Preparing"
-            orderToUpdate.farmer = user
+            orderToUpdate.status = "Pending"
+            orderToUpdate.farmer = null.toString()
 
 
-            reserverAdapter.notifyDataSetChanged() // Notify the adapter that data has changed
+            MyreserverAdapter.notifyDataSetChanged() // Notify the adapter that data has changed
         }
-}
+    }
 }
