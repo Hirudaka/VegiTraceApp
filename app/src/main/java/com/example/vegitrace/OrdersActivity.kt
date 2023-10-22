@@ -19,6 +19,8 @@ class OrdersActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.oRecycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
         // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
