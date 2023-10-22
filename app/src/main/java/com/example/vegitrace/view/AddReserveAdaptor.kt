@@ -12,7 +12,9 @@ import com.example.vegitrace.model.Order
 
 
 
-class AddReserveAdaptor(private val context: Context, private val orderList: ArrayList<Order>,private val buttonClickListener: AddReserveAdaptor.OnButtonClickListener) : RecyclerView.Adapter<AddReserveAdaptor.AddReserveViewHolder>() {
+class AddReserveAdaptor(private val context: Context,
+                        private val orderList: ArrayList<Order>,
+                        private val buttonClickListener: OnButtonClickListener) : RecyclerView.Adapter<AddReserveAdaptor.AddReserveViewHolder>() {
 
 
     interface OnButtonClickListener {
