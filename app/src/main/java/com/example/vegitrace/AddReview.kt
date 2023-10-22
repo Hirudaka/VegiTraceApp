@@ -1,17 +1,17 @@
 package com.example.vegitrace
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Button
 import android.widget.Toast
-import com.example.vegitrace.model.FarmerData
-import com.example.vegitrace.model.Review
-import com.example.vegitrace.model.ShopOwner
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
+import com.example.vegitrace.model.FarmerData
+import com.example.vegitrace.model.Review
+import com.example.vegitrace.model.ShopOwner
 
 class AddReview : AppCompatActivity() {
     private lateinit var farmerNameEditText: EditText
@@ -32,7 +32,7 @@ class AddReview : AppCompatActivity() {
         reviewEditText = findViewById(R.id.review)
         submitReviewButton = findViewById(R.id.buttonSubmitReview)
 
-        // Retrieve the authenticated user's name and set it as the owner's name
+        // Retrieve the authenticated user's data
         val currentUser = auth.currentUser
 
         if (currentUser != null) {
@@ -43,10 +43,30 @@ class AddReview : AppCompatActivity() {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     if (dataSnapshot.exists()) {
                         val shopOwnerData = dataSnapshot.getValue(ShopOwner::class.java)
-                        val ownerName = shopOwnerData?.name
+                        val ownerName = shopOwnerData?.email
+                        val shopNo = shopOwnerData?.shopNo
 
                         if (ownerName != null) {
                             ownerNameEditText.setText(ownerName)
+
+                            // Set the shopno field in the EditText
+                            if (shopNo != null) {
+                                val shopNoEditText = findViewById<EditText>(R.id.shopno)
+                                shopNoEditText.setText(shopNo)
+                            }
+
+                            // Set the shopno field in the Review model
+                            val farmerName = farmerNameEditText.text.toString()
+                            val farmerMail = farmerMailEditText.text.toString()
+                            val reviewText = reviewEditText.text.toString()
+
+                            if (farmerName.isNotEmpty() && ownerName.isNotEmpty() && farmerMail.isNotEmpty() && reviewText.isNotEmpty()) {
+                                val review = Review(farmername = farmerName, owneremail = ownerName, shopno = shopNo ?: "", email = farmerMail, review = reviewText)
+                                // Save the review to Firebase
+                                saveReviewToFirebase(review)
+                            } else {
+                                Toast.makeText(this@AddReview, "Please provide all details.", Toast.LENGTH_SHORT).show()
+                            }
                         } else {
                             Toast.makeText(this@AddReview, "User name not found. Please log in.", Toast.LENGTH_LONG).show()
                         }
@@ -82,23 +102,23 @@ class AddReview : AppCompatActivity() {
             val ownerName = ownerNameEditText.text.toString()
             val farmerMail = farmerMailEditText.text.toString()
             val reviewText = reviewEditText.text.toString()
+            val shopNoEditText = findViewById<EditText>(R.id.shopno)
+            val shopNo = shopNoEditText.text.toString()
 
             if (farmerName.isNotEmpty() && ownerName.isNotEmpty() && farmerMail.isNotEmpty() && reviewText.isNotEmpty()) {
-                saveReviewToFirebase(farmerName, ownerName, farmerMail, reviewText)
+                saveReviewToFirebase(Review(farmername = farmerName, owneremail = ownerName, shopno = shopNo, email = farmerMail, review = reviewText))
             } else {
                 Toast.makeText(this, "Please provide all details.", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun saveReviewToFirebase(farmerName: String, ownerName: String, email: String, review: String) {
+    private fun saveReviewToFirebase(review: Review) {
         val reference = database.getReference("reviews")
-
-        val newReview = Review(farmerName, ownerName, email, review)
 
         val key = reference.push().key
         if (key != null) {
-            reference.child(key).setValue(newReview)
+            reference.child(key).setValue(review)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Review submitted successfully", Toast.LENGTH_LONG).show()
                     finish()

@@ -13,13 +13,16 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
+            android:name=".ReviewRemoveList"
+            android:exported="true" />
+        <activity
             android:name=".MyReserves"
             android:exported="false" />
 
         <activity
 
             android:name=".RecyclerProfile"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RecyclerLogin"
             android:exported="true" />
@@ -37,6 +40,7 @@
             android:exported="true" />
         <activity
             android:name=".WasteProfileEdit"
+
             android:exported="true" />
         <activity
             android:name=".ShopOwnerProfile"
@@ -57,6 +61,8 @@
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
+            android:name=".ShopReview"
+            android:exported="true" />
             android:name=".Reviews"
             android:exported="true" />
         <activity
@@ -95,14 +101,9 @@
         <activity
             android:name=".OrdersActivity"
             android:exported="true" />
+
         <activity
-            android:name=".DambullaCentre"
-            android:exported="true" />
-        <activity
-            android:name=".MeegodaCentre"
-            android:exported="true" />
-        <activity
-            android:name=".PaliyagodaCentre"
+            android:name=".Centers"
             android:exported="true" />
         <activity
             android:name=".MarketOverview"
