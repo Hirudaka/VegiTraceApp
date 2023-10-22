@@ -17,8 +17,18 @@
             android:exported="false" />
 
         <activity
-            android:name=".MyOrderDetail"
+
+            android:name=".RecyclerProfile"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerLogin"
             android:exported="true" />
+        <activity
+            android:name=".RecyclerSignup"
+                  android:exported="true" />
+ <activity
+            android:name=".MyOrderDetail"
+                  android:exported="true"/>
         <activity
             android:name=".SellerAddWaste"
             android:exported="true" />
