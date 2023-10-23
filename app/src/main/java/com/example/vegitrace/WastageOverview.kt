@@ -70,12 +70,21 @@ class WastageOverview : AppCompatActivity() {
             val intent = Intent(this, WastageForm::class.java)
             startActivity(intent)
         }
+        // Add a button to go back to the WastageMain page
+        val goBackButton = findViewById<Button>(R.id.wastageGoBack)
+
+        goBackButton.setOnClickListener {
+            val intent = Intent(this, WastageMain::class.java)
+            startActivity(intent)
+        }
+
         // Retrieve the total waste weight from the intent
         val totalWasteWeight = intent.getIntExtra("totalWasteWeight", 0) // 0 is the default value if the extra is not found
 
         // Find the TextView with ID "wastageTotal2" and set the value
         val wastageTotal2TextView = findViewById<TextView>(R.id.wastageTotal2)
         wastageTotal2TextView.text = totalWasteWeight.toString()
+
     }
     private fun getCurrentDate(): String {
         val dateFormat = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
