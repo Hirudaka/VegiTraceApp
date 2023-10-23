@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#27BDAF"
+    tools:context=".Welcome"
+    tools:layout_editor_absoluteX="-7dp"
+    tools:layout_editor_absoluteY="4dp">
+    <!-- Square Tile Button Style -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="203dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="111dp"
+        android:fontFamily="serif"
+        android:text="VegiTrace"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#125013"
+        android:textDirection="firstStrongRtl"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="219dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="-205dp"
+        android:layout_marginTop="78dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="203dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="10dp"
+        android:text="Welcome To "
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="@color/lavender"
+        android:shadowColor="#252424"
+        android:text="Shop owner"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:strokeColor="#0C0C0C"
+        app:strokeWidth="1dp"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="@color/lavender"
+        android:shadowColor="#1B1A1A"
+        android:text="Recycler"
+        android:textColor="#F4EFEF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="@+id/button"
+        app:strokeColor="#191818"
+        app:strokeWidth="1dp"
+        app:layout_constraintDimensionRatio="1:1" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="-238dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="@color/lavender"
+        android:shadowColor="#151515"
+        android:text="Farmer"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:strokeColor="#151515"
+        app:strokeWidth="1dp"
+        app:layout_constraintDimensionRatio="1:1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

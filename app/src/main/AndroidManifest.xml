@@ -43,6 +43,9 @@
             android:exported="true"
             android:label="@string/title_activity_farmer_location" />
         <activity
+            android:name=".Welcome"
+            android:exported="true" />
+        <activity
             android:name=".ReviewRemoveList"
             android:exported="true" />
         <activity
@@ -88,7 +91,7 @@
             android:name=".ShopReview"
             android:exported="true" />
         <activity
-            android:name=".FarmerProfile"
+            android:name=".Reviews"
             android:exported="true" />
         <activity
             android:name=".FarmerReserves"

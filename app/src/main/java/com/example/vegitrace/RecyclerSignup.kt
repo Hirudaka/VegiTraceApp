@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.example.vegitrace.databinding.ActivityRecyclersignupBinding
-import com.example.vegitrace.model.Recycle
+import com.example.vegitrace.model.Recycler
 
 class RecyclerSignup : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclersignupBinding
@@ -75,7 +75,7 @@ class RecyclerSignup : AppCompatActivity() {
     private fun saveUserDataToDatabase(name: String, address: String, phone: String, nic: String, email: String) {
         // Replace the following lines with your database logic to save user data
         val databaseRef = database.getReference("Recyclers")
-        val recycler = Recycle(name, address, phone, nic, email)
+        val recycler = Recycler(name, address, phone, nic, email)
         val userId = firebaseAuth.currentUser?.uid
         if (userId != null) {
             databaseRef.child(userId).setValue(recycler)

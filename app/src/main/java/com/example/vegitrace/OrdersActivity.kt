@@ -1,6 +1,7 @@
 package com.example.vegitrace
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,12 @@ class OrdersActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.oRecycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val vegetableName = intent.getStringExtra("vegetableName")
+
+        val centerName = intent.getStringExtra("centerName")
+
+        Log.d("VegetableClick", "Selected Vegetable: $vegetableName")
+
 
 
         // Initialize Firebase
@@ -31,22 +38,25 @@ class OrdersActivity : AppCompatActivity() {
         // Read data from Firebase and populate the orderList
         databaseReference
             .orderByChild("vegetableType")
-            .equalTo("Carrot")
+            .equalTo(vegetableName)
             .addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                orderList.clear()
-                for (snapshot in dataSnapshot.children) {
-                    val order = snapshot.getValue(Order::class.java)
-                    order?.let {
-                        orderList.add(it)
-                    }
-                }
-                orderAdapter.notifyDataSetChanged()
-            }
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    orderList.clear()
+                    for (snapshot in dataSnapshot.children) {
+                        val order = snapshot.getValue(Order::class.java)
+                        order?.let {
+                            if (it.centre == centerName) {
+                                orderList.add(it)
+                            }
+                        }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors here
-            }
-        })
+                    }
+                    orderAdapter.notifyDataSetChanged()
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle any errors here
+                }
+            })
     }
 }

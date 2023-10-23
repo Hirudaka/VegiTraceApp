@@ -97,10 +97,10 @@ class AddOrderActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             } else {
                 // Get the user's unique ID (UID)
-                val userId = currentUser.uid
+                //val userId = currentUser.uid
 
                 // Use the user information to create a unique order
-                val order = Order(orderId, shopowner, vegetableType, quantity, price, centre, "Pending", userId)
+                val order = Order(orderId, shopowner, vegetableType, quantity, price, centre, "Pending", "")
 
                 // Get a reference to your Firebase database
                 val database = FirebaseDatabase.getInstance()
