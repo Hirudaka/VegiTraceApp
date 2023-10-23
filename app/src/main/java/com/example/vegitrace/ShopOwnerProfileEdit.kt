@@ -1,48 +1,44 @@
 package com.example.vegitrace
-import android.content.Intent
+
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.vegitrace.databinding.ActivityShopOwnerProfileEditBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.example.vegitrace.databinding.ActivityShopOwnerProfileBinding
 import com.example.vegitrace.model.ShopOwner
 
-class ShopOwnerProfile : AppCompatActivity() {
-    private lateinit var binding: ActivityShopOwnerProfileBinding
+class ShopOwnerProfileEdit : AppCompatActivity() {
+    private lateinit var binding: ActivityShopOwnerProfileEditBinding
     private lateinit var database: FirebaseDatabase
     private lateinit var auth: FirebaseAuth
     private lateinit var userId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityShopOwnerProfileBinding.inflate(layoutInflater)
+        binding = ActivityShopOwnerProfileEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        // Check if the user is authenticated
         val currentUser = auth.currentUser
         if (currentUser == null) {
-            // The user is not authenticated, handle this case (e.g., redirect to the login page).
-            // You might also want to finish this activity.
             Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show()
-            finish() // Close this activity
+            finish()
             return
         }
 
-        userId = currentUser.uid // Get the user's UID
+        userId = currentUser.uid
 
-        val databaseRef = database.getReference("shopOwners").child(userId) // Query using the user's UID
 
-        databaseRef.addValueEventListener(object : ValueEventListener {
+        val databaseRef = database.getReference("shopOwners").child(userId)
+        databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
                     val shopOwner = dataSnapshot.getValue(ShopOwner::class.java)
                     if (shopOwner != null) {
-                        // Populate the binding elements with user data
+                        // Populate the input fields with existing user data
                         binding.profileName.setText(shopOwner.name)
-                        binding.profileEmail.setText(shopOwner.email)
                         binding.profileAddress.setText(shopOwner.address)
                         binding.profileShopNo.setText(shopOwner.shopNo)
                         binding.profileMarketPosition.setText(shopOwner.marketPosition)
@@ -51,16 +47,24 @@ class ShopOwnerProfile : AppCompatActivity() {
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(this@ShopOwnerProfile, "Failed to retrieve user data", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ShopOwnerProfileEdit, "Failed to retrieve user data", Toast.LENGTH_SHORT).show()
             }
         })
-        val sellerEditProButton = binding.sellerEditPro
 
-        sellerEditProButton.setOnClickListener {
-            val intent = Intent(this, ShopOwnerProfileEdit::class.java)
-            startActivity(intent)
+        binding.sellerUpdatePro.setOnClickListener {
+            val name = binding.profileName.text.toString()
+            val address = binding.profileAddress.text.toString()
+            val shopNo = binding.profileShopNo.text.toString()
+            val marketPosition = binding.profileMarketPosition.text.toString()
+
+            val databaseRef = database.getReference("shopOwners").child(userId)
+            databaseRef.child("name").setValue(name)
+            databaseRef.child("address").setValue(address)
+            databaseRef.child("shopNo").setValue(shopNo)
+            databaseRef.child("marketPosition").setValue(marketPosition)
+
+            Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show()
+            finish()
         }
-
     }
 }
-
