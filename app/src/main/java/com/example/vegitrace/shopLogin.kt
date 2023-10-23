@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
 import com.example.vegitrace.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class shopLogin : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -28,7 +28,7 @@ class shopLogin : AppCompatActivity() {
                             // User successfully logged in
                             val userId = authResult.result?.user?.uid
                             if (userId != null) {
-                                val intent = Intent(this, MarketOverview::class.java)
+                                val intent = Intent(this, MyOrdersActivity::class.java)
                                 intent.putExtra("userId", userId)
                                 startActivity(intent)
                                 finish() // Close the login activity
