@@ -13,14 +13,15 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
+            android:name=".Welcome"
+            android:exported="true" />
+        <activity
             android:name=".ReviewRemoveList"
             android:exported="true" />
         <activity
             android:name=".MyReserves"
             android:exported="false" />
-
         <activity
-
             android:name=".RecyclerProfile"
             android:exported="true" />
         <activity
@@ -28,8 +29,7 @@
             android:exported="true" />
         <activity
             android:name=".RecyclerSignup"
-                  android:exported="true" />
-
+            android:exported="true" />
         <activity
             android:name=".SellerAddWaste"
             android:exported="true" />
@@ -38,7 +38,6 @@
             android:exported="true" />
         <activity
             android:name=".WasteProfileEdit"
-
             android:exported="true" />
         <activity
             android:name=".ShopOwnerProfile"
@@ -64,7 +63,6 @@
         <activity
             android:name=".Reviews"
             android:exported="true" />
-
         <activity
             android:name=".FarmerReserves"
             android:exported="true" />
@@ -98,7 +96,6 @@
         <activity
             android:name=".OrdersActivity"
             android:exported="true" />
-
         <activity
             android:name=".Centers"
             android:exported="true" />
