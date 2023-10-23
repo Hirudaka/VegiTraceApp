@@ -69,13 +69,7 @@ class SignupActivity : AppCompatActivity() {
                                     saveFarmerToDatabase(userId, farmer)
 
                                     // Pass the user data to ProfileActivity
-                                    val intent = Intent(this, ProfileActivity::class.java)
-                                    intent.putExtra("name", name)
-                                    intent.putExtra("email", email)
-                                    intent.putExtra("address", address)
-                                    intent.putExtra("phoneNumber", phoneNumber)
-                                    intent.putExtra("vehicleRegNo", vehicleRegNo)
-                                    intent.putExtra("qrCodeBase64", qrCodeBase64)
+                                    val intent = Intent(this, LoginActivity::class.java)
                                     startActivity(intent)
                                 } else {
                                     Toast.makeText(this, "Failed to create user.", Toast.LENGTH_SHORT).show()

@@ -5,18 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signupbkg"
+    android:background="@drawable/login_back"
     tools:context=".RecyclerSignup">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="320dp"
         android:orientation="vertical"
         android:padding="20dp">
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:id="@+id/name"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
@@ -28,8 +34,8 @@
             android:textColor="@color/grey" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:id="@+id/address"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
@@ -41,8 +47,8 @@
             android:textColor="@color/grey" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:id="@+id/phone"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
@@ -54,8 +60,8 @@
             android:textColor="@color/grey" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:id="@+id/nic"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
@@ -67,8 +73,8 @@
             android:textColor="@color/grey" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:id="@+id/signupEmail1"
             android:layout_marginTop="30dp"
             android:background="@drawable/lavender_border"
@@ -79,8 +85,8 @@
             android:textColor="@color/grey" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:id="@+id/signupPassword1"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
@@ -92,16 +98,16 @@
             android:textColor="@color/grey" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/signupConfirm1"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
-            android:padding="8dp"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
             android:drawableLeft="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="8dp"
             android:textColor="@color/grey" />
 
         <Button
@@ -124,6 +130,7 @@
             android:textSize="18sp"
             android:textColor="@color/lavender" />
 
+    </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
