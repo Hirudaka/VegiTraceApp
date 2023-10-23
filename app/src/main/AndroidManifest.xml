@@ -115,9 +115,7 @@
         <activity
             android:name=".MyOrdersActivity"
             android:exported="true" />
-        <activity
-            android:name=".DBtesting"
-            android:exported="true" />
+
         <activity
             android:name=".WastageProfile"
             android:exported="true" />

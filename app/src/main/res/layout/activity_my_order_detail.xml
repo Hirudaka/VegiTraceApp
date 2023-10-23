@@ -23,75 +23,157 @@
         android:textSize="20sp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="70dp"
+        android:textStyle="bold"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <ImageView
             android:id="@+id/VegimageView"
-            android:layout_width="190dp"
+            android:layout_width="154dp"
             android:layout_height="190dp"
-           android:layout_marginStart="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="70dp"
-            android:layout_marginBottom="15dp"
             android:layout_marginEnd="10dp"
-            />
+            android:layout_marginBottom="15dp" />
 
         <LinearLayout
+            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/FarmertextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Farmer"
-                android:layout_margin="10dp"
-                />
 
-            <TextView
-                android:id="@+id/VegtextView"
+            <LinearLayout
+                android:layout_margin="2dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Vegitable"
-                android:layout_margin="10dp"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/QuanttextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Quantity"
-                android:layout_margin="10dp" />
+                <TextView
+                    android:id="@+id/FtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Farmer:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
-            <TextView
-                android:id="@+id/PricetextView"
+                <TextView
+                    android:id="@+id/FarmertextView"
+                    android:layout_width="157dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Farmer"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="2dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Price"
-                android:layout_margin="10dp"/>
-            <TextView
-                android:id="@+id/StatustextView"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/VtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:text="Vegitable:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/VegtextView"
+                    android:layout_width="146dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:text="Vegitable"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="2dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Status"
-                android:layout_margin="10dp"/>
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/PtextView"
+                    android:layout_width="66dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Price:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/PricetextView"
+                    android:layout_width="164dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Price"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/QtextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Quantity:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/QuanttextView"
+                    android:layout_width="157dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Quantity"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_margin="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/SView"
+                    android:layout_width="78dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="0dp"
+                    android:text="Status:"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/StatustextView"
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="0dp"
+                    android:text="Status"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/trackbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Track"
-                android:layout_marginStart="50dp"
+                android:layout_marginStart="110dp"
                 android:layout_marginBottom="10dp"
-                />
+                android:text="Track" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView >

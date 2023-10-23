@@ -5,9 +5,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vegitrace.model.Recycle
+import com.example.vegitrace.model.Recycler
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class RecyclerProfileEdit : AppCompatActivity() {
     private lateinit var nameEditText: EditText
@@ -36,7 +40,7 @@ class RecyclerProfileEdit : AppCompatActivity() {
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    val recycler = dataSnapshot.getValue(Recycle::class.java)
+                    val recycler = dataSnapshot.getValue(Recycler::class.java)
 
                     if (recycler != null) {
                         nameEditText.setText(recycler.name)
