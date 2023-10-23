@@ -57,6 +57,7 @@ class Centers : AppCompatActivity() {
         val vegetableName = view.tag.toString()
         val centerName = findViewById<TextView>(R.id.center).text.toString()
         Log.d("VegetableClick", "Selected Vegetable: $vegetableName")
+        Log.d("Centre", "Selected centre: $centerName")
 
         val intent = Intent(this, OrdersActivity::class.java)
         intent.putExtra("vegetableName", vegetableName)
