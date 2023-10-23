@@ -46,6 +46,18 @@
             android:name=".Welcome"
             android:exported="true" />
         <activity
+            android:name=".VegeSelect"
+            android:exported="true" />
+        <activity
+            android:name=".FarmerProfileEdit"
+            android:exported="true" />
+        <activity
+            android:name=".ShopOwnerProfileEdit"
+            android:exported="true" />
+        <activity
+            android:name=".RecyclerProfileEdit"
+            android:exported="true" />
+        <activity
             android:name=".ReviewRemoveList"
             android:exported="true" />
         <activity
@@ -60,6 +72,7 @@
         <activity
             android:name=".RecyclerSignup"
             android:exported="true" />
+
         <activity
             android:name=".SellerAddWaste"
             android:exported="true" />
