@@ -29,7 +29,10 @@ class OrdersActivity : AppCompatActivity() {
         recyclerView.adapter = orderAdapter
 
         // Read data from Firebase and populate the orderList
-        databaseReference.addValueEventListener(object : ValueEventListener {
+        databaseReference
+            .orderByChild("vegetableType")
+            .equalTo("Carrot")
+            .addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 orderList.clear()
                 for (snapshot in dataSnapshot.children) {
