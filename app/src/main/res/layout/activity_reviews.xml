@@ -6,33 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".Reviews">
 
-    <TextView
-        android:id="@+id/BookingFormTitle"
-        android:layout_width="413dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="28dp"
-        android:background="@color/DarkGreenBackground"
-        android:text="Reviews"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sellerProfileCardView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/DarkGreenBackground"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Seller All Reviews"
+            android:textColor="@color/white"
+            android:textSize="33sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginRight="0dp"
+            android:background="@color/green"
+            android:padding="6dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="378dp"
+        android:layout_width="match_parent"
         android:layout_height="633dp"
-        android:layout_marginBottom="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView"
         tools:ignore="MissingConstraints" />
 
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@color/DarkGreenBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_alignParentBottom="true">
+
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_home_24"/>
+
+        <ImageView
+            android:id="@+id/navAddUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_library_books_24"/>
+        <ImageView
+            android:id="@+id/navReviewUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:background="@color/green"
+            app:srcCompat="@drawable/baseline_reviews_24"/>
+        <ImageView
+            android:id="@+id/navScanUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_account_facewhite"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

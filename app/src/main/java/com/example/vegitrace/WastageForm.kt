@@ -7,6 +7,7 @@ import android.widget.Toast
 import com.example.vegitrace.databinding.ActivityWastageFormBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.example.vegitrace.model.WasteForm
 
 class WastageForm : AppCompatActivity() {
 
@@ -37,12 +38,9 @@ class WastageForm : AppCompatActivity() {
                         binding.WastageDateEdit.text.clear()
 
                         Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
-                        // Pass the wastageWeight back to the WastageOverview activity
-                        val intent = Intent()
-                        intent.putExtra("wastageWeight", wastageWeight)
-                        setResult(RESULT_OK, intent)
-                        finish()
-
+                        // Navigate to the WasteFormC2 activity
+                        val intent = Intent(this, WastageFormC2::class.java)
+                        startActivity(intent)
                     }.addOnFailureListener {
                         Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
                     }
@@ -53,6 +51,9 @@ class WastageForm : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_LONG).show()
             }
+        }
+        binding.wastageGoBack.setOnClickListener {
+            finish()
         }
     }
     data class WasteForm(

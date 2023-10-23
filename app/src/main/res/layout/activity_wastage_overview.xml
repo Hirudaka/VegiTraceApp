@@ -10,10 +10,11 @@
         android:id="@+id/wastageOverview"
         android:layout_width="411dp"
         android:layout_height="54dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:background="@color/DarkGreenBackground"
         android:text="Wastage Overview"
         android:textAlignment="center"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="33sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +52,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="19dp"
                     android:text="Date -"
+                    android:textColor="@color/black"
                     android:textSize="28sp" />
 
                 <TextView
@@ -60,6 +62,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="12dp"
                     android:text=""
+                    android:textColor="@color/black"
                     android:textSize="28sp" />
 
             </LinearLayout>
@@ -88,6 +91,7 @@
                     android:layout_height="68dp"
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="13dp"
+                    android:textColor="@color/black"
                     android:text="Current Total Garbage Amount -"
                     android:textSize="28sp" />
 
@@ -98,6 +102,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="12dp"
                     android:text=""
+                    android:textColor="@color/black"
                     android:textSize="28sp" />
 
             </LinearLayout>
@@ -125,6 +130,7 @@
                     android:layout_height="68dp"
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="13dp"
+                    android:textColor="@color/black"
                     android:text="Number Of Shops Contributed -"
                     android:textSize="28sp" />
 
@@ -135,6 +141,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="12dp"
                     android:text=""
+                    android:textColor="@color/black"
                     android:textSize="28sp" />
 
             </LinearLayout>
@@ -162,6 +169,44 @@
         android:text="Go Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wastageBookNow" />
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/DarkGreenBackground"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:background="@color/green"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/navBookingUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_library_books_24" />
+
+        <ImageView
+            android:id="@+id/navProfileUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

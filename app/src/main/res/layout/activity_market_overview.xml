@@ -6,31 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".MarketOverview">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="402dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="-400dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/BookingFormTitle"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
         android:layout_marginTop="16dp"
-        android:text="Select Your Economic Centre...."
-        android:textAlignment="center"
-        android:textColor="@color/green"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:backgroundTint="@color/DarkGreenBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Select Your Economic Centre.."
+            android:textColor="@color/white"
+            android:textSize="27sp" />
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="412dp"
+        android:layout_width="match_parent"
         android:layout_height="675dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/map"
-        android:onClick="onCenterClicked"
-        android:tag="Meegoda"/>
+        app:layout_constraintTop_toBottomOf="@+id/BookingFormTitle"
+        app:srcCompat="@drawable/map" />
 
     <ImageView
         android:id="@+id/meegodaloc"
@@ -102,5 +109,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/paliyagodalock"
         android:layout_width="150dp" />
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/DarkGreenBackground"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/navAddUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_library_books_24" />
+
+        <ImageView
+            android:id="@+id/navReviewUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_reviews_24" />
+
+        <ImageView
+            android:id="@+id/navScanUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
