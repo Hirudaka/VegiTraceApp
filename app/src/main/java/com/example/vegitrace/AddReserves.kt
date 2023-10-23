@@ -23,6 +23,11 @@ class AddReserves : AppCompatActivity(),  AddReserveAdaptor.OnButtonClickListene
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val vegetableName = intent.getStringExtra("vegetableName")
+
+        val centerName = intent.getStringExtra("centerName")
+
+
 
 
         // Initialize Firebase
@@ -35,13 +40,19 @@ class AddReserves : AppCompatActivity(),  AddReserveAdaptor.OnButtonClickListene
         recyclerView.adapter = reserverAdapter
 
         // Read data from Firebase and populate the orderList
-        databaseReference.addValueEventListener(object : ValueEventListener {
+        databaseReference
+            .orderByChild("vegetableType")
+            .equalTo(vegetableName)
+            .addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 orderList.clear()
                 for (snapshot in dataSnapshot.children) {
                     val order = snapshot.getValue(Order::class.java)
                     order?.let {
-                        orderList.add(it)
+                        if (it.centre == centerName) {
+                            orderList.add(it)
+                        }
+
                     }
                 }
                 reserverAdapter.notifyDataSetChanged()
