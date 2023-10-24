@@ -2,6 +2,7 @@ package com.example.vegitrace
 import android.content.Intent
 import android.os.Bundle
 import android.provider.ContactsContract.CommonDataKinds.Im
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -68,6 +69,7 @@ class ShopOwnerProfile : AppCompatActivity() {
         val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
         val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
         val topProfile = findViewById<ImageView>(R.id.imageView4)
+        val addDWaste = findViewById<Button>(R.id.sellerAddWaste)
 
         navHomeUnClick.setOnClickListener {
             val intent = Intent(this, Centers::class.java)
@@ -89,7 +91,10 @@ class ShopOwnerProfile : AppCompatActivity() {
             val intent = Intent(this, ShopOwnerProfile::class.java)
             startActivity(intent)
         }
-
+        addDWaste.setOnClickListener {
+            val intent = Intent(this, SellerAddWaste::class.java)
+            startActivity(intent)
+        }
     }
 }
 

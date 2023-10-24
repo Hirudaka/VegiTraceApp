@@ -52,17 +52,35 @@ class ProfileActivity : AppCompatActivity() {
                     }
                 }
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 // Handle errors or provide feedback to the user
                 Toast.makeText(this@ProfileActivity, "Failed to retrieve user data", Toast.LENGTH_SHORT).show()
             }
         })
 
-        val farmerEditProButton = findViewById<Button>(R.id.farmerEditPro)
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
 
-        farmerEditProButton.setOnClickListener {
-            val intent = Intent(this, FarmerProfileEdit::class.java)
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, MarketOverview::class.java)
+            startActivity(intent)
+        }
+
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
+            startActivity(intent)
+        }
+
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, Reviews::class.java)
+            startActivity(intent)
+        }
+
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
     }
