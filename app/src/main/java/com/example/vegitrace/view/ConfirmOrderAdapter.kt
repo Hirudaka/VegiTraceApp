@@ -65,8 +65,11 @@ class ConfirmOrderAdapter(private val context: Context, private val orderList: A
         val vegetableImageMap = mapOf(
             "Carrot" to R.drawable.carrots,
             "Beans" to R.drawable.greenbeans,
-            "Cabbage" to R.drawable.cabbage
-            // Add more vegetable-to-image mappings as needed
+            "Cabbage" to R.drawable.cabbage,
+            "Egg Plant" to R.drawable.eggplant,
+            "BeetRoot" to R.drawable.beet,
+            "Corn" to R.drawable.corn,
+
         )
 
         // Look up the image resource ID for the given vegetable name
