@@ -62,7 +62,7 @@ class ProfileActivity : AppCompatActivity() {
         val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
         val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
         val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
-
+        val farmerMap = findViewById<Button>(R.id.farmerLocation)
 
         navHomeUnClick.setOnClickListener {
             val intent = Intent(this, MarketOverview::class.java)
@@ -81,6 +81,10 @@ class ProfileActivity : AppCompatActivity() {
 
         navScanUnClick.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+        farmerMap.setOnClickListener {
+            val intent = Intent(this, FarmerLocation::class.java)
             startActivity(intent)
         }
     }
