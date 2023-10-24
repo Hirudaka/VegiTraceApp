@@ -34,10 +34,12 @@ class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
+
         val currentUser = auth.currentUser
         if (currentUser != null) {
             val userId = currentUser.uid
             val shopOwnersRef: DatabaseReference = database.getReference("shopOwners")
+
 
             shopOwnersRef.child(userId).addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
