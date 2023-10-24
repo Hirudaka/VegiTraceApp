@@ -6,43 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Centers">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/sellerProfileCardView"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/DarkGreenBackground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="center"
-            android:textColor="@color/white"
-            android:textSize="33sp" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="55dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="end"
-            android:layout_marginRight="0dp"
-            android:padding="6dp"
-            app:srcCompat="@drawable/baseline_account_facewhite" />
-    </androidx.cardview.widget.CardView>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="25dp"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -50,6 +20,32 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sellerProfileCardView"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/DarkGreenBackground">
+
+                <TextView
+                    android:id="@+id/center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="center"
+                    android:textColor="@color/white"
+                    android:textSize="33sp" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="55dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="0dp"
+                    android:padding="6dp"
+                    app:srcCompat="@drawable/baseline_account_facewhite" />
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,7 +65,9 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Beans"
-                        app:srcCompat="@drawable/greenbeans" />
+                        app:srcCompat="@drawable/greenbeans"
+                        android:background="@drawable/bordered_image_view"
+                        />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -93,7 +91,8 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Carrot"
-                        app:srcCompat="@drawable/carrots" />
+                        app:srcCompat="@drawable/carrots"
+                        android:background="@drawable/bordered_image_view"/>
 
                     <TextView
                         android:id="@+id/textView8"
@@ -125,7 +124,8 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/cabbage"
-                        android:tag="Cabbage" />
+                        android:tag="Cabbage"
+                        android:background="@drawable/bordered_image_view"/>
 
                     <TextView
                         android:id="@+id/textView11"
@@ -150,7 +150,8 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Beet-Root"
-                        app:srcCompat="@drawable/beet" />
+                        app:srcCompat="@drawable/beet"
+                        android:background="@drawable/bordered_image_view"/>
 
                     <TextView
                         android:id="@+id/textView12"
@@ -180,7 +181,9 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/eggplant"
-                        android:tag="Egg Plant" />
+                        android:tag="Egg Plant"
+                        android:background="@drawable/bordered_image_view"
+                        />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -205,7 +208,8 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/corn"
-                        android:tag="Corn" />
+                        android:tag="Corn"
+                        android:background="@drawable/bordered_image_view"/>
 
                     <TextView
                         android:id="@+id/textView14"
@@ -219,54 +223,52 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/navBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/DarkGreenBackground"
+                android:layout_marginBottom="0dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/navHomeUnClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    android:padding="7dp"
+                    app:srcCompat="@drawable/baseline_home_24" />
+
+                <ImageView
+                    android:id="@+id/navAddUnClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    app:srcCompat="@drawable/outline_add_circle_outline_24" />
+
+                <ImageView
+                    android:id="@+id/navReviewUnClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    app:srcCompat="@drawable/baseline_reviews_24" />
+
+                <ImageView
+                    android:id="@+id/navScanUnClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/navBar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/DarkGreenBackground"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-
-        <ImageView
-            android:id="@+id/navHomeUnClick"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="7dp"
-            android:background="@color/green"
-            app:srcCompat="@drawable/baseline_home_24" />
-
-        <ImageView
-            android:id="@+id/navAddUnClick"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="7dp"
-            app:srcCompat="@drawable/outline_add_circle_outline_24" />
-
-        <ImageView
-            android:id="@+id/navReviewUnClick"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="7dp"
-            app:srcCompat="@drawable/baseline_reviews_24" />
-
-        <ImageView
-            android:id="@+id/navScanUnClick"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="7dp"
-            app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
-    </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
