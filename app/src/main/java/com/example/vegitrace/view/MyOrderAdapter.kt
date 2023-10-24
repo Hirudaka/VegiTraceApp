@@ -46,7 +46,7 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
         val order = orderList[position]
 
         holder.oId.text = order.orderId
-        holder.name.text = order.shopOwner
+        holder.name.text = order.farmer
         holder.vegetable.text = order.vegetableType
         holder.quantity.text = order.quantity
         holder.price.text = order.price
@@ -57,7 +57,7 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
         }
         holder.trackbtn.setOnClickListener {
             val intent = Intent(context, DisplayLocationActivity::class.java)
-            intent.putExtra("orderId", order.orderId)
+            intent.putExtra("farmer", order.farmer)
             context.startActivity(intent)
         }
         val imageResId = getImageResourceForVegetable(order.vegetableType)

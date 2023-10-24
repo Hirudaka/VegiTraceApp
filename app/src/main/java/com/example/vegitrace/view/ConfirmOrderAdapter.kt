@@ -38,7 +38,7 @@ class ConfirmOrderAdapter(private val context: Context, private val orderList: A
         val order = orderList[position]
 
         holder.oId.text = order.orderId
-        holder.name.text = order.shopOwner
+        holder.name.text = order.farmer
         holder.vegetable.text = order.vegetableType
         holder.quantity.text = order.quantity
         holder.price.text = order.price
