@@ -1,12 +1,15 @@
 package com.example.vegitrace.view
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vegitrace.DisplayLocationActivity
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
 import com.google.firebase.database.*
@@ -26,6 +29,7 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
         val status: TextView = itemView.findViewById(R.id.StatustextView)
         val image: ImageView = itemView.findViewById(R.id.VegimageView)
         val removebtn: ImageView = itemView.findViewById(R.id.removebtn)
+        val trackbtn: Button = itemView.findViewById(R.id.trackbtn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
@@ -50,6 +54,11 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
 
         holder.removebtn.setOnClickListener {
             listener.onItemClick(position)
+        }
+        holder.trackbtn.setOnClickListener {
+            val intent = Intent(context, DisplayLocationActivity::class.java)
+            intent.putExtra("orderId", order.orderId)
+            context.startActivity(intent)
         }
         val imageResId = getImageResourceForVegetable(order.vegetableType)
         holder.image.setImageResource(imageResId)
