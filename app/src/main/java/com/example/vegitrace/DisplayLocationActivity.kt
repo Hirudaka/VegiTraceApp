@@ -72,6 +72,7 @@ class DisplayLocationActivity : AppCompatActivity(), OnMapReadyCallback {
                         val padding = 100 // Adjust padding as needed
                         val cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, padding)
                         mMap.animateCamera(cameraUpdate)
+
                     } else {
                         // Handle the case when there's no data (e.g., show a message)
                     }
