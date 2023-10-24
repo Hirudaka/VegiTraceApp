@@ -1,6 +1,9 @@
 package com.example.vegitrace
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.model.Recycler
@@ -14,6 +17,7 @@ class RecyclerProfile : AppCompatActivity() {
     private lateinit var nicTextView: TextView
     private lateinit var emailTextView: TextView
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var editProfileButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +29,14 @@ class RecyclerProfile : AppCompatActivity() {
         phoneTextView = findViewById(R.id.phoneTextView)
         nicTextView = findViewById(R.id.nicTextView)
         emailTextView = findViewById(R.id.emailTextView)
+        editProfileButton = findViewById(R.id.recyclerEditPro)
+
+        // Set an OnClickListener for the "recyclerEditPro" button
+        editProfileButton.setOnClickListener {
+            // Create an Intent to navigate to the RecyclerProfileEdit activity
+            val intent = Intent(this, RecyclerProfileEdit::class.java)
+            startActivity(intent)
+        }
 
         // Initialize Firebase Database reference
         val userId = FirebaseAuth.getInstance().currentUser?.uid
@@ -38,11 +50,11 @@ class RecyclerProfile : AppCompatActivity() {
 
                     if (recycler != null) {
                         // Update the TextViews with retrieved data
-                        nameTextView.text = "Name: ${recycler.name}"
-                        addressTextView.text = "Address: ${recycler.address}"
-                        phoneTextView.text = "Phone: ${recycler.phone}"
-                        nicTextView.text = "NIC: ${recycler.nic}"
-                        emailTextView.text = "Email: ${recycler.email}"
+                        nameTextView.text = "${recycler.name}"
+                        addressTextView.text = "${recycler.address}"
+                        phoneTextView.text = "${recycler.phone}"
+                        nicTextView.text = "${recycler.nic}"
+                        emailTextView.text = "${recycler.email}"
                     }
                 }
             }
@@ -51,5 +63,22 @@ class RecyclerProfile : AppCompatActivity() {
                 // Handle any errors during data retrieval
             }
         })
+
+        val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
+        val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
+        val recyclerProfileButton = findViewById<ImageView>(R.id.navProfileUnClick)
+
+        wastageMainButton.setOnClickListener {
+            val intent = Intent(this, WastageMain::class.java)
+            startActivity(intent)
+        }
+        historyButton.setOnClickListener {
+            val intent = Intent(this, WastageHistory::class.java)
+            startActivity(intent)
+        }
+        recyclerProfileButton.setOnClickListener {
+            val intent = Intent(this, RecyclerProfile::class.java)
+            startActivity(intent)
+        }
     }
 }

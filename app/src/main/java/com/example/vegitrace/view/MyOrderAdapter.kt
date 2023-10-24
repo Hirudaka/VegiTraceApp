@@ -12,12 +12,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.DisplayLocationActivity
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
-import com.google.firebase.database.*
 
-class MyOrderAdapter(private val context: Context, private val orderList: ArrayList<Order>, private val listener: OnItemClickListener) : RecyclerView.Adapter<MyOrderAdapter.OrderViewHolder>() {
+class MyOrderAdapter(
+    private val context: Context,
+    private val orderList: ArrayList<Order>,
+    private val listener: OnItemClickListener,
+    private val trackButtonListener: OnTrackButtonClickListener
+) : RecyclerView.Adapter<MyOrderAdapter.OrderViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
+    }
+
+    interface OnTrackButtonClickListener {
+        fun onTrackButtonClick(position: Int)
     }
 
     inner class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -55,11 +63,13 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
         holder.removebtn.setOnClickListener {
             listener.onItemClick(position)
         }
+
         holder.trackbtn.setOnClickListener {
             val intent = Intent(context, DisplayLocationActivity::class.java)
             intent.putExtra("farmer", order.farmer)
             context.startActivity(intent)
         }
+
         val imageResId = getImageResourceForVegetable(order.vegetableType)
         holder.image.setImageResource(imageResId)
     }
@@ -67,12 +77,17 @@ class MyOrderAdapter(private val context: Context, private val orderList: ArrayL
     fun itemRemovedAtUpdatedList(position: Int) {
         notifyItemRemoved(position)
     }
+
     private fun getImageResourceForVegetable(vegetableName: String): Int {
         // Define a mapping of vegetable names to image resource IDs
         val vegetableImageMap = mapOf(
             "Carrot" to R.drawable.carrots,
             "Beans" to R.drawable.greenbeans,
             "Cabbage" to R.drawable.cabbage,
+            "Egg Plant" to R.drawable.eggplant,
+            "BeetRoot" to R.drawable.beet,
+            "Corn" to R.drawable.corn,
+
             // Add more vegetable-to-image mappings as needed
         )
 

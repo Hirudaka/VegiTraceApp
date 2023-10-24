@@ -28,7 +28,7 @@ class RecyclerLogin : AppCompatActivity() {
                             // User successfully logged in
                             val userId = authResult.result?.user?.uid
                             if (userId != null) {
-                                val intent = Intent(this, RecyclerProfile::class.java)
+                                val intent = Intent(this, WastageMain::class.java)
                                 intent.putExtra("userId", userId)
                                 startActivity(intent)
                                 finish() // Close the login activity

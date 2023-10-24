@@ -3,10 +3,12 @@ package com.example.vegitrace
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.vegitrace.databinding.ActivityWastageFormBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.example.vegitrace.model.WasteForm
 
 class WastageForm : AppCompatActivity() {
 
@@ -37,12 +39,9 @@ class WastageForm : AppCompatActivity() {
                         binding.WastageDateEdit.text.clear()
 
                         Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
-                        // Pass the wastageWeight back to the WastageOverview activity
-                        val intent = Intent()
-                        intent.putExtra("wastageWeight", wastageWeight)
-                        setResult(RESULT_OK, intent)
-                        finish()
-
+                        // Navigate to the WasteFormC2 activity
+                        val intent = Intent(this, WastageFormC2::class.java)
+                        startActivity(intent)
                     }.addOnFailureListener {
                         Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
                     }
@@ -54,6 +53,28 @@ class WastageForm : AppCompatActivity() {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_LONG).show()
             }
         }
+        binding.wastageGoBack.setOnClickListener {
+            finish()
+        }
+
+
+        val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
+        val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
+        val recyclerProfileButton = findViewById<ImageView>(R.id.navProfileUnClick)
+
+        wastageMainButton.setOnClickListener {
+            val intent = Intent(this, WastageMain::class.java)
+            startActivity(intent)
+        }
+        historyButton.setOnClickListener {
+            val intent = Intent(this, WastageHistory::class.java)
+            startActivity(intent)
+        }
+        recyclerProfileButton.setOnClickListener {
+            val intent = Intent(this, RecyclerProfile::class.java)
+            startActivity(intent)
+        }
+
     }
     data class WasteForm(
         val wastageName: String?=null,
