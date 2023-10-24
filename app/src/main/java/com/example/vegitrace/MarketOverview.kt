@@ -3,7 +3,10 @@ package com.example.vegitrace
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.util.Log
+import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 
 class MarketOverview : AppCompatActivity() {
     private lateinit var dambullaImageView: ImageView
@@ -24,10 +27,16 @@ class MarketOverview : AppCompatActivity() {
 
 
         // Set up OnClickListener for Paliyagoda ImageView
-        paliyagodaImageView.setOnClickListener {
-            // Navigate to the PaliyagodaActivity
-            val intent = Intent(this, Centers::class.java)
-            startActivity(intent)
-        }
+
+    }
+
+    fun onCenterClicked(view: View) {
+        val Center = view.tag.toString()
+
+
+        val intent = Intent(this, OrdersActivity::class.java)
+        intent.putExtra("center", Center)
+
+        startActivity(intent)
     }
 }
