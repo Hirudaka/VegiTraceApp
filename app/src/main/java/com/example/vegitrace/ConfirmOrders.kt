@@ -1,33 +1,30 @@
 package com.example.vegitrace
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Order
-import com.example.vegitrace.view.MyOrderAdapter
+import com.example.vegitrace.view.ConfirmOrderAdapter
 import com.google.firebase.database.*
 
-class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener {
-    private lateinit var myOrderAdapter: MyOrderAdapter
+class ConfirmOrders : AppCompatActivity(), ConfirmOrderAdapter.OnItemClickListener {
+    private lateinit var confirmOrderAdapter: ConfirmOrderAdapter
     private val orderList = ArrayList<Order>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_orders)
+        setContentView(R.layout.activity_confirm_orders)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.myRecycler)
+        val recyclerView = findViewById<RecyclerView>(R.id.porderRecycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
 
-
-
-
         // Set up the RecyclerView adapter
-        myOrderAdapter = MyOrderAdapter(this, orderList, this)
-        recyclerView.adapter = myOrderAdapter
+        confirmOrderAdapter = ConfirmOrderAdapter(this, orderList, this)
+        recyclerView.adapter = confirmOrderAdapter
 
         // Read data from Firebase and populate the orderList
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -39,7 +36,7 @@ class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener
                         orderList.add(it)
                     }
                 }
-                myOrderAdapter.notifyDataSetChanged()
+                confirmOrderAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(databaseError: DatabaseError) {
@@ -62,7 +59,7 @@ class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener
                 for (snapshot in dataSnapshot.children) {
                     snapshot.ref.removeValue()
                     orderList.removeAt(position)
-                    myOrderAdapter.itemRemovedAtUpdatedList(position)
+                    confirmOrderAdapter.itemRemovedAtUpdatedList(position)
                 }
             }
 
