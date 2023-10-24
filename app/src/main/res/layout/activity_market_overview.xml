@@ -60,6 +60,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         android:onClick="onCenterClicked"
+        android:tag="Dambulla"
         app:srcCompat="@drawable/baseline_location_on_24" />
 
     <ImageView
@@ -71,6 +72,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/baseline_location_on_24"
+        android:onClick="onCenterClicked"
         android:tag="Paliyagoda"/>
 
     <TextView

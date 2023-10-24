@@ -5,11 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vegitrace.model.ShopOwner
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
-import android.util.Log
-import com.example.vegitrace.view.OrderAdapter
+import com.google.firebase.database.FirebaseDatabase
 
 
 class VegeSelect : AppCompatActivity() {
@@ -18,7 +15,8 @@ class VegeSelect : AppCompatActivity() {
     private lateinit var database: FirebaseDatabase
     private lateinit var centerName: TextView
 
-    val center = intent.getStringExtra("center")
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +24,8 @@ class VegeSelect : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
+
+        val center = intent.getStringExtra("center")
 
         centerName = findViewById(R.id.center)
 
@@ -45,6 +45,7 @@ class VegeSelect : AppCompatActivity() {
 
     fun onVegetableClicked(view: View) {
         val vegetableName = view.tag.toString()
+        val center = intent.getStringExtra("center")
 
 
         val intent = Intent(this, AddReserves::class.java)

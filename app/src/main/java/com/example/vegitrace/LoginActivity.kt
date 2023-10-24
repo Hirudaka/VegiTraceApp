@@ -2,12 +2,12 @@ package com.example.vegitrace
 
 
 import android.content.Intent
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.databinding.ActivityLoginBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
                             // User successfully logged in, you can perform further actions here
                             Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                             // For example, navigate to the main activity
-                            val intent = Intent(this, FarmerLocation::class.java)
+                            val intent = Intent(this, MarketOverview::class.java)
                             startActivity(intent)
                             finish() // Optional: Close the login activity to prevent going back
                         }
