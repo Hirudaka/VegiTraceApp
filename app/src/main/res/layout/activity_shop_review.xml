@@ -33,16 +33,29 @@
             android:padding="6dp"
             app:srcCompat="@drawable/baseline_account_facewhite" />
     </androidx.cardview.widget.CardView>
+    <!-- Add this EditText for the search bar -->
+
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="312dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/lavender_border"
+        android:hint="Search by Farmer Name"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reviewsRec"
         android:layout_width="match_parent"
         android:layout_height="700dp"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="136dp"
         android:layout_marginRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
@@ -91,5 +104,15 @@
             android:padding="7dp"
             app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="19dp"
+        android:text="My Reviews"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
