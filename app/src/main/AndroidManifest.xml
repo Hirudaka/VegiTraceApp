@@ -18,6 +18,9 @@
         android:theme="@style/Theme.VegiTrace"
         tools:targetApi="31">
         <activity
+            android:name=".RecyclerRemoveList"
+            android:exported="true" />
+        <activity
             android:name=".ConfirmOrders"
             android:exported="true" />
         <!--
