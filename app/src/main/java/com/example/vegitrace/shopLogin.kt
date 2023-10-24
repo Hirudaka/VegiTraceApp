@@ -29,7 +29,9 @@ class shopLogin : AppCompatActivity() {
                             val userId = authResult.result?.user?.uid
                             if (userId != null) {
 
+
                                 val intent = Intent(this, MyOrdersActivity::class.java)
+
 
                                 intent.putExtra("userId", userId)
                                 startActivity(intent)
