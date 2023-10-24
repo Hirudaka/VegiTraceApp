@@ -2,6 +2,7 @@ package com.example.vegitrace
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -110,5 +111,33 @@ class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener
                 // Handle any errors here
             }
         })
+
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+        val topProfile = findViewById<ImageView>(R.id.imageView4)
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, Centers::class.java)
+            startActivity(intent)
+        }
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, AddOrderActivity::class.java)
+            startActivity(intent)
+        }
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, ShopReview::class.java)
+            startActivity(intent)
+        }
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, QRscanner::class.java)
+            startActivity(intent)
+        }
+        topProfile.setOnClickListener{
+            val intent = Intent(this, ShopOwnerProfile::class.java)
+            startActivity(intent)
+        }
     }
+
 }
