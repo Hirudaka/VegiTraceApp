@@ -12,13 +12,13 @@ import com.example.vegitrace.R
 import com.example.vegitrace.model.Review
 
 
-class ReviewAdapter(private val context: Context, private val reviews: List<Review>) :
+class ReviewAdapter(private val context: Context, private var reviews: List<Review>) :
     RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
 
     inner class ReviewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val farmerName: TextView = itemView.findViewById(R.id.farmerNameTextView)
-        val shopno: TextView = itemView.findViewById(R.id.shopnoTextView)
-        val ownerEmail: TextView = itemView.findViewById(R.id.sownerEmailTextView)
+        val shopno: TextView = itemView.findViewById(R.id.shopNoTextView)
+        val ownerEmail: TextView = itemView.findViewById(R.id.shopOwnerEmailTextView)
         val farmerEmail: TextView = itemView.findViewById(R.id.farmerEmailTextView)
         val reviewText: TextView = itemView.findViewById(R.id.reviewTextView)
     }
@@ -41,4 +41,9 @@ class ReviewAdapter(private val context: Context, private val reviews: List<Revi
     override fun getItemCount(): Int {
         return reviews.size
     }
+    fun updateReviews(filteredReviews: List<Review>) {
+        reviews = filteredReviews
+        notifyDataSetChanged()
+    }
+
 }

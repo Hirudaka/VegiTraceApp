@@ -28,7 +28,7 @@ class shopLogin : AppCompatActivity() {
                             // User successfully logged in
                             val userId = authResult.result?.user?.uid
                             if (userId != null) {
-                                val intent = Intent(this, MyOrdersActivity::class.java)
+                                val intent = Intent(this, ReviewRemoveList::class.java)
                                 intent.putExtra("userId", userId)
                                 startActivity(intent)
                                 finish() // Close the login activity

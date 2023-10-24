@@ -5,11 +5,8 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vegitrace.LoginActivity
-import com.example.vegitrace.R
 import com.example.vegitrace.databinding.ActivityShopRegBinding
 import com.example.vegitrace.model.ShopOwner
-import com.example.vegitrace.shopLogin
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -45,7 +42,7 @@ class shopReg : AppCompatActivity() {
                     createShopownerInFirebaseAuth(email, password) { userId ->
                         if (userId != null) {
                             // User creation was successful, now save to the database
-                            val shopOwner = ShopOwner(name, marketPosition, shopNo, address, email)
+                            val shopOwner = ShopOwner(name, email, shopNo, address,marketPosition )
                             saveShopownerToDatabase(userId, shopOwner)
 
                             val intent = Intent(this, shopLogin::class.java)
