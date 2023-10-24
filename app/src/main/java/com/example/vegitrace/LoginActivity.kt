@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
                             // User successfully logged in, you can perform further actions here
                             Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                             // For example, navigate to the main activity
-                            val intent = Intent(this, MarketOverview::class.java)
+                            val intent = Intent(this, FarmerLocation::class.java)
                             startActivity(intent)
                             finish() // Optional: Close the login activity to prevent going back
                         }

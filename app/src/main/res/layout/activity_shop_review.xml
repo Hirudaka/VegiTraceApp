@@ -6,12 +6,113 @@
     android:layout_height="match_parent"
     tools:context=".ShopReview">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sellerProfileCardView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/DarkGreenBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Seller all Reviews"
+            android:textColor="@color/white"
+            android:textSize="33sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginRight="0dp"
+            android:padding="6dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </androidx.cardview.widget.CardView>
+    <!-- Add this EditText for the search bar -->
+
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="312dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/lavender_border"
+        android:hint="Search by Farmer Name"
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reviewsRec"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="700dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/DarkGreenBackground"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/navAddUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/outline_add_circle_outline_24" />
+
+        <ImageView
+            android:id="@+id/navReviewUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:background="@color/green"
+            app:srcCompat="@drawable/baseline_reviews_24" />
+
+        <ImageView
+            android:id="@+id/navScanUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="19dp"
+        android:text="My Reviews"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.example.vegitrace.view
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,45 +8,30 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vegitrace.DisplayLocationActivity
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
 
-class MyOrderAdapter(
-    private val context: Context,
-    private val orderList: ArrayList<Order>,
-    private val listener: OnItemClickListener,
-    private val trackButtonListener: OnTrackButtonClickListener
-) : RecyclerView.Adapter<MyOrderAdapter.OrderViewHolder>() {
+class ConfirmOrderAdapter(private val context: Context, private val orderList: ArrayList<Order>, private val listener: ConfirmOrderAdapter.OnItemClickListener) : RecyclerView.Adapter<ConfirmOrderAdapter.OrderViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    interface OnTrackButtonClickListener {
-        fun onTrackButtonClick(position: Int)
-    }
-
     inner class OrderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val oId: TextView = itemView.findViewById(R.id.OIdtextView)
-        val name: TextView = itemView.findViewById(R.id.FarmertextView)
-        val vegetable: TextView = itemView.findViewById(R.id.VegtextView)
-        val quantity: TextView = itemView.findViewById(R.id.QuanttextView)
-        val price: TextView = itemView.findViewById(R.id.PricetextView)
-        val status: TextView = itemView.findViewById(R.id.StatustextView)
-        val image: ImageView = itemView.findViewById(R.id.VegimageView)
-        val removebtn: ImageView = itemView.findViewById(R.id.removebtn)
-        val trackbtn: Button = itemView.findViewById(R.id.trackbtn)
+        val oId: TextView = itemView.findViewById(R.id.POIdtextView)
+        val name: TextView = itemView.findViewById(R.id.PFarmertextView)
+        val vegetable: TextView = itemView.findViewById(R.id.PVegtextView)
+        val quantity: TextView = itemView.findViewById(R.id.PQuanttextView)
+        val price: TextView = itemView.findViewById(R.id.PPricetextView)
+        val status: TextView = itemView.findViewById(R.id.PStatustextView)
+        val image: ImageView = itemView.findViewById(R.id.PVegimageView)
+        val confirmbtn: Button = itemView.findViewById(R.id.confirmbtn)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.activity_my_order_detail, parent, false)
+        val view = inflater.inflate(R.layout.purchase_order_details, parent, false) // Update with the correct layout
         return OrderViewHolder(view)
-    }
-
-    override fun getItemCount(): Int {
-        return orderList.size
     }
 
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
@@ -60,21 +44,19 @@ class MyOrderAdapter(
         holder.price.text = order.price
         holder.status.text = order.status
 
-        holder.removebtn.setOnClickListener {
+        holder.confirmbtn.setOnClickListener {
             listener.onItemClick(position)
         }
-
-        holder.trackbtn.setOnClickListener {
-            val intent = Intent(context, DisplayLocationActivity::class.java)
-            intent.putExtra("farmer", order.farmer)
-            context.startActivity(intent)
-        }
-
         val imageResId = getImageResourceForVegetable(order.vegetableType)
         holder.image.setImageResource(imageResId)
     }
 
+    override fun getItemCount(): Int {
+        return orderList.size
+    }
+
     fun itemRemovedAtUpdatedList(position: Int) {
+// Remove the item from the list
         notifyItemRemoved(position)
     }
 
@@ -83,11 +65,7 @@ class MyOrderAdapter(
         val vegetableImageMap = mapOf(
             "Carrot" to R.drawable.carrots,
             "Beans" to R.drawable.greenbeans,
-            "Cabbage" to R.drawable.cabbage,
-            "Egg Plant" to R.drawable.eggplant,
-            "BeetRoot" to R.drawable.beet,
-            "Corn" to R.drawable.corn,
-
+            "Cabbage" to R.drawable.cabbage
             // Add more vegetable-to-image mappings as needed
         )
 

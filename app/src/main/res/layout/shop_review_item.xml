@@ -5,72 +5,131 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     app:cardElevation="8dp"
-    app:cardMaxElevation="5dp"
-    >
+    app:cardMaxElevation="5dp">
+
+    <TextView
+        android:id="@+id/farmerNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Farmer Name"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="70dp"
+        android:textStyle="bold"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="50dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/farmerNameTextView"
-                android:layout_width="match_parent"
+                android:id="@+id/shopNoLabel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Farmer name"
-                android:textColor="@color/black"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:layout_margin="0dp"
+                android:text="Shop No:"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/shopnoTextView"
-                android:layout_width="match_parent"
+                android:id="@+id/shopNoTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:layout_margin="0dp"
                 android:text="Shop No"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
-                android:id="@+id/sownerEmailTextView"
-                android:layout_width="match_parent"
+                android:id="@+id/shopOwnerEmailLabel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_margin="0dp"
+                android:text="From :"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/shopOwnerEmailTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="0dp"
                 android:text="Shop Owner Email"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="20sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/farmerEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:text="To :"
+                android:textSize="20sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/farmerEmailTextView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:layout_margin="0dp"
                 android:text="Farmer Email"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="20sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/reviewLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:text="Review:"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/reviewTextView"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:text="Review"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-
-
+                android:layout_weight="1"
+                android:layout_margin="0dp"
+                android:text="Long Review Text Goes Here"
+                android:textSize="20sp"
+                android:maxLines="7"
+                />
         </LinearLayout>
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>

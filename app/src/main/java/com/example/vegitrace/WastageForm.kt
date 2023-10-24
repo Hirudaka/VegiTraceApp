@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.vegitrace.databinding.ActivityWastageFormBinding
+import com.example.vegitrace.model.WasteForm
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -12,6 +13,7 @@ class WastageForm : AppCompatActivity() {
 
     private lateinit var binding: ActivityWastageFormBinding
     private lateinit var database: DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWastageFormBinding.inflate(layoutInflater)
@@ -28,26 +30,34 @@ class WastageForm : AppCompatActivity() {
                 val wastageWeight = wastageWeightStr.toIntOrNull()
 
                 if (wastageWeight != null) {
-                    val wastage = WasteForm(wastageName, wastagePhone, wastageWeight, wastageDate)
-                    database.child(wastageName).setValue(wastage).addOnSuccessListener {
+                    // Generate a unique key for the form
+                    val newWastageRef = database.push()
+                    val key = newWastageRef.key
 
-                        binding.WastageNameEdit.text.clear()
-                        binding.WastagePhoneEdit.text.clear()
-                        binding.WastageWeightEdit.text.clear()
-                        binding.WastageDateEdit.text.clear()
+                    if (key != null) {
+                        val wastage = WasteForm(key, wastageName, wastagePhone, wastageWeight, wastageDate)
+                        newWastageRef.setValue(wastage).addOnSuccessListener {
 
-                        Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
-                        // Pass the wastageWeight back to the WastageOverview activity
-                        val intent = Intent()
-                        intent.putExtra("wastageWeight", wastageWeight)
-                        setResult(RESULT_OK, intent)
-                        finish()
+                            binding.WastageNameEdit.text.clear()
+                            binding.WastagePhoneEdit.text.clear()
+                            binding.WastageWeightEdit.text.clear()
+                            binding.WastageDateEdit.text.clear()
 
-                    }.addOnFailureListener {
-                        Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
+                            // Pass the wastageWeight back to the WastageOverview activity
+                            val intent = Intent()
+                            intent.putExtra("wastageWeight", wastageWeight)
+                            setResult(RESULT_OK, intent)
+                            finish()
+
+                        }.addOnFailureListener {
+                            Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
+                        }
+                    } else {
+                        Toast.makeText(this, "Failed to generate a key for the form", Toast.LENGTH_LONG).show()
                     }
                 } else {
-                    Toast.makeText(this, "Invalid weight input.Please enter a valid number.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Invalid weight input. Please enter a valid number.", Toast.LENGTH_LONG).show()
                 }
 
             } else {
@@ -55,9 +65,4 @@ class WastageForm : AppCompatActivity() {
             }
         }
     }
-    data class WasteForm(
-        val wastageName: String?=null,
-        val wastagePhone: String?=null,
-        val wastageWeight: Int?=null,
-        val wastageDate: String?=null)
 }

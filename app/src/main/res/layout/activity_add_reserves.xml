@@ -6,54 +6,118 @@
     android:layout_height="match_parent"
     tools:context=".AddReserves">
 
-    <TextView
-        android:id="@+id/BookingFormTitle"
-        android:layout_width="413dp"
-        android:layout_height="53dp"
-        android:background="@color/DarkGreenBackground"
-        android:text="Orders"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/SellerEditCardView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/DarkGreenBackground"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="2dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/BookingFormTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Farmer Add Reserve"
+            android:textColor="@color/white"
+            android:textSize="33sp" />
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="Vegetable"
         android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="70dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SellerEditCardView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="40dp"
         android:text="Total Price"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="650dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="40dp"
         android:text="000000"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="650dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="353dp"
         android:layout_height="483dp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="116dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/DarkGreenBackground"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/navAddUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_library_books_24" />
+
+        <ImageView
+            android:id="@+id/navReviewUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_reviews_24" />
+
+        <ImageView
+            android:id="@+id/navScanUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </LinearLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
