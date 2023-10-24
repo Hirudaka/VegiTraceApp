@@ -10,11 +10,13 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.vegitrace.databinding.ActivityFarmerLocationBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -22,13 +24,11 @@ class FarmerLocation : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityFarmerLocationBinding
-    private var currentLocation: Location? = null // Change to nullable type
+    private var currentLocation: Location? = null
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private val permissionCode = 101
-
-    // Initialize Firebase
     private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
-    private val locationRef: DatabaseReference = database.getReference("locations")
+    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,29 +65,63 @@ class FarmerLocation : AppCompatActivity(), OnMapReadyCallback {
                 currentLocation = location
                 Toast.makeText(applicationContext, "${currentLocation?.latitude}, ${currentLocation?.longitude}", Toast.LENGTH_LONG).show()
 
-                // Store the location data in Firebase
-                currentLocation?.let {
-                    // Send latitude, longitude, and timestamp as separate fields
-                    val latitude = it.latitude
-                    val longitude = it.longitude
-                    val timestamp = System.currentTimeMillis()
+                // Fetch the farmer's name using the current user's ID
+                val userId = firebaseAuth.currentUser?.uid
+                if (userId != null) {
+                    val farmerNameRef = database.getReference("farmer").child(userId).child("name")
+                    farmerNameRef.get().addOnSuccessListener { dataSnapshot ->
+                        val farmerName = dataSnapshot.value as String
+                        // Update the user's location in the database using the farmer's name as a unique identifier
+                        updateLocationInDatabase(farmerName)
 
-                    // Create a map to store the data
-                    val locationData = mapOf(
-                        "latitude" to latitude,
-                        "longitude" to longitude,
-                        "timestamp" to timestamp
-                    )
-
-                    // Push the new location data to the database
-                    locationRef.push().setValue(locationData)
+                        // Add a marker for the current location
+                        addMarkerForCurrentLocation()
+                    }
                 }
-
-                val mapFragment = supportFragmentManager
-                    .findFragmentById(R.id.map) as SupportMapFragment
-                mapFragment.getMapAsync(this)
             }
         }
+    }
+
+    private fun updateLocationInDatabase(farmerName: String) {
+        val locationRef = database.getReference("locations").child(farmerName)
+
+        // Get the latest location or provide a new location
+        val latestLocation = currentLocation ?: createDefaultLocation()
+
+        val latitude = latestLocation.latitude
+        val longitude = latestLocation.longitude
+        val timestamp = System.currentTimeMillis()
+
+        val locationData = mapOf(
+            "latitude" to latitude,
+            "longitude" to longitude,
+            "timestamp" to timestamp
+        )
+
+        locationRef.setValue(locationData)
+    }
+
+    private fun addMarkerForCurrentLocation() {
+        if (currentLocation != null) {
+            val latLng = LatLng(currentLocation!!.latitude, currentLocation!!.longitude)
+            val markerOptions = MarkerOptions().position(latLng).title("Current Location")
+
+            // You can customize the marker icon (e.g., make it red)
+            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+
+            mMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
+            mMap?.addMarker(markerOptions)
+        } else {
+            Toast.makeText(applicationContext, "Location not available", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    // A function to create a default location if a location is not available
+    private fun createDefaultLocation(): Location {
+        val defaultLocation = Location("")
+        defaultLocation.latitude = 0.0 // Set a default latitude
+        defaultLocation.longitude = 0.0 // Set a default longitude
+        return defaultLocation
     }
 
     override fun onRequestPermissionsResult(
@@ -102,15 +136,6 @@ class FarmerLocation : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        if (currentLocation != null) {
-            val latLng = LatLng(currentLocation!!.latitude, currentLocation!!.longitude)
-            val markerOptions = MarkerOptions().position(latLng).title("Current Location")
-
-            googleMap?.animateCamera(CameraUpdateFactory.newLatLng(latLng))
-            googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f))
-            googleMap?.addMarker(markerOptions)
-        } else {
-            Toast.makeText(applicationContext, "Location not available", Toast.LENGTH_LONG).show()
-        }
+        mMap = googleMap
     }
 }

@@ -1,8 +1,10 @@
 package com.example.vegitrace
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.model.Recycler
@@ -64,8 +66,25 @@ class RecyclerProfileEdit : AppCompatActivity() {
             databaseReference.child("phone").setValue(updatedPhone)
             databaseReference.child("nic").setValue(updatedNic)
 
-            Toast.makeText(this, "Update Successful", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Profile Update Successful", Toast.LENGTH_SHORT).show()
             finish()
+        }
+
+        val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
+        val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
+        val recyclerProfileButton = findViewById<ImageView>(R.id.navProfileUnClick)
+
+        wastageMainButton.setOnClickListener {
+            val intent = Intent(this, WastageMain::class.java)
+            startActivity(intent)
+        }
+        historyButton.setOnClickListener {
+            val intent = Intent(this, WastageHistory::class.java)
+            startActivity(intent)
+        }
+        recyclerProfileButton.setOnClickListener {
+            val intent = Intent(this, RecyclerProfile::class.java)
+            startActivity(intent)
         }
     }
 }
