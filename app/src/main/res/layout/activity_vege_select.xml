@@ -44,7 +44,9 @@
                         android:layout_height="200dp"
                         app:srcCompat="@drawable/greenbeans"
                         android:onClick="onVegetableClicked"
-                        android:tag="Beans" />
+                        android:tag="Beans"
+                        android:background="@drawable/bordered_image_view"/>
+                        />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -69,7 +71,9 @@
                         android:layout_height="200dp"
                         app:srcCompat="@drawable/carrots"
                         android:onClick="onVegetableClicked"
-                        android:tag="Carrot" />
+                        android:tag="Carrot"
+                        android:background="@drawable/bordered_image_view"/>
+                        />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -101,7 +105,9 @@
                         android:layout_height="200dp"
                         android:src="@drawable/cabbage"
                         android:onClick="onVegetableClicked"
-                        android:tag="Cabbage" />
+                        android:tag="Cabbage"
+                        android:background="@drawable/bordered_image_view"/>
+                        />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -126,7 +132,9 @@
                         android:layout_height="200dp"
                         app:srcCompat="@drawable/beet"
                         android:onClick="onVegetableClicked"
-                        android:tag="BeetRoot" />
+                        android:tag="BeetRoot"
+                        android:background="@drawable/bordered_image_view"/>
+                        />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -156,7 +164,9 @@
                         android:layout_height="200dp"
                         android:src="@drawable/eggplant"
                         android:onClick="onVegetableClicked"
-                        android:tag="Egg Plant" />
+                        android:tag="Egg Plant"
+                        android:background="@drawable/bordered_image_view"/>
+                        />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -182,7 +192,9 @@
                         android:layout_height="200dp"
                         android:src="@drawable/corn"
                         android:onClick="onVegetableClicked"
-                        android:tag="Corn" />
+                        android:tag="Corn"
+                        android:background="@drawable/bordered_image_view"/>
+                        />
 
                     <TextView
                         android:id="@+id/textView14"
