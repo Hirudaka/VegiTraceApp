@@ -7,9 +7,9 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.vegitrace.databinding.ActivityWastageFormBinding
+import com.example.vegitrace.model.WasteForm
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.example.vegitrace.model.WasteForm
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -71,24 +71,34 @@ class WastageForm : AppCompatActivity() {
                 val wastageWeight = wastageWeightStr.toIntOrNull()
 
                 if (wastageWeight != null) {
-                    val wastage = WasteForm(wastageName, wastagePhone, wastageWeight, wastageDate)
+                    // Generate a unique key for the form
                     val newWastageRef = database.push()
-                    newWastageRef.setValue(wastage).addOnSuccessListener {
+                    val key = newWastageRef.key
+
+                    if (key != null) {
+                        val wastage = WasteForm(key, wastageName, wastagePhone, wastageWeight, wastageDate)
+                        newWastageRef.setValue(wastage).addOnSuccessListener {
 
                         binding.WastageNameEdit.text.clear()
                         binding.WastagePhoneEdit.text.clear()
                         binding.WastageWeightEdit.text.clear()
                         binding.WastageDateEdit.text.clear()
 
-                        Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
-                        // Navigate to the WasteFormC2 activity
-                        val intent = Intent(this, WastageFormC2::class.java)
-                        startActivity(intent)
-                    }.addOnFailureListener {
-                        Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
+                            // Pass the wastageWeight back to the WastageOverview activity
+                            val intent = Intent()
+                            intent.putExtra("wastageWeight", wastageWeight)
+                            setResult(RESULT_OK, intent)
+                            finish()
+
+                        }.addOnFailureListener {
+                            Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
+                        }
+                    } else {
+                        Toast.makeText(this, "Failed to generate a key for the form", Toast.LENGTH_LONG).show()
                     }
                 } else {
-                    Toast.makeText(this, "Invalid weight input.Please enter a valid number.", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Invalid weight input. Please enter a valid number.", Toast.LENGTH_LONG).show()
                 }
 
             } else {
@@ -132,9 +142,4 @@ class WastageForm : AppCompatActivity() {
         datePickerDialog.datePicker.maxDate = System.currentTimeMillis() + 5 * 24 * 60 * 60 * 1000
         datePickerDialog.show()
     }
-    data class WasteForm(
-        val wastageName: String?=null,
-        val wastagePhone: String?=null,
-        val wastageWeight: Int?=null,
-        val wastageDate: String?=null)
 }

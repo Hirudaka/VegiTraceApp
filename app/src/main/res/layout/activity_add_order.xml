@@ -114,7 +114,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="5dp"
                     android:inputType="text"
-                    android:text="Name" />
+                    android:hint="Center" />
             </LinearLayout>
 
             <LinearLayout
@@ -139,7 +139,7 @@
                     android:layout_marginStart="90dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Name" />
+                    android:hint="Enter Order ID" />
 
 
             </LinearLayout>
@@ -169,7 +169,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="60dp"
                     android:inputType="text"
-                    android:text="Name" />
+                    android:hint="Shop owner" />
             </LinearLayout>
 
             <LinearLayout
@@ -195,7 +195,7 @@
                     android:layout_marginStart="87dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Name" />
+                    android:hint="Enter Quantity" />
             </LinearLayout>
 
             <LinearLayout
@@ -220,7 +220,7 @@
                     android:layout_marginStart="115dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="Name" />
+                    android:hint="Enter price" />
 
 
             </LinearLayout>

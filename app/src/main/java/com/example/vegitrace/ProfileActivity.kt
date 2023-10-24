@@ -3,13 +3,13 @@ package com.example.vegitrace
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.model.Farmer
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -25,6 +25,18 @@ class ProfileActivity : AppCompatActivity() {
         // Retrieve the user's profile information from Firebase Database
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         val databaseRef = FirebaseDatabase.getInstance().getReference("farmer").child(userId.toString())
+        // Find the reservations button
+        val reservationsButton = findViewById<Button>(R.id.reservation)
+
+// Set an OnClickListener for the reservations button
+        reservationsButton.setOnClickListener {
+            // Define an Intent to start the ReservationsActivity
+            val reservationsIntent = Intent(this, MyOrdersActivity::class.java)
+
+            // Start the ReservationsActivity
+            startActivity(reservationsIntent)
+        }
+
 
         databaseRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -88,6 +100,7 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
 
     private fun decodeBase64ToBitmap(base64: String?): Bitmap? {
         if (base64.isNullOrEmpty()) return null
