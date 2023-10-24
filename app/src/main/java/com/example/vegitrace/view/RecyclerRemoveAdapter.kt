@@ -27,7 +27,7 @@ class RecyclerRemoveAdapter(private val context: Context, private val wastages: 
     override fun onBindViewHolder(holder: WastageViewHolder, position: Int) {
         val wastage = wastages[position]
         holder.name.text = wastage.wastageName
-        holder.phone.text = wastage.wastageName
+        holder.phone.text = wastage.wastagePhone
         holder.weight.text = wastage.wastageWeight.toString()
         holder.date.text = wastage.wastageDate
 

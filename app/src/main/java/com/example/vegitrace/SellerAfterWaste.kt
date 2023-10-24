@@ -15,7 +15,7 @@ import java.util.Locale
 import java.text.SimpleDateFormat
 import java.util.Date
 
-class WastageOverview : AppCompatActivity() {
+class SellerAfterWaste : AppCompatActivity() {
     private lateinit var wastageShops2TextView: TextView
     private lateinit var wastageTotal2TextView: TextView
     private lateinit var wastageDate2TextView: TextView
@@ -23,9 +23,9 @@ class WastageOverview : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_wastage_overview)
+        setContentView(R.layout.activity_seller_after_waste)
 
-        wastageShops2TextView = findViewById(R.id.wastageShops2) // Replace with the actual ID of your TextView
+        wastageShops2TextView = findViewById(R.id.wastageShops2)
         wastageTotal2TextView = findViewById(R.id.wastageTotal2)
         wastageDate2TextView = findViewById(R.id.wastageDate2)
 
@@ -64,33 +64,36 @@ class WastageOverview : AppCompatActivity() {
             }
         })
 
-
-        val wastageConfirmBtn = findViewById<Button>(R.id.wastageBookNow)
-        wastageConfirmBtn.setOnClickListener {
-            val intent = Intent(this, WastageForm::class.java)
-            startActivity(intent)
-        }
         val goBackButton = findViewById<Button>(R.id.wastageGoBack)
         goBackButton.setOnClickListener {
-            val intent = Intent(this, WastageMain::class.java)
+            val intent = Intent(this, ShopOwnerProfile::class.java)
             startActivity(intent)
         }
 
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+        val topProfile = findViewById<ImageView>(R.id.imageView4)
 
-        val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
-        val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
-        val recyclerProfileButton = findViewById<ImageView>(R.id.navProfileUnClick)
-
-        wastageMainButton.setOnClickListener {
-            val intent = Intent(this, WastageMain::class.java)
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, Centers::class.java)
             startActivity(intent)
         }
-        historyButton.setOnClickListener {
-            val intent = Intent(this, RecyclerRemoveList::class.java)
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, AddOrderActivity::class.java)
             startActivity(intent)
         }
-        recyclerProfileButton.setOnClickListener {
-            val intent = Intent(this, RecyclerProfile::class.java)
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, ShopReview::class.java)
+            startActivity(intent)
+        }
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, QRscanner::class.java)
+            startActivity(intent)
+        }
+        topProfile.setOnClickListener{
+            val intent = Intent(this, ShopOwnerProfile::class.java)
             startActivity(intent)
         }
 
