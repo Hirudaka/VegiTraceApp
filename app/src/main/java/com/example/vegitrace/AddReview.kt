@@ -1,17 +1,22 @@
 package com.example.vegitrace
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
-import com.google.gson.Gson
-import com.google.gson.JsonSyntaxException
 import com.example.vegitrace.model.FarmerData
 import com.example.vegitrace.model.Review
 import com.example.vegitrace.model.ShopOwner
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.gson.Gson
+import com.google.gson.JsonSyntaxException
 
 class AddReview : AppCompatActivity() {
     private lateinit var farmerNameEditText: EditText
@@ -19,6 +24,7 @@ class AddReview : AppCompatActivity() {
     private lateinit var farmerMailEditText: EditText
     private lateinit var reviewEditText: EditText
     private lateinit var submitReviewButton: Button
+    private lateinit var checkoutbtn: Button
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
 
@@ -31,6 +37,7 @@ class AddReview : AppCompatActivity() {
         farmerMailEditText = findViewById(R.id.farmermail)
         reviewEditText = findViewById(R.id.review)
         submitReviewButton = findViewById(R.id.buttonSubmitReview)
+        checkoutbtn = findViewById(R.id.checkoutbtn)
 
         // Retrieve the authenticated user's data
         val currentUser = auth.currentUser
@@ -111,6 +118,12 @@ class AddReview : AppCompatActivity() {
                 Toast.makeText(this, "Please provide all details.", Toast.LENGTH_SHORT).show()
             }
         }
+        checkoutbtn.setOnClickListener{
+            val intent = Intent(this, ConfirmOrders::class.java)
+            startActivity(intent)
+        }
+
+
     }
 
     private fun saveReviewToFirebase(review: Review) {
@@ -121,7 +134,10 @@ class AddReview : AppCompatActivity() {
             reference.child(key).setValue(review)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Review submitted successfully", Toast.LENGTH_LONG).show()
-                    finish()
+
+                    // Create an Intent to navigate to the ConfirmOrders page
+                    val intent = Intent(this, ConfirmOrders::class.java)
+                    startActivity(intent)
                 }
                 .addOnFailureListener { error ->
                     Toast.makeText(this, "Failed to submit review: ${error.message}", Toast.LENGTH_LONG).show()
@@ -130,4 +146,5 @@ class AddReview : AppCompatActivity() {
             Toast.makeText(this, "Failed to generate a key for the review.", Toast.LENGTH_LONG).show()
         }
     }
+
 }
