@@ -42,7 +42,7 @@ class shopReg : AppCompatActivity() {
                     createShopownerInFirebaseAuth(email, password) { userId ->
                         if (userId != null) {
                             // User creation was successful, now save to the database
-                            val shopOwner = ShopOwner(name, email, shopNo, address,marketPosition )
+                            val shopOwner = ShopOwner(name, email, address, shopNo,marketPosition )
                             saveShopownerToDatabase(userId, shopOwner)
 
                             val intent = Intent(this, shopLogin::class.java)
