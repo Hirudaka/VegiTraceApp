@@ -1,5 +1,6 @@
 package com.example.vegitrace
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -64,6 +65,7 @@ class AddReserves : AppCompatActivity(),  AddReserveAdaptor.OnButtonClickListene
         })
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onButtonClicked(order: Order) {
         // Handle the button click here
         // Update the 'status' attribute for the clicked order

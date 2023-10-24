@@ -51,12 +51,10 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/resbut"
                 android:layout_width="356dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
-
                 android:text="Reserve" />
 
         </LinearLayout>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -50,8 +49,8 @@
 
     <TextView
         android:id="@+id/textshop2"
-        android:layout_width="92dp"
-        android:layout_height="28dp"
+        android:layout_width="67dp"
+        android:layout_height="23dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="196dp"
         android:text="From:"
@@ -89,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="432dp"
         android:text="Review:"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -109,50 +108,44 @@
 
     <EditText
         android:id="@+id/farmername"
-        android:layout_width="275dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="332dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
         android:hint="Your Farmer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ownername" />
+        app:layout_constraintTop_toBottomOf="@+id/textshop4" />
 
     <EditText
         android:id="@+id/ownername"
-        android:layout_width="269dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="309dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
         android:hint="Your Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toEndOf="@+id/textshop2"
         app:layout_constraintTop_toBottomOf="@+id/shopno" />
 
     <EditText
         android:id="@+id/farmermail"
-        android:layout_width="372dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="309dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
         android:hint="Farmer Email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/farmername" />
+        app:layout_constraintStart_toEndOf="@+id/textshop3"
+        app:layout_constraintTop_toBottomOf="@+id/ownername" />
 
     <EditText
         android:id="@+id/review"
-        android:layout_width="418dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="52dp"
+        android:layout_width="400dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="27dp"
         android:hint="Your Review"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/farmermail" />
+        app:layout_constraintTop_toBottomOf="@+id/textshop5" />
 
     <Button
         android:id="@+id/buttonSubmitReview"
@@ -169,11 +162,11 @@
         android:id="@+id/navBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:background="@color/DarkGreenBackground"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_alignParentBottom="true">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <ImageView
@@ -182,7 +175,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_home_24"/>
+            app:srcCompat="@drawable/baseline_home_24" />
 
         <ImageView
             android:id="@+id/navAddUnClick"
@@ -190,22 +183,24 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_library_books_24"/>
+            app:srcCompat="@drawable/baseline_library_books_24" />
+
         <ImageView
             android:id="@+id/navReviewUnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="7dp"
             android:background="@color/green"
-            app:srcCompat="@drawable/baseline_reviews_24"/>
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_reviews_24" />
+
         <ImageView
             android:id="@+id/navScanUnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_account_facewhite"/>
+            app:srcCompat="@drawable/baseline_account_facewhite" />
     </LinearLayout>
 
     <Button

@@ -24,7 +24,7 @@ class AddReserveAdaptor(private val context: Context,
         val name: TextView = itemView.findViewById(R.id.oTitle)
         val quantity: TextView = itemView.findViewById(R.id.oSubTitle1)
         val price: TextView = itemView.findViewById(R.id.oSubTitle2)
-        val resbut : Button = itemView.findViewById(R.id.button3)
+        val resbut : Button = itemView.findViewById(R.id.resbut)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddReserveViewHolder {
