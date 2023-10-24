@@ -1,7 +1,9 @@
  package com.example.vegitrace
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Review
@@ -44,6 +46,23 @@ import com.google.firebase.database.ValueEventListener
                  // Handle any errors here
              }
          })
+
+         val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
+         val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
+         val recyclerProfileButton = findViewById<ImageView>(R.id.navProfileUnClick)
+
+         wastageMainButton.setOnClickListener {
+             val intent = Intent(this, WastageMain::class.java)
+             startActivity(intent)
+         }
+         historyButton.setOnClickListener {
+             val intent = Intent(this, RecyclerRemoveList::class.java)
+             startActivity(intent)
+         }
+         recyclerProfileButton.setOnClickListener {
+             val intent = Intent(this, RecyclerProfile::class.java)
+             startActivity(intent)
+         }
      }
      override fun onItemClick(position: Int) {
          val removedWastage = wastageList[position]
@@ -68,5 +87,6 @@ import com.google.firebase.database.ValueEventListener
              }
          })
      }
+
 
  }
