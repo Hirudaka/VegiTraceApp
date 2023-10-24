@@ -50,32 +50,34 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="@color/lavender"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="68dp"
+        android:alpha="0.7"
+        android:backgroundTint="#474A46"
         android:shadowColor="#252424"
         android:text="Shop owner"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:cornerRadius="15dp"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:strokeColor="#0C0C0C"
         app:strokeWidth="1dp"
-        app:layout_constraintDimensionRatio="1:1" />
-
+        />
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="0dp"
-        android:backgroundTint="@color/lavender"
+        android:backgroundTint="#474A46"
         android:shadowColor="#1B1A1A"
         android:text="Recycler"
         android:textColor="#F4EFEF"
@@ -86,7 +88,8 @@
         app:layout_constraintTop_toTopOf="@+id/button"
         app:strokeColor="#191818"
         app:strokeWidth="1dp"
-        app:layout_constraintDimensionRatio="1:1" />
+        app:layout_constraintDimensionRatio="1:1"
+        android:alpha="0.7"/>
 
     <Button
         android:id="@+id/button3"
@@ -94,7 +97,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="-238dp"
         android:layout_marginTop="180dp"
-        android:backgroundTint="@color/lavender"
+        android:backgroundTint="#474A46"
         android:shadowColor="#151515"
         android:text="Farmer"
         android:textColor="#FFFFFF"
@@ -105,5 +108,6 @@
         app:layout_constraintTop_toTopOf="@+id/button2"
         app:strokeColor="#151515"
         app:strokeWidth="1dp"
-        app:layout_constraintDimensionRatio="1:1" />
+        app:layout_constraintDimensionRatio="1:1"
+        android:alpha="0.7"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
