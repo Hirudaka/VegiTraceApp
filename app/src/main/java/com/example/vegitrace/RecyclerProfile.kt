@@ -73,7 +73,7 @@ class RecyclerProfile : AppCompatActivity() {
             startActivity(intent)
         }
         historyButton.setOnClickListener {
-            val intent = Intent(this, WastageHistory::class.java)
+            val intent = Intent(this, RecyclerRemoveList::class.java)
             startActivity(intent)
         }
         recyclerProfileButton.setOnClickListener {

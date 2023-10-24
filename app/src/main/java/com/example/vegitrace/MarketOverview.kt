@@ -26,6 +26,31 @@ class MarketOverview : AppCompatActivity() {
 
 
         // Set up OnClickListener for Paliyagoda ImageView
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, MarketOverview::class.java)
+            startActivity(intent)
+        }
+
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
+            startActivity(intent)
+        }
+
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, Reviews::class.java)
+            startActivity(intent)
+        }
+
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
