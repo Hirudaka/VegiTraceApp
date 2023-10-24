@@ -94,9 +94,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="@color/DarkGreenBackground"
-        android:layout_alignParentBottom="true"
-        >
-
+        android:layout_alignParentBottom="true">
 
         <ImageView
             android:id="@+id/navHomeUnClick"
