@@ -4,34 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WastageMain">
+    tools:context=".WastageMain"
+    android:background="@drawable/login_back"
+    >
 
     <TextView
         android:id="@+id/marketOverview"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="51dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@color/DarkGreenBackground"
+        android:gravity="center"
         android:text="Markets Overview"
         android:textAlignment="center"
-        android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/selectAmarket"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Chose a Market"
-        android:gravity="center"
-        android:textSize="26sp"
-        android:textColor="@color/black"
-        android:background="@color/lavender"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/marketOverview" />
 
 
     <androidx.cardview.widget.CardView
@@ -42,10 +31,10 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         app:cardCornerRadius="5dp"
-        android:backgroundTint="@color/TextBackground"
+        android:backgroundTint="@color/OpacityBackground"
         app:layout_constraintBottom_toTopOf="@+id/NaraCard"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectAmarket">
+        app:layout_constraintTop_toBottomOf="@+id/marketOverview">
 
         <ImageView
             android:id="@+id/peliyagodaM"
@@ -81,11 +70,11 @@
         android:id="@+id/NaraCard"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         app:cardCornerRadius="5dp"
-        android:backgroundTint="@color/TextBackground"
+        android:backgroundTint="@color/OpacityBackground"
         app:layout_constraintBottom_toTopOf="@+id/DambullaCard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PaliyaCard">
@@ -118,11 +107,11 @@
         android:id="@+id/DambullaCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         app:cardCornerRadius="5dp"
-        android:backgroundTint="@color/TextBackground"
+        android:backgroundTint="@color/OpacityBackground"
         android:layout_marginBottom="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NaraCard">

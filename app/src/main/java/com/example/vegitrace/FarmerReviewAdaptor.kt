@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Review
 
-class ReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapter<ReviewAdaptor.ReviewViewHolder>(){
+class FarmerReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapter<FarmerReviewAdaptor.ReviewViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewViewHolder {
 
@@ -29,16 +29,16 @@ class ReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapt
         val currentItem = revList[position]
 
         holder.shopNum.text = currentItem.shopno
-        holder.Owner.text = currentItem.email
+        holder.Owner.text = currentItem.owneremail
         holder.review.text = currentItem.review
 
     }
 
     class ReviewViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
 
-        val shopNum : TextView = itemView.findViewById(R.id.shopno)
-        val Owner : TextView = itemView.findViewById(R.id.owner)
-        val review : TextView = itemView.findViewById(R.id.review)
+        val shopNum : TextView = itemView.findViewById(R.id.shopnumber)
+        val Owner : TextView = itemView.findViewById(R.id.shopowner)
+        val review : TextView = itemView.findViewById(R.id.revvv)
 
     }
 

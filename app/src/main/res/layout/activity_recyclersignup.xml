@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_back"
-    tools:context=".RecyclerSignup">
+    android:background="@drawable/back1"
+    tools:context=".RecyclerSignup"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,10 +17,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:padding="20dp">
-
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Recycler Registration"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="20dp"/>
         <EditText
             android:layout_width="350dp"
             android:layout_height="60dp"
@@ -117,7 +127,8 @@
             android:text="Sign Up"
             android:id="@+id/signup_button1"
             android:textSize="18sp"
-            app:cornerRadius="30dp" />
+            app:cornerRadius="30dp"
+            android:backgroundTint="#68BD51"/>
 
         <TextView
             android:layout_width="wrap_content"

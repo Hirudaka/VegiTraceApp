@@ -5,8 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_back"
-    tools:context=".LoginActivity">
+    android:background="@drawable/back2"
+    tools:context=".LoginActivity"
+    >
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,6 +25,16 @@
                 android:orientation="vertical"
                 android:layout_marginTop="205dp"
                 android:padding="20dp">
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="140dp"/>
 
                 <EditText
                     android:layout_width="350dp"
@@ -79,6 +91,8 @@
                     android:textColor="@color/lavender"/>
 
             </LinearLayout>
+
+
 
         </LinearLayout>
     </ScrollView>

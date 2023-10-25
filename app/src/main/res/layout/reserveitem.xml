@@ -30,7 +30,7 @@
             android:layout_width="154dp"
             android:layout_height="190dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="15dp" />
 
@@ -59,7 +59,7 @@
 
                 <TextView
                     android:id="@+id/Ownertext"
-                    android:layout_width="157dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
                     android:text="Shopowner"
@@ -165,11 +165,14 @@
 
             <Button
                 android:id="@+id/removebtn"
-                android:layout_width="119dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="110dp"
+
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="0dp"
+
                 android:layout_marginBottom="10dp"
-                android:text="Remove" />
+                android:text="Remove"
+                android:backgroundTint="#68BD51"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView >

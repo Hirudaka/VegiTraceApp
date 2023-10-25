@@ -1,15 +1,13 @@
 package com.example.vegitrace.view
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vegitrace.AddReserves
-import com.example.vegitrace.DisplayLocationActivity
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
 
@@ -48,7 +46,7 @@ class AddReserveAdaptor(private val context: Context,
 
         holder.resbut.setOnClickListener {
             // Call the interface method to handle the button click
-            buttonClickListener.onButtonClicked(position)
+            showConfirmationDialog(position)
            // val intent = Intent(context, AddReserves::class.java)
            // intent.putExtra("id", order.orderId)
 
@@ -59,6 +57,27 @@ class AddReserveAdaptor(private val context: Context,
 
         }
 
+    }
+
+
+    private fun showConfirmationDialog(position: Int) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Confirm Order")
+        builder.setMessage("Are you sure you want to reserve the Order? this action cannot be revert. ")
+
+        // Add positive button for confirmation
+        builder.setPositiveButton("Confirm") { _, _ ->
+            buttonClickListener.onButtonClicked(position)
+            // Perform the confirmation action here
+        }
+
+        // Add negative button to cancel the operation
+        builder.setNegativeButton("Cancel") { _, _ ->
+            // User canceled the confirmation, do nothing
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     

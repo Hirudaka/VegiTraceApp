@@ -62,7 +62,7 @@ class MyOrdersActivity : AppCompatActivity(), MyOrderAdapter.OnItemClickListener
                                 for (snapshot in dataSnapshot.children) {
                                     val order = snapshot.getValue(Order::class.java)
                                     order?.let {
-                                        if (order.shopOwner == ownerName) {
+                                        if (order.shopOwner == ownerName ) {
                                             orderList.add(it)
                                         }
                                     }

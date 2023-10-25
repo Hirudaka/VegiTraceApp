@@ -3,13 +3,15 @@ package com.example.vegitrace
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 
-class VegeSelect : AppCompatActivity() {
+class  VegeSelect : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
@@ -33,6 +35,28 @@ class VegeSelect : AppCompatActivity() {
             centerName.text = center
         } else {
             centerName.text = "Center Not Found" // Set a default value if the center is null
+        }
+
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, MarketOverview::class.java)
+            startActivity(intent)
+        }
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
+            startActivity(intent)
+        }
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, Reviews::class.java)
+            startActivity(intent)
+        }
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
 
