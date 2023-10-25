@@ -235,7 +235,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-
         <ImageView
             android:id="@+id/navHomeUnClick"
             android:layout_width="wrap_content"
@@ -250,14 +249,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_library_books_24" />
+            app:srcCompat="@drawable/outline_add_circle_outline_24" />
 
         <ImageView
             android:id="@+id/navReviewUnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/green"
             android:padding="7dp"
             app:srcCompat="@drawable/baseline_reviews_24" />
 
@@ -267,7 +265,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_account_facewhite" />
+            app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
     </LinearLayout>
 
     <Button
