@@ -174,9 +174,10 @@
                 android:id="@+id/trackbtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginBottom="10dp"
-                android:text="Track" />
+                android:text="Track"
+                android:backgroundTint="#68BD51"
+                />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView >

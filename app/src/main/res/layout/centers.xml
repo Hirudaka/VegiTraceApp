@@ -65,9 +65,9 @@
 
                     <ImageView
                         android:id="@+id/imageView7"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
                         android:background="@drawable/bordered_image_view"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Beans"
                         app:srcCompat="@drawable/greenbeans" />
@@ -92,9 +92,9 @@
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
                         android:background="@drawable/bordered_image_view"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Carrot"
                         app:srcCompat="@drawable/carrots" />
@@ -126,9 +126,9 @@
 
                     <ImageView
                         android:id="@+id/imageView8"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
                         android:background="@drawable/bordered_image_view"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/cabbage"
                         android:tag="Cabbage" />
@@ -153,9 +153,9 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
                         android:background="@drawable/bordered_image_view"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:tag="BeetRoot"
                         app:srcCompat="@drawable/beet" />
@@ -186,9 +186,9 @@
 
                     <ImageView
                         android:id="@+id/imageView10"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
                         android:background="@drawable/bordered_image_view"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/eggplant"
                         android:tag="EggPlant" />
@@ -213,9 +213,9 @@
 
                     <ImageView
                         android:id="@+id/imageView11"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
                         android:background="@drawable/bordered_image_view"
+                        android:layout_width="190dp"
+                        android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/corn"
                         android:tag="Corn" />

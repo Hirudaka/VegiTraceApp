@@ -56,7 +56,8 @@
                     android:text="Login"
                     android:id="@+id/login_button"
                     android:textSize="18sp"
-                    app:cornerRadius = "30dp"/>
+                    app:cornerRadius = "30dp"
+                    android:backgroundTint="#68BD51"/>
 
                 <TextView
                     android:layout_width="wrap_content"

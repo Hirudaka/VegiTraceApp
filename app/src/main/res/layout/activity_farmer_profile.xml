@@ -100,3 +100,32 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/WastageNic1"
+        android:backgroundTint="#68BD51"/>
+
+    <Button
+        android:id="@+id/wastageUpdatePro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="60dp"
+        android:text="Delete Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageNic1"
+        android:backgroundTint="#C85555"
+        />
+
+    <Button
+        android:id="@+id/WastageLogOut"
+        android:layout_width="350dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="Log Out"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WastageUpdatePro"
+        android:backgroundTint="#91782B"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

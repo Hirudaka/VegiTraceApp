@@ -86,6 +86,7 @@
                 android:text="Confirm"
                 android:layout_marginStart="50dp"
                 android:layout_marginBottom="10dp"
+                android:backgroundTint="#68BD51"
                 />
         </LinearLayout>
     </LinearLayout>
