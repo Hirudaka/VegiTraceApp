@@ -161,7 +161,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="70dp"
                 android:text="Update Profile"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="#68BD51"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

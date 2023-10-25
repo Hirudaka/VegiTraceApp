@@ -83,6 +83,8 @@
         android:text="Button"
         tools:layout_editor_absoluteX="279dp"
         tools:layout_editor_absoluteY="194dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:backgroundTint="#68BD51"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

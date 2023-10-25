@@ -197,21 +197,25 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:text="Edit Profile" />
+            android:text="Edit Profile"
+            android:backgroundTint="#E1BF58"/>
         <Button
             android:id="@+id/farmerLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Share My Location" />
+            android:text="Share My Location"
+            android:backgroundTint="#326C0E"/>
         <Button
         android:id="@+id/reservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="reservations" />
+        android:text="reservations"
+            android:backgroundTint="#68BD51"
+            />
 
 
     </LinearLayout>
