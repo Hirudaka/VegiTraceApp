@@ -1,12 +1,11 @@
 package com.example.vegitrace
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MarketOverview : AppCompatActivity() {
     private lateinit var dambullaImageView: ImageView
@@ -59,8 +58,11 @@ class MarketOverview : AppCompatActivity() {
         val Center = view.tag.toString()
 
 
-        val intent = Intent(this, OrdersActivity::class.java)
+
+        val intent = Intent(this, VegeSelect::class.java)
         intent.putExtra("center", Center)
+
+        Log.d("VegetableClick", "Selected Vegetable: $Center")
 
         startActivity(intent)
     }
