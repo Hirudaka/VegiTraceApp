@@ -13,9 +13,9 @@
         android:layout_marginTop="16dp"
         android:background="@color/DarkGreenBackground"
         android:gravity="center"
-        android:text="Wastage History"
+        android:text="Wastage Form History"
         android:textColor="@color/white"
-        android:textSize="33sp"
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

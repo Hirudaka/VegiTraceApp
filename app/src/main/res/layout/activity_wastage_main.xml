@@ -16,7 +16,7 @@
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -13,10 +13,10 @@
             android:layout_marginTop="10dp"
             android:background="@color/DarkGreenBackground"
             android:gravity="center"
-            android:text="Recycler Edit Profile"
+            android:text="Edit My Profile"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="29sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     <androidx.cardview.widget.CardView

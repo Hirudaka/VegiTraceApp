@@ -13,6 +13,8 @@
     <color name="colorAccent">#03DAC5</color>
 
     <color name="green">#005b41</color>
+    <color name="redback">#D52C1F</color>
+    <color name="hintColor">#8F606060</color>
 
 
 </resources>
