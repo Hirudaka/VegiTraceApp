@@ -12,11 +12,11 @@
         android:layout_height="54dp"
         android:layout_marginTop="15dp"
         android:background="@color/DarkGreenBackground"
-        android:text="Wastage Overview"
+        android:text="Paliyagoda Market"
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="33sp"
+        android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,6 +157,8 @@
         android:layout_marginStart="135dp"
         android:layout_marginTop="15dp"
         android:text="Book Now"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/DarkGreenBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -167,6 +169,8 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="13dp"
         android:text="Go Back"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/redback"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wastageBookNow" />
 
