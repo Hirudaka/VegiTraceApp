@@ -217,14 +217,13 @@
         android:id="@+id/buttonSubmitReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="#68BD51"
         android:gravity="center"
         android:text="Submit Review"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addreviewcard"
-        android:backgroundTint="#68BD51"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/addreviewcard" />
 
     <LinearLayout
         android:id="@+id/navBar"
