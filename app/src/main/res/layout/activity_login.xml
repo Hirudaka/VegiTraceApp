@@ -60,7 +60,8 @@
                     android:textColorHighlight="@color/green"
                     android:textColorLink="@color/colorPrimary"
                     android:textSize="18sp"
-                    app:cornerRadius="30dp" />
+                    app:cornerRadius="30dp"
+                    android:backgroundTint="#68BD51"/>
 
 
 

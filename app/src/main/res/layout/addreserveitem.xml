@@ -61,7 +61,9 @@
             android:layout_marginTop="4dp"
             android:text="Reserve"
             app:layout_constraintStart_toEndOf="@+id/oSubTitle2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="#68BD51"
+        />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

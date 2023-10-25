@@ -32,7 +32,8 @@
             android:layout_gravity="end"
             android:layout_marginRight="0dp"
             android:padding="6dp"
-            app:srcCompat="@drawable/baseline_account_facewhite" />
+            app:srcCompat="@drawable/baseline_account_facewhite"
+            />
     </androidx.cardview.widget.CardView>
 
 
@@ -52,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="250dp"
                 android:layout_marginTop="10dp"
-                android:text="Add Vegetable" />
+                android:text="Add Vegetable"
+                android:backgroundTint="#68BD51"/>
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -60,7 +62,9 @@
                 android:layout_height="199dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="35dp"
-                android:layout_marginBottom="15dp" />
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/bordered_image_view"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,7 +113,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="5dp"
                     android:inputType="text"
-                    android:hint="Center" />
+                    android:text="Center" />
             </LinearLayout>
 
             <LinearLayout
@@ -164,7 +168,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="60dp"
                     android:inputType="text"
-                    android:hint="Shop owner" />
+                    android:text="Shop owner" />
             </LinearLayout>
 
             <LinearLayout
