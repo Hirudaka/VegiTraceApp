@@ -168,8 +168,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         android:text="Edit Profile"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/DarkGreenBackground"/>
+        android:textColor="@color/black"
+        android:backgroundTint="#E1BF58"/>
 
     <Button
         android:id="@+id/sellerAddWaste"

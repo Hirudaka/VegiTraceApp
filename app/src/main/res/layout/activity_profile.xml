@@ -214,8 +214,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="reservations"
-            android:backgroundTint="#68BD51"
-            />
+            android:backgroundTint="#326C0E" />
 
 
     </LinearLayout>
