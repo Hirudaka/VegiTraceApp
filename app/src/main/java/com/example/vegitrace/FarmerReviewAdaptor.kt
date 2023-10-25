@@ -29,7 +29,7 @@ class FarmerReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView
         val currentItem = revList[position]
 
         holder.shopNum.text = currentItem.shopno
-        holder.Owner.text = currentItem.email
+        holder.Owner.text = currentItem.owneremail
         holder.review.text = currentItem.review
 
     }

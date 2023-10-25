@@ -46,7 +46,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -56,8 +59,8 @@
 
                     <ImageView
                         android:id="@+id/imageView7"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:tag="Beans"
@@ -82,8 +85,8 @@
 
                     <ImageView
                         android:id="@+id/imageView5"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:tag="Carrot"
@@ -106,7 +109,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -116,8 +121,8 @@
 
                     <ImageView
                         android:id="@+id/imageView8"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/cabbage"
@@ -143,8 +148,8 @@
 
                     <ImageView
                         android:id="@+id/imageView9"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:tag="BeetRoot"
@@ -165,7 +170,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -175,8 +181,8 @@
 
                     <ImageView
                         android:id="@+id/imageView10"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/eggplant"
@@ -202,8 +208,8 @@
 
                     <ImageView
                         android:id="@+id/imageView11"
-                        android:layout_width="200dp"
-                        android:layout_height="200dp"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/corn"
