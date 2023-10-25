@@ -24,18 +24,14 @@ class ShopOwnerProfile : AppCompatActivity() {
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        // Check if the user is authenticated
-        val currentUser = auth.currentUser
+        val currentUser = auth.currentUser //check if user authenticated
         if (currentUser == null) {
-            // The user is not authenticated, handle this case (e.g., redirect to the login page).
-            // You might also want to finish this activity.
             Toast.makeText(this, "User not authenticated", Toast.LENGTH_SHORT).show()
-            finish() // Close this activity
+            finish()
             return
         }
 
-        userId = currentUser.uid // Get the user's UID
-
+        userId = currentUser.uid
         val databaseRef = database.getReference("shopOwners").child(userId) // Query using the user's UID
 
         databaseRef.addValueEventListener(object : ValueEventListener {
@@ -70,6 +66,7 @@ class ShopOwnerProfile : AppCompatActivity() {
         val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
         val topProfile = findViewById<ImageView>(R.id.imageView4)
         val addDwastage = findViewById<Button>(R.id.sellerAddWaste)
+        val sellerOrder = findViewById<Button>(R.id.sellerMyOrders)
 
         navHomeUnClick.setOnClickListener {
             val intent = Intent(this, Centers::class.java)
@@ -93,6 +90,10 @@ class ShopOwnerProfile : AppCompatActivity() {
         }
         addDwastage.setOnClickListener {
             val intent = Intent(this, SellerAddWaste::class.java)
+            startActivity(intent)
+        }
+        sellerOrder.setOnClickListener {
+            val intent = Intent(this, MyOrdersActivity::class.java)
             startActivity(intent)
         }
 
