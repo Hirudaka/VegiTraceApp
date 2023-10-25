@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/wastageOverview"
-        android:layout_width="411dp"
+        android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@color/DarkGreenBackground"
         android:text="Paliyagoda Market"
         android:textAlignment="center"
@@ -36,7 +36,7 @@
             android:layout_height="136dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/TextBackground"
+            android:backgroundTint="@color/OpacityBackground"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -75,7 +75,7 @@
             android:layout_height="146dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/TextBackground"
+            android:backgroundTint="@color/OpacityBackground"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -114,7 +114,7 @@
             android:layout_height="146dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/TextBackground"
+            android:backgroundTint="@color/OpacityBackground"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
