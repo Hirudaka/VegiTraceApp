@@ -196,17 +196,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            android:layout_marginStart="-100dp"
-            android:text="Edit Profile" />
+            android:layout_marginTop="40dp"
+            android:text="Edit Profile"
+            android:backgroundTint="#E1BF58"/>
+        <Button
+            android:id="@+id/farmerLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Share My Location"
+            android:backgroundTint="#326C0E"/>
         <Button
         android:id="@+id/reservation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="-49dp"
-        android:layout_marginStart="100dp"
-        android:text="reservations" />
+        android:layout_marginTop="20dp"
+        android:text="reservations"
+            android:backgroundTint="#68BD51"
+            />
 
 
     </LinearLayout>
@@ -216,7 +225,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginStart="107dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="104dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -156,7 +156,9 @@
         android:gravity="center"
         android:text="Submit Review"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review" />
+        app:layout_constraintTop_toBottomOf="@+id/review"
+        android:backgroundTint="#68BD51"
+        />
 
     <LinearLayout
         android:id="@+id/navBar"
@@ -211,6 +213,7 @@
         android:layout_marginTop="76dp"
         android:text="Checkout"
         app:layout_constraintStart_toEndOf="@+id/buttonSubmitReview"
-        app:layout_constraintTop_toBottomOf="@+id/review" />
+        app:layout_constraintTop_toBottomOf="@+id/review"
+        android:backgroundTint="#68BD51"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

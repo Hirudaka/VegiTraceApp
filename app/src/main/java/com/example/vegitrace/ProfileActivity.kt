@@ -71,10 +71,41 @@ class ProfileActivity : AppCompatActivity() {
             }
         })
 
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+        val farmerMap = findViewById<Button>(R.id.farmerLocation)
+        val farRes = findViewById<Button>(R.id.reservation)
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, MarketOverview::class.java)
+            startActivity(intent)
+        }
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
+            startActivity(intent)
+        }
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, Reviews::class.java)
+            startActivity(intent)
+        }
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+        farmerMap.setOnClickListener {
+            val intent = Intent(this, FarmerLocation::class.java)
+            startActivity(intent)
+        }
         val farmerEditProButton = findViewById<Button>(R.id.farmerEditPro)
 
         farmerEditProButton.setOnClickListener {
             val intent = Intent(this, FarmerProfileEdit::class.java)
+            startActivity(intent)
+        }
+        farRes.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
             startActivity(intent)
         }
     }

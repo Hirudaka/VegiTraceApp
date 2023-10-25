@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#e3e4e8" /> <!-- Border color -->
+            <corners android:radius="13dp" /> <!-- Add a small corner radius (4dp in this example) -->
+        </shape>
+    </item>
+</layer-list>

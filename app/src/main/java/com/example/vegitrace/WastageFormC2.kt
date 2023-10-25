@@ -27,7 +27,7 @@ class WastageFormC2 : AppCompatActivity() {
         }
 
         historyButton.setOnClickListener {
-            val intent = Intent(this, WastageHistory::class.java)
+            val intent = Intent(this, RecyclerRemoveList::class.java)
             startActivity(intent)
         }
 

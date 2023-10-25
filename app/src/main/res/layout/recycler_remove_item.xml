@@ -3,10 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="8dp"
-    app:cardMaxElevation="5dp"
-    >
+    app:cardCornerRadius="7dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:backgroundTint="@color/TextBackground">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,65 +17,117 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp">
 
                 <TextView
                     android:id="@+id/recyclernameTextView"
-                    android:layout_width="250dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Name"
                     android:textColor="@color/black"
-                    android:textSize="19sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/recyclerremovebtn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginStart="45dp"
-                    app:srcCompat="@drawable/ic_remove" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/recyclerphnTextView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:text="Phone Number"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp">
 
             <TextView
-                android:id="@+id/recyclerWeightTextView"
+                android:id="@+id/recyclerphnTextView1"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Phone No: "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/recyclerphnTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:text="Weight"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp">
+
             <TextView
-                android:id="@+id/recyclerremoveDateTextView"
+                android:id="@+id/recyclerWeightTextView1"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Weight(Kg): "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/recyclerWeightTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Weight"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:text="Date"
+                android:orientation="horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp">
+
+
+            <TextView
+                android:id="@+id/recyclerremoveDateTextView1"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="Date: "
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/recyclerremoveDateTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+
+            </LinearLayout>
 
 
 
         </LinearLayout>
+        <ImageView
+            android:id="@+id/recyclerremovebtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center_vertical"
+            app:srcCompat="@drawable/ic_remove" />
+
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

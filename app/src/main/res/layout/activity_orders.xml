@@ -34,14 +34,56 @@
             android:padding="6dp"
             app:srcCompat="@drawable/baseline_account_facewhite" />
     </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="700dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp">
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="116dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="Name"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="125dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="132dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="Quantity"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="91dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="256dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:text="Price"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/oRecycler"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_marginTop="25dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="20dp"
+
+        />
 
     <View
         android:layout_width="match_parent"
@@ -54,9 +96,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="@color/DarkGreenBackground"
-        android:layout_alignParentBottom="true"
-        >
-
+        android:layout_alignParentBottom="true">
 
         <ImageView
             android:id="@+id/navHomeUnClick"

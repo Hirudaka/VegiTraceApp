@@ -39,12 +39,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reviewRemoveRecyclerView"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/navBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
@@ -52,11 +55,12 @@
         android:id="@+id/navBar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
         android:background="@color/DarkGreenBackground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_alignParentBottom="true">
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <ImageView
@@ -65,7 +69,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_home_24"/>
+            app:srcCompat="@drawable/baseline_home_24" />
 
         <ImageView
             android:id="@+id/navAddUnClick"
@@ -73,22 +77,25 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_library_books_24"/>
+            app:srcCompat="@drawable/outline_add_circle_outline_24"/>
+
         <ImageView
             android:id="@+id/navReviewUnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            android:background="@color/green"
-            app:srcCompat="@drawable/baseline_reviews_24"/>
+            app:srcCompat="@drawable/baseline_reviews_24"
+            android:background="@color/green"/>
+
         <ImageView
             android:id="@+id/navScanUnClick"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="7dp"
-            app:srcCompat="@drawable/baseline_account_facewhite"/>
+            app:srcCompat="@drawable/baseline_qr_code_scanner_24"/>
+
     </LinearLayout>
 
 
