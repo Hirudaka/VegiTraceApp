@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="0dp"
-    tools:context=".ShopOwnerProfile">
+    tools:context=".ShopOwnerProfile"
+    android:background="@drawable/login_back">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/SellerEditCardView"

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecyclerRemoveList">
+    tools:context=".RecyclerRemoveList"
+    android:background="@drawable/login_back">
 
     <TextView
         android:id="@+id/wastageHistory"

@@ -7,11 +7,16 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
 
-class ConfirmOrderAdapter(private val context: Context, private val orderList: ArrayList<Order>, private val listener: ConfirmOrderAdapter.OnItemClickListener) : RecyclerView.Adapter<ConfirmOrderAdapter.OrderViewHolder>() {
+class ConfirmOrderAdapter(
+    private val context: Context,
+    private val orderList: ArrayList<Order>,
+    private val listener: ConfirmOrderAdapter.OnItemClickListener
+) : RecyclerView.Adapter<ConfirmOrderAdapter.OrderViewHolder>() {
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
@@ -45,7 +50,7 @@ class ConfirmOrderAdapter(private val context: Context, private val orderList: A
         holder.status.text = order.status
 
         holder.confirmbtn.setOnClickListener {
-            listener.onItemClick(position)
+            showConfirmationDialog(position)
         }
         val imageResId = getImageResourceForVegetable(order.vegetableType)
         holder.image.setImageResource(imageResId)
@@ -56,8 +61,28 @@ class ConfirmOrderAdapter(private val context: Context, private val orderList: A
     }
 
     fun itemRemovedAtUpdatedList(position: Int) {
-// Remove the item from the list
+        // Remove the item from the list
         notifyItemRemoved(position)
+    }
+
+    private fun showConfirmationDialog(position: Int) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Confirm Order")
+        builder.setMessage("Are you sure you want to confirm the Order Delivery? this action cannot be revert. ")
+
+        // Add positive button for confirmation
+        builder.setPositiveButton("Confirm") { _, _ ->
+            listener.onItemClick(position)
+            // Perform the confirmation action here
+        }
+
+        // Add negative button to cancel the operation
+        builder.setNegativeButton("Cancel") { _, _ ->
+            // User canceled the confirmation, do nothing
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
     private fun getImageResourceForVegetable(vegetableName: String): Int {
@@ -69,7 +94,6 @@ class ConfirmOrderAdapter(private val context: Context, private val orderList: A
             "Egg Plant" to R.drawable.eggplant,
             "BeetRoot" to R.drawable.beet,
             "Corn" to R.drawable.corn,
-
         )
 
         // Look up the image resource ID for the given vegetable name

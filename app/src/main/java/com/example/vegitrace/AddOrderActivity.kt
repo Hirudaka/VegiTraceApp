@@ -113,30 +113,44 @@ class AddOrderActivity : AppCompatActivity() {
                     // Display a toast message indicating that all fields must be filled
                     Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 } else {
-                    // Use the user information to create a unique order
-                    val order = Order(orderId, shopowner, vegetableType, quantity, price, centre, "Pending", "")
-
                     // Get a reference to your Firebase database
                     val ordersReference = database.getReference("orders")
 
-                    // Push the data to the "orders" node, creating a new child node with a unique ID
-                    val newOrderReference = ordersReference.push()
-                    newOrderReference.setValue(order)
-                        .addOnSuccessListener {
-                            // Order insertion successful, display a success message
-                            Toast.makeText(this, "Order inserted successfully", Toast.LENGTH_SHORT).show()
+                    // Check if the order ID already exists in the database
+                    ordersReference.orderByChild("orderId").equalTo(orderId).addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                // Order ID already exists, display an error message
+                                Toast.makeText(this@AddOrderActivity, "Order ID already exists", Toast.LENGTH_SHORT).show()
+                            } else {
+                                // Use the user information to create a unique order
+                                val order = Order(orderId, shopowner, vegetableType, quantity, price, centre, "Pending", "")
 
-                            // Optionally, clear the input fields
-                            orderIdEditText.text.clear()
-                            supplierEditText.text.clear()
-                            quantityEditText.text.clear()
-                            priceEditText.text.clear()
-                            centreEditText.text.clear()
+                                // Push the data to the "orders" node, creating a new child node with a unique ID
+                                val newOrderReference = ordersReference.push()
+                                newOrderReference.setValue(order)
+                                    .addOnSuccessListener {
+                                        // Order insertion successful, display a success message
+                                        Toast.makeText(this@AddOrderActivity, "Order inserted successfully", Toast.LENGTH_SHORT).show()
+
+                                        // Optionally, clear the input fields
+                                        orderIdEditText.text.clear()
+                                        supplierEditText.text.clear()
+                                        quantityEditText.text.clear()
+                                        priceEditText.text.clear()
+                                        centreEditText.text.clear()
+                                    }
+                                    .addOnFailureListener { e ->
+                                        // Order insertion failed, display an error message
+                                        Toast.makeText(this@AddOrderActivity, "Order insertion failed: ${e.message}", Toast.LENGTH_SHORT).show()
+                                    }
+                            }
                         }
-                        .addOnFailureListener { e ->
-                            // Order insertion failed, display an error message
-                            Toast.makeText(this, "Order insertion failed: ${e.message}", Toast.LENGTH_SHORT).show()
+
+                        override fun onCancelled(databaseError: DatabaseError) {
+                            // Handle the error
                         }
+                    })
                 }
             }
         }
@@ -167,7 +181,6 @@ class AddOrderActivity : AppCompatActivity() {
             val intent = Intent(this, ShopOwnerProfile::class.java)
             startActivity(intent)
         }
-
     }
 
     private fun updateUIForVegetableType(vegetableType: String) {
@@ -191,8 +204,8 @@ class AddOrderActivity : AppCompatActivity() {
                 vegetableNameTextView.text = "BeetRoot"
                 imageView2.setImageResource(R.drawable.beet)
             }
-            "Egg Plant" -> {
-                vegetableNameTextView.text = "Egg Plant"
+            "EggPlant" -> {
+                vegetableNameTextView.text = "EggPlant"
                 imageView2.setImageResource(R.drawable.eggplant)
             }
             "Corn" -> {
