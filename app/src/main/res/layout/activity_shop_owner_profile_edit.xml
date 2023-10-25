@@ -39,6 +39,22 @@
             app:srcCompat="@drawable/baseline_account_facewhite" />
     </androidx.cardview.widget.CardView>
 
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sellereditcard2"
+        app:cardCornerRadius="7dp"
+        android:backgroundTint="@color/OpacityBackground"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -119,7 +135,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <TextView
             android:id="@+id/profileMarketPositionLabel"
@@ -141,13 +158,17 @@
             android:textSize="20sp" />
 
     </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/sellerUpdatePro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="40dp"
         android:text="Update Profile"
         android:textColor="@color/white"
         android:backgroundTint="@color/DarkGreenBackground"/>
