@@ -1,5 +1,6 @@
 package com.example.vegitrace
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class ProfileActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -27,6 +29,7 @@ class ProfileActivity : AppCompatActivity() {
         val databaseRef = FirebaseDatabase.getInstance().getReference("farmer").child(userId.toString())
         // Find the reservations button
         val reservationsButton = findViewById<Button>(R.id.reservation)
+        val logoutbtn = findViewById<Button>(R.id.logout)
 
 // Set an OnClickListener for the reservations button
         reservationsButton.setOnClickListener {
@@ -35,6 +38,14 @@ class ProfileActivity : AppCompatActivity() {
 
             // Start the ReservationsActivity
             startActivity(reservationsIntent)
+        }
+
+       logoutbtn.setOnClickListener {
+            // Define an Intent to start the ReservationsActivity
+            val logoutIntent = Intent(this, Welcome::class.java)
+
+            // Start the ReservationsActivity
+            startActivity(logoutIntent)
         }
 
 

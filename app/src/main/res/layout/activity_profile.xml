@@ -204,43 +204,56 @@
 
     </LinearLayout>
 
-        <Button
-            android:id="@+id/farmerEditPro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="Edit Profile"
-            android:backgroundTint="#E1BF58"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
-        <Button
-            android:id="@+id/farmerLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Share My Location"
-            android:layout_weight="1"
-            android:layout_marginBottom="7dp"
-            android:backgroundTint="#326C0E"/>
-        <Button
-        android:id="@+id/reservation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-            android:layout_weight="1"
-        android:text="reservations"
-            android:layout_marginBottom="7dp"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="#326C0E" />
+            android:layout_height="87dp"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/farmerEditPro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#E1BF58"
+                android:text="Edit Profile" />
+
+            <Button
+                android:id="@+id/reservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#68BD51"
+                android:text="reservations" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/farmerLocation"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#326C0E"
+                android:text="Share My Location" />
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="126dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Logout" />
+
         </LinearLayout>
 
 
