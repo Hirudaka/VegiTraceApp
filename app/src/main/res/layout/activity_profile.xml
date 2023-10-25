@@ -242,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#326C0E"
                 android:text="Share My Location" />
@@ -254,6 +255,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Logout" />
 
+        </LinearLayout>
         </LinearLayout>
 
 
