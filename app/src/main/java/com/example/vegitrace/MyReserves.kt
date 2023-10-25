@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Order
 import com.example.vegitrace.view.MyReserveAdaptor
 import com.google.firebase.auth.FirebaseAuth
-
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener {
     private lateinit var MyreserverAdapter: MyReserveAdaptor
@@ -92,7 +94,7 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
         // Update the 'status' attribute for the clicked order
 
         val id = revList[position].orderId
-        val status = "Pending"
+
 
 
 
@@ -104,7 +106,7 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
                     for (orderSnapshot in dataSnapshot.children) {
                         // Update the 'status' attribute for the matching order
                         val orderRef = dbref.child(orderSnapshot.key.toString())
-                        orderRef.child("status").setValue(status)
+                        orderRef.child("status").setValue("Pending")
 
                         // Update the 'farmer' attribute if needed
                         orderRef.child("farmer").setValue("")

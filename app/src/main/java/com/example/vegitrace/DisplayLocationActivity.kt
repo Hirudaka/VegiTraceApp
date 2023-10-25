@@ -1,27 +1,29 @@
 package com.example.vegitrace
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.android.gms.maps.model.LatLngBounds
 
 class DisplayLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var database: FirebaseDatabase
     private lateinit var locationRef: DatabaseReference
-    private var farmerName: String = "vimal"
+    private lateinit var farmerName: String
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +37,14 @@ class DisplayLocationActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         // Set the farmer's name (modify this to get the desired farmer's name)
-        farmerName = "vimal" // Replace with the farmer's name you want to display
+        val farmerName = intent.getStringExtra("farmer")// Replace with the farmer's name you want to display
+
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
+
+        val farmerName = intent.getStringExtra("farmer")
         mMap = googleMap
 
         if (farmerName != null) {

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
@@ -58,7 +59,7 @@ class MyReserveAdaptor(private val context: Context,
 
         holder.removebtn.setOnClickListener {
             // Call the interface method to handle the button click
-            buttonClickListener.onButtonClicked(position)
+            showConfirmationDialog(position)
         }
 
     }
@@ -77,6 +78,25 @@ class MyReserveAdaptor(private val context: Context,
 
         // Look up the image resource ID for the given vegetable name
         return vegetableImageMap[vegetableName] ?: 0
+    }
+    private fun showConfirmationDialog(position: Int) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Confirm Order")
+        builder.setMessage("Are you sure you want to remove the Order? this action cannot be revert. ")
+
+        // Add positive button for confirmation
+        builder.setPositiveButton("Confirm") { _, _ ->
+            buttonClickListener.onButtonClicked(position)
+            // Perform the confirmation action here
+        }
+
+        // Add negative button to cancel the operation
+        builder.setNegativeButton("Cancel") { _, _ ->
+            // User canceled the confirmation, do nothing
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 
 
