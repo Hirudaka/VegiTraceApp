@@ -180,7 +180,7 @@
                         android:background="@drawable/bordered_image_view"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/eggplant"
-                        android:tag="Egg Plant" />
+                        android:tag="EggPlant" />
                     />
 
                     <TextView

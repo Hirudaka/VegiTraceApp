@@ -15,6 +15,8 @@ class AddReserves : AppCompatActivity(), AddReserveAdaptor.OnButtonClickListener
     private lateinit var reserverAdapter: AddReserveAdaptor
     private val orderList = ArrayList<Order>()
     private lateinit var user: String
+    private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,29 +67,53 @@ class AddReserves : AppCompatActivity(), AddReserveAdaptor.OnButtonClickListener
 
         val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
         user = currentFirebaseUser?.email.toString()
+        val userId = firebaseAuth.currentUser?.uid
 
-        val dbref = FirebaseDatabase.getInstance().getReference("orders")
 
-        dbref.orderByChild("orderId").equalTo(id).addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    for (orderSnapshot in dataSnapshot.children) {
-                        // Update the 'status' attribute for the matching order
-                        val orderRef = dbref.child(orderSnapshot.key.toString())
-                        orderRef.child("status").setValue(status)
+        if (userId != null) {
+            val farmerNameRef = database.getReference("farmer").child(userId).child("name")
+            farmerNameRef.get().addOnSuccessListener { dataSnapshot ->
+                val farmerName = dataSnapshot.value as String
+                // Update the user's location in the database using the farmer's name as a unique identifier
+                Log.d("YourTag", "The value of fname is: $farmerName")
 
-                        // Update the 'farmer' attribute if needed
-                        orderRef.child("farmer").setValue(user)
+                // Add a marker for the current location
+
+
+
+                val dbref = FirebaseDatabase.getInstance().getReference("orders")
+
+                dbref.orderByChild("orderId").equalTo(id).addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        if (dataSnapshot.exists()) {
+                            for (orderSnapshot in dataSnapshot.children) {
+                                // Update the 'status' attribute for the matching order
+                                val orderRef = dbref.child(orderSnapshot.key.toString())
+                                orderRef.child("status").setValue(status)
+
+                                // Update the 'farmer' attribute if needed
+                                orderRef.child("farmer").setValue(farmerName)
+                            }
+                        } else {
+                            // Handle the case where the order with the given 'orderId' doesn't exist
+                        }
                     }
-                } else {
-                    // Handle the case where the order with the given 'orderId' doesn't exist
-                }
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors here
+                    override fun onCancelled(databaseError: DatabaseError) {
+                        // Handle any errors here
+                    }
+                })
+
             }
-        })
+        }
+
+
+
+
+
+
+
+
     }
 
 }
