@@ -57,6 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -83,7 +84,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginStart="4dp">
+                    >
 
                     <ImageView
                         android:id="@+id/imageView5"
@@ -116,7 +119,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginEnd="4dp"
+                    >
 
                     <ImageView
                         android:id="@+id/imageView8"
@@ -142,14 +147,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginStart="4dp"
+                    >
 
                     <ImageView
                         android:id="@+id/imageView9"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
-                        android:tag="Beet-Root"
+                        android:tag="BeetRoot"
                         app:srcCompat="@drawable/beet"
                         android:background="@drawable/bordered_image_view"/>
 
@@ -173,7 +180,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginEnd="4dp"
+                    >
 
                     <ImageView
                         android:id="@+id/imageView10"
@@ -181,7 +190,7 @@
                         android:layout_height="200dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/eggplant"
-                        android:tag="Egg Plant"
+                        android:tag="EggPlant"
                         android:background="@drawable/bordered_image_view"
                         />
 
@@ -200,7 +209,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginStart="4dp"
+                    >
 
                     <ImageView
                         android:id="@+id/imageView11"

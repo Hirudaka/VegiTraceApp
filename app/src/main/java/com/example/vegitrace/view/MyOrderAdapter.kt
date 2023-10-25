@@ -84,7 +84,7 @@ class MyOrderAdapter(
             "Carrot" to R.drawable.carrots,
             "Beans" to R.drawable.greenbeans,
             "Cabbage" to R.drawable.cabbage,
-            "Egg Plant" to R.drawable.eggplant,
+            "EggPlant" to R.drawable.eggplant,
             "BeetRoot" to R.drawable.beet,
             "Corn" to R.drawable.corn,
 
