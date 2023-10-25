@@ -17,6 +17,7 @@ class Centers : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
+    private lateinit var user : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +28,13 @@ class Centers : AppCompatActivity() {
 
         val currentUser = auth.currentUser
 
+
+
         if (currentUser != null) {
             val userId = currentUser.uid
             val shopOwnersRef: DatabaseReference = database.getReference("shopOwners")
+
+
 
             shopOwnersRef.child(userId).addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -37,6 +42,8 @@ class Centers : AppCompatActivity() {
                         val shopOwnerData = dataSnapshot.getValue(ShopOwner::class.java)
 
                         val marketPosition = shopOwnerData?.marketPosition
+
+
 
                         if (shopOwnerData != null) {
                             if (marketPosition != null) {

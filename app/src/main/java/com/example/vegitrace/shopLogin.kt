@@ -30,7 +30,7 @@ class shopLogin : AppCompatActivity() {
                             if (userId != null) {
 
 
-                                val intent = Intent(this, QRscanner::class.java)
+                                val intent = Intent(this, Centers::class.java)
 
 
                                 intent.putExtra("userId", userId)

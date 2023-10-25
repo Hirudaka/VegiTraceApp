@@ -61,7 +61,8 @@
                 android:text="Review"
                 android:textColor="@color/black"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="7"/>
 
 
 
