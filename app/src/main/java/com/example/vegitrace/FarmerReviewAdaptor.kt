@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Review
 
-class ReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapter<ReviewAdaptor.ReviewViewHolder>(){
+class FarmerReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapter<FarmerReviewAdaptor.ReviewViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewViewHolder {
 

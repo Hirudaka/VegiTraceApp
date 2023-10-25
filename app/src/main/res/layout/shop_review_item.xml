@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_margin="0dp"
-                android:text="Long Review Text Goes Here"
+                android:text=" Review Goes Here"
                 android:textSize="20sp"
                 android:maxLines="7"
                 />

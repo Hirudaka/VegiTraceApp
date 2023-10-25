@@ -22,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Seller Orders"
+            android:text="Orders"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="33sp" />
 
@@ -35,55 +36,12 @@
             android:padding="6dp"
             app:srcCompat="@drawable/baseline_account_facewhite" />
     </androidx.cardview.widget.CardView>
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="700dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="25dp">
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="116dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:text="Name"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="125dp"
-            android:layout_height="38dp"
-            android:layout_marginStart="132dp"
-            android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:text="Quantity"
-            android:textStyle="bold"
-
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="91dp"
-            android:layout_height="39dp"
-            android:layout_marginStart="256dp"
-            android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:text="Price"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/oRecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="550dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginRight="20dp"
