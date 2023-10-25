@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/wastageHistory"
-        android:layout_width="410dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
         android:background="@color/DarkGreenBackground"
         android:gravity="center"
         android:text="Wastage Form History"
