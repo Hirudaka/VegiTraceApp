@@ -33,11 +33,13 @@
         <ImageView
             android:id="@+id/VegimageView"
             android:layout_width="154dp"
-            android:layout_height="190dp"
+            android:layout_height="162dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="15dp" />
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/bordered_image_view"
+            />
 
         <LinearLayout
             android:layout_marginTop="50dp"

@@ -47,7 +47,7 @@
 
             <TextView
                 android:id="@+id/recyclerphnTextView1"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:text="Phone No: "
                 android:textColor="@color/black"
@@ -73,9 +73,9 @@
 
             <TextView
                 android:id="@+id/recyclerWeightTextView1"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:text="Weight: "
+                android:text="Weight(Kg): "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -99,7 +99,7 @@
 
             <TextView
                 android:id="@+id/recyclerremoveDateTextView1"
-                android:layout_width="100dp"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
                 android:text="Date: "
                 android:textColor="@color/black"

@@ -35,9 +35,9 @@ class WastageForm : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         val currentUser: FirebaseUser? = auth.currentUser
+        val currentUserId = currentUser?.uid
 
-        if (currentUser != null) {
-            val currentUserId = currentUser.uid
+        if (currentUserId != null) {
 
             val recyclersRef = FirebaseDatabase.getInstance().reference.child("Recyclers").child(currentUserId)
             recyclersRef.addValueEventListener(object : ValueEventListener {
@@ -71,12 +71,10 @@ class WastageForm : AppCompatActivity() {
                 val wastageWeight = wastageWeightStr.toIntOrNull()
 
                 if (wastageWeight != null) {
-                    // Generate a unique key for the form
                     val newWastageRef = database.push()
                     val key = newWastageRef.key
-
                     if (key != null) {
-                        val wastage = WasteForm(key, wastageName, wastagePhone, wastageWeight, wastageDate)
+                        val wastage = WasteForm(key, currentUserId, wastageName, wastagePhone, wastageWeight, wastageDate)
                         newWastageRef.setValue(wastage).addOnSuccessListener {
 
                             binding.WastageNameEdit.text.clear()
@@ -86,10 +84,8 @@ class WastageForm : AppCompatActivity() {
 
                             Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
                             // Pass the wastageWeight back to the WastageOverview activity
-                            val intent = Intent()
-                            intent.putExtra("wastageWeight", wastageWeight)
-                            setResult(RESULT_OK, intent)
-                            finish()
+                            val intent = Intent(this, WastageOverview::class.java)
+                            startActivity(intent)
 
                         }.addOnFailureListener {
                             Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
