@@ -49,7 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/baseline_location_on_24"
         android:onClick="onCenterClicked"
-        android:tag="Dambulla"/>
+        android:tag="Meegoda"/>
 
     <ImageView
         android:id="@+id/dambullaloc"
@@ -60,7 +60,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         android:onClick="onCenterClicked"
-        android:tag="Dambulla"
+        android:tag="Dabulla"
         app:srcCompat="@drawable/baseline_location_on_24" />
 
     <ImageView

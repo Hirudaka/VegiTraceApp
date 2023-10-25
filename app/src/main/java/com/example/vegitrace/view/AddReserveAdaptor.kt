@@ -1,12 +1,15 @@
 package com.example.vegitrace.view
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vegitrace.AddReserves
+import com.example.vegitrace.DisplayLocationActivity
 import com.example.vegitrace.R
 import com.example.vegitrace.model.Order
 
@@ -18,7 +21,7 @@ class AddReserveAdaptor(private val context: Context,
 
 
     interface OnButtonClickListener {
-        fun onButtonClicked(order: Order)
+        fun onButtonClicked(position: Int)
     }
     inner class AddReserveViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.oTitle)
@@ -45,7 +48,15 @@ class AddReserveAdaptor(private val context: Context,
 
         holder.resbut.setOnClickListener {
             // Call the interface method to handle the button click
-            buttonClickListener.onButtonClicked(order)
+            buttonClickListener.onButtonClicked(position)
+           // val intent = Intent(context, AddReserves::class.java)
+           // intent.putExtra("id", order.orderId)
+
+            //intent.putExtra("status", order.status)
+           // intent.putExtra("vegetableName", order.vegetableType)
+            //intent.putExtra("centerName", order.centre)
+           // context.startActivity(intent)
+
         }
 
     }
