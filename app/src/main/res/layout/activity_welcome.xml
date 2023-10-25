@@ -5,10 +5,11 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#27BDAF"
+    android:background="@drawable/back3"
     tools:context=".Welcome"
     tools:layout_editor_absoluteX="-7dp"
-    tools:layout_editor_absoluteY="4dp">
+    tools:layout_editor_absoluteY="4dp"
+    >
     <!-- Square Tile Button Style -->
 
     <TextView
@@ -57,7 +58,6 @@
         android:layout_height="150dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="68dp"
-        android:alpha="0.7"
         android:backgroundTint="#73BA5C"
         android:shadowColor="#252424"
         android:text="Shop owner"
@@ -69,14 +69,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:strokeColor="#0C0C0C"
-        app:strokeWidth="1dp" />
+
+        app:strokeWidth="1dp"
+        />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="32dp"
-        android:alpha="0.7"
         android:backgroundTint="#73BA5C"
         android:shadowColor="#1B1A1A"
         android:text="Recycler"
@@ -96,7 +97,6 @@
         android:layout_height="150dp"
         android:layout_marginStart="-238dp"
         android:layout_marginTop="180dp"
-        android:alpha="0.7"
         android:backgroundTint="#73BA5C"
         android:shadowColor="#151515"
         android:text="Farmer"

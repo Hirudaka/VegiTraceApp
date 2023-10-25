@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".OrdersActivity">
+    tools:context=".OrdersActivity"
+    android:background="@drawable/login_back">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/sellerProfileCardView"
@@ -46,6 +47,7 @@
             android:layout_marginTop="60dp"
             android:gravity="center"
             android:text="Name"
+            android:textStyle="bold"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
@@ -58,6 +60,8 @@
             android:layout_marginTop="60dp"
             android:gravity="center"
             android:text="Quantity"
+            android:textStyle="bold"
+
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
@@ -69,6 +73,7 @@
             android:layout_marginTop="60dp"
             android:gravity="center"
             android:text="Price"
+            android:textStyle="bold"
             android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />

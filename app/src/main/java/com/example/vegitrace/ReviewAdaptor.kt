@@ -36,9 +36,9 @@ class ReviewAdaptor(private val revList : ArrayList<Review>): RecyclerView.Adapt
 
     class ReviewViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
 
-        val shopNum : TextView = itemView.findViewById(R.id.shopno)
-        val Owner : TextView = itemView.findViewById(R.id.owner)
-        val review : TextView = itemView.findViewById(R.id.review)
+        val shopNum : TextView = itemView.findViewById(R.id.shopnumber)
+        val Owner : TextView = itemView.findViewById(R.id.shopowner)
+        val review : TextView = itemView.findViewById(R.id.revvv)
 
     }
 

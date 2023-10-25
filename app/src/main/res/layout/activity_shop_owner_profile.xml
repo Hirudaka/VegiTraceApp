@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="0dp"
-    tools:context=".ShopOwnerProfile">
+    tools:context=".ShopOwnerProfile"
+    android:background="@drawable/login_back"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/sellerProfileCardView"
@@ -167,7 +169,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:text="Edit Profile" />
+        android:text="Edit Profile"
+        android:backgroundTint="#68BD51"/>
 
     <Button
         android:id="@+id/sellerAddWaste"
@@ -175,7 +178,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="Add Daily Wastage" />
+        android:text="Add Daily Wastage"
+        android:backgroundTint="#78A66C"/>
 
     <Button
         android:id="@+id/sellerMyOrders"
@@ -183,7 +187,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="My Orders" />
+        android:text="My Orders"
+        android:backgroundTint="#0CA81C"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
