@@ -2,15 +2,18 @@ package com.example.vegitrace
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.model.Review
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class Reviews : AppCompatActivity() {
@@ -57,7 +60,7 @@ class Reviews : AppCompatActivity() {
 
                     }
 
-                    reviewRecyclerView.adapter = ReviewAdaptor(reviewArrayList)
+                    reviewRecyclerView.adapter = FarmerReviewAdaptor(reviewArrayList)
                 }
 
             }
