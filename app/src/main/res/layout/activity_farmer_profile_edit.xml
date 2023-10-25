@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:background="@drawable/login_back">
 
     <LinearLayout
         android:id="@+id/farmerLinear"
@@ -171,7 +172,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
-            android:text="Update Profile" />
+            android:text="Update Profile"
+            android:backgroundTint="#68BD51"/>
 
         <View
             android:layout_width="match_parent"
@@ -184,7 +186,8 @@
             android:layout_height="50dp"
             android:orientation="horizontal"
             android:background="@color/DarkGreenBackground"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            >
 
 
             <ImageView

@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecyclerProfileEdit">
+    tools:context=".RecyclerProfileEdit"
+    android:background="@drawable/login_back">
 
         <TextView
             android:id="@+id/MyProfileWast"
-            android:layout_width="413dp"
-            android:layout_height="54dp"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
             android:layout_marginTop="10dp"
             android:background="@color/DarkGreenBackground"
             android:gravity="center"
-            android:text="Recycler Edit Profile"
+            android:text="Edit My Profile"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="29sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     <androidx.cardview.widget.CardView
@@ -26,7 +27,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="25dp"
         app:cardCornerRadius="7dp"
-        android:backgroundTint="@color/TextBackground"
+        android:backgroundTint="#BCABFDCC"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MyProfileWast">
 
@@ -159,9 +160,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
                 android:text="Update Profile"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/DarkGreenBackground"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MyOrdersActivity">
+    tools:context=".MyOrdersActivity"
+    android:background="@drawable/login_back">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/sellerProfileCardView"
@@ -38,7 +39,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/myRecycler"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_height="650dp"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"/>

@@ -1,6 +1,8 @@
 package com.example.vegitrace
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -57,22 +59,64 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
                 // Handle any errors here
             }
         })
+
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, MarketOverview::class.java)
+            startActivity(intent)
+        }
+
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
+            startActivity(intent)
+        }
+
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, Reviews::class.java)
+            startActivity(intent)
+        }
+
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
-    override fun onButtonClicked(order: Order) {
+    override fun onButtonClicked(position: Int) {
         // Handle the button click here
         // Update the 'status' attribute for the clicked order
 
-        val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
-
-        user = currentFirebaseUser!!.email.toString()
-        val orderToUpdate = revList.find { it.orderId == order.orderId }
-        if (orderToUpdate != null) {
-            orderToUpdate.status = "Pending"
-            orderToUpdate.farmer = null.toString()
+        val id = revList[position].orderId
+        val status = "Pending"
 
 
-            MyreserverAdapter.notifyDataSetChanged() // Notify the adapter that data has changed
-        }
+
+        val dbref = FirebaseDatabase.getInstance().getReference("orders")
+
+        dbref.orderByChild("orderId").equalTo(id).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (orderSnapshot in dataSnapshot.children) {
+                        // Update the 'status' attribute for the matching order
+                        val orderRef = dbref.child(orderSnapshot.key.toString())
+                        orderRef.child("status").setValue(status)
+
+                        // Update the 'farmer' attribute if needed
+                        orderRef.child("farmer").setValue("")
+                    }
+                } else {
+                    // Handle the case where the order with the given 'orderId' doesn't exist
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle any errors here
+            }
+        })
     }
 }

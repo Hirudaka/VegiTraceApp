@@ -1,12 +1,11 @@
 package com.example.vegitrace
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MarketOverview : AppCompatActivity() {
     private lateinit var dambullaImageView: ImageView
@@ -27,6 +26,31 @@ class MarketOverview : AppCompatActivity() {
 
 
         // Set up OnClickListener for Paliyagoda ImageView
+        val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
+        val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
+        val navReviewUnClick = findViewById<ImageView>(R.id.navReviewUnClick)
+        val navScanUnClick = findViewById<ImageView>(R.id.navScanUnClick)
+
+
+        navHomeUnClick.setOnClickListener {
+            val intent = Intent(this, MarketOverview::class.java)
+            startActivity(intent)
+        }
+
+        navAddUnClick.setOnClickListener {
+            val intent = Intent(this, MyReserves::class.java)
+            startActivity(intent)
+        }
+
+        navReviewUnClick.setOnClickListener {
+            val intent = Intent(this, Reviews::class.java)
+            startActivity(intent)
+        }
+
+        navScanUnClick.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -34,8 +58,11 @@ class MarketOverview : AppCompatActivity() {
         val Center = view.tag.toString()
 
 
-        val intent = Intent(this, OrdersActivity::class.java)
+
+        val intent = Intent(this, VegeSelect::class.java)
         intent.putExtra("center", Center)
+
+        Log.d("VegetableClick", "Selected Vegetable: $Center")
 
         startActivity(intent)
     }

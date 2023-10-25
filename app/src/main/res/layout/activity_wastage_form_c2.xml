@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WastageFormC2">
+    tools:context=".WastageFormC2"
+    android:background="@drawable/login_back">
 
 
     <TextView
         android:id="@+id/BookingsTitle"
-        android:layout_width="412dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
         android:background="@color/DarkGreenBackground"
         android:text="Bookings"
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="33sp"
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,6 +42,8 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="80dp"
         android:text="OK"
+        android:backgroundTint="@color/DarkGreenBackground"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bookingCompleted"
         />

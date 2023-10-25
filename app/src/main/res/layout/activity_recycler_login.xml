@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginbkg"
+    android:background="@drawable/login_back"
     tools:context=".RecyclerLogin">
 
     <ScrollView
@@ -56,7 +56,8 @@
                     android:text="Login"
                     android:id="@+id/login_button"
                     android:textSize="18sp"
-                    app:cornerRadius = "30dp"/>
+                    app:cornerRadius = "30dp"
+                    android:backgroundTint="#68BD51"/>
 
                 <TextView
                     android:layout_width="wrap_content"

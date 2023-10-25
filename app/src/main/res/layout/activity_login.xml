@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_back"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -60,7 +61,8 @@
                     android:textColorHighlight="@color/green"
                     android:textColorLink="@color/colorPrimary"
                     android:textSize="18sp"
-                    app:cornerRadius="30dp" />
+                    app:cornerRadius="30dp"
+                    android:backgroundTint="#68BD51"/>
 
 
 

@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShopReview">
+    tools:context=".ShopReview"
+    android:background="@drawable/login_back"
+    >
 
     <androidx.cardview.widget.CardView
         android:id="@+id/sellerProfileCardView"
@@ -113,6 +115,7 @@
         android:layout_marginTop="19dp"
         android:text="My Reviews"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBar"
+        android:backgroundTint="#68BD51"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
