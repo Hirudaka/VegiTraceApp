@@ -1,188 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WastageProfile">
+    tools:context=".ReviewRemoveList">
 
-    <TextView
-        android:id="@+id/MyProfileWast"
-        android:layout_width="413dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sellerProfileCardView"
+        android:layout_width="match_parent"
         android:layout_height="54dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/DarkGreenBackground"
-        android:gravity="center"
-        android:text="My Profile"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="33sp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/DarkGreenBackground"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/WastageUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="Username -"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MyProfileWast" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Seller Reviews"
+            android:textColor="@color/white"
+            android:textSize="33sp"
 
-    <TextView
-        android:id="@+id/WastageName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Name -"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastageUsername" />
+            />
 
-    <TextView
-        android:id="@+id/WastageAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="48dp"
-        android:text="Address -"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastageName" />
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginRight="0dp"
+            android:padding="6dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/WastageTelephone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:text="Telephone -"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastageAddress" />
-
-    <TextView
-        android:id="@+id/WastagePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Password -"
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="445dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/WastageNic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="NIC - "
-        android:textSize="23sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastagePassword" />
-
-    <TextView
-        android:id="@+id/WastageUsername1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="113dp"
-        android:text="Udana456"
-        android:textSize="23sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviewRemoveRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/WastageUsername"
-        app:layout_constraintTop_toBottomOf="@+id/MyProfileWast" />
-
-    <TextView
-        android:id="@+id/WastageName1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="40dp"
-        android:text="M.H.Udana"
-        android:textSize="23sp"
-        app:layout_constraintStart_toEndOf="@+id/WastageName"
-        app:layout_constraintTop_toBottomOf="@+id/WastageUsername1" />
-
-    <TextView
-        android:id="@+id/WastageAddress1"
-        android:layout_width="208dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="47dp"
-        android:text="28/8 Sama Uyana Rd, Malabe"
-        android:textSize="21sp"
-        app:layout_constraintStart_toEndOf="@+id/WastageAddress"
-        app:layout_constraintTop_toBottomOf="@+id/WastageName1" />
-
-    <TextView
-        android:id="@+id/WastageTelephone1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="38dp"
-        android:text="0718865379"
-        android:textSize="23sp"
-        app:layout_constraintStart_toEndOf="@+id/WastageTelephone"
-        app:layout_constraintTop_toBottomOf="@+id/WastageAddress1" />
-
-    <TextView
-        android:id="@+id/WastagePassword1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="23423457"
-        android:textSize="23sp"
-        app:layout_constraintStart_toEndOf="@+id/WastagePassword"
-        tools:layout_editor_absoluteY="445dp"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/WastageNic1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="34dp"
-        android:text="20004578357"
-        android:textSize="23sp"
-        app:layout_constraintStart_toEndOf="@+id/WastageNic"
-        app:layout_constraintTop_toBottomOf="@+id/WastagePassword1" />
-
-    <Button
-        android:id="@+id/WastageUpdatePro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="60dp"
-        android:text="Update Profile"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastageNic1" />
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
-    <Button
-        android:id="@+id/wastageUpdatePro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="60dp"
-        android:text="Delete Profile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastageNic1" />
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/DarkGreenBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/WastageLogOut"
-        android:layout_width="350dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:text="Log Out"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WastageUpdatePro" />
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/navAddUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/outline_add_circle_outline_24"/>
+
+        <ImageView
+            android:id="@+id/navReviewUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_reviews_24"
+            android:background="@color/green"/>
+
+        <ImageView
+            android:id="@+id/navScanUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_qr_code_scanner_24"/>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
