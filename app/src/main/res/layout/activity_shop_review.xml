@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Seller all Reviews"
+            android:text="Reviews"
             android:textColor="@color/white"
             android:textSize="33sp" />
 
@@ -52,12 +52,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/reviewsRec"
-        android:layout_width="match_parent"
-        android:layout_height="700dp"
+        android:layout_width="370dp"
+        android:layout_height="471dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="128dp"
         android:layout_marginRight="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
