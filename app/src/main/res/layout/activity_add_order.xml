@@ -41,7 +41,16 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="630dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="7dp"
+            android:backgroundTint="@color/TextBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,16 +62,16 @@
                 android:id="@+id/addVegetableButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="250dp"
+                android:layout_marginLeft="200dp"
                 android:layout_marginTop="10dp"
                 android:text="Add Vegetable"
                 android:backgroundTint="#68BD51"/>
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="199dp"
-                android:layout_height="199dp"
-                android:layout_marginLeft="100dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/bordered_image_view"
@@ -204,7 +213,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:id="@+id/textView15"
@@ -227,6 +237,8 @@
                     </LinearLayout>
 
         </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
     </ScrollView>
 
     <View
