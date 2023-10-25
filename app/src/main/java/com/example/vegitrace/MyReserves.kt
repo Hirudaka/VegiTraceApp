@@ -59,20 +59,36 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
         })
     }
 
-    override fun onButtonClicked(order: Order) {
+    override fun onButtonClicked(position: Int) {
         // Handle the button click here
         // Update the 'status' attribute for the clicked order
 
-        val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
-
-        user = currentFirebaseUser!!.email.toString()
-        val orderToUpdate = revList.find { it.orderId == order.orderId }
-        if (orderToUpdate != null) {
-            orderToUpdate.status = "Pending"
-            orderToUpdate.farmer = null.toString()
+        val id = revList[position].orderId
+        val status = "Pending"
 
 
-            MyreserverAdapter.notifyDataSetChanged() // Notify the adapter that data has changed
-        }
+
+        val dbref = FirebaseDatabase.getInstance().getReference("orders")
+
+        dbref.orderByChild("orderId").equalTo(id).addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (orderSnapshot in dataSnapshot.children) {
+                        // Update the 'status' attribute for the matching order
+                        val orderRef = dbref.child(orderSnapshot.key.toString())
+                        orderRef.child("status").setValue(status)
+
+                        // Update the 'farmer' attribute if needed
+                        orderRef.child("farmer").setValue("")
+                    }
+                } else {
+                    // Handle the case where the order with the given 'orderId' doesn't exist
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Handle any errors here
+            }
+        })
     }
 }

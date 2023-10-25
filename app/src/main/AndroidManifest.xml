@@ -65,7 +65,7 @@
             android:exported="true" />
         <activity
             android:name=".MyReserves"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".RecyclerProfile"
             android:exported="true" />
