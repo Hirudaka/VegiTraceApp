@@ -18,7 +18,7 @@
         android:textAlignment="center"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="35sp"
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,7 +83,7 @@
         android:id="@+id/NaraCard"
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         app:cardCornerRadius="5dp"
@@ -120,7 +120,7 @@
         android:id="@+id/DambullaCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         app:cardCornerRadius="5dp"

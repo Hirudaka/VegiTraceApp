@@ -19,16 +19,17 @@ class MyReserveAdaptor(private val context: Context,
 
 
     interface OnButtonClickListener {
-        fun onButtonClicked(order: Order)
+        fun onButtonClicked(position: Int)
     }
     inner class MyReserveViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val owner : TextView = itemView.findViewById(R.id.owner)
-        val veg : TextView = itemView.findViewById(R.id.veg)
-        val price : TextView = itemView.findViewById(R.id.price)
-        val qty : TextView = itemView.findViewById(R.id.quantity)
-        val status : TextView = itemView.findViewById(R.id.stat)
-        val removebtn : Button = itemView.findViewById(R.id.remove)
-        val image: ImageView = itemView.findViewById(R.id.imageView)
+        val id : TextView = itemView.findViewById(R.id.OIdtext)
+        val owner : TextView = itemView.findViewById(R.id.Ownertext)
+        val veg : TextView = itemView.findViewById(R.id.Vegtext)
+        val price : TextView = itemView.findViewById(R.id.Pricetext)
+        val qty : TextView = itemView.findViewById(R.id.Quanttext)
+        val status : TextView = itemView.findViewById(R.id.Statustext)
+        val removebtn : Button = itemView.findViewById(R.id.removebtn)
+        val image: ImageView = itemView.findViewById(R.id.Vegimage)
 
 
     }
@@ -45,6 +46,7 @@ class MyReserveAdaptor(private val context: Context,
 
     override fun onBindViewHolder(holder: MyReserveViewHolder, position: Int) {
         val rev = reservedList[position]
+        holder.id.text = rev.orderId
         holder.owner.text = rev.shopOwner
         holder.veg.text = rev.vegetableType
         holder.price.text = rev.price
@@ -56,7 +58,7 @@ class MyReserveAdaptor(private val context: Context,
 
         holder.removebtn.setOnClickListener {
             // Call the interface method to handle the button click
-            buttonClickListener.onButtonClicked(rev)
+            buttonClickListener.onButtonClicked(position)
         }
 
     }
@@ -67,6 +69,9 @@ class MyReserveAdaptor(private val context: Context,
             "Carrot" to R.drawable.carrots,
             "Beans" to R.drawable.greenbeans,
             "Cabbage" to R.drawable.cabbage,
+            "EggPlant" to R.drawable.eggplant,
+            "BeetRoot" to R.drawable.beet,
+            "Corn" to R.drawable.corn,
             // Add more vegetable-to-image mappings as needed
         )
 

@@ -173,6 +173,8 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="13dp"
         android:text="Go Back"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/DarkGreenBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 

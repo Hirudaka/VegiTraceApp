@@ -18,7 +18,7 @@
         android:gravity="center"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="33sp"
+        android:textSize="29sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,6 +42,8 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="80dp"
         android:text="OK"
+        android:backgroundTint="@color/DarkGreenBackground"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bookingCompleted"
         />

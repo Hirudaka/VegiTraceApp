@@ -148,7 +148,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
-        android:text="Update Profile" />
+        android:text="Update Profile"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/DarkGreenBackground"/>
 
     <View
         android:layout_width="match_parent"

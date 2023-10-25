@@ -170,7 +170,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         android:text="Edit Profile"
-        android:backgroundTint="#68BD51"/>
+
+        android:textColor="@color/black"
+        android:backgroundTint="#E1BF58"/>
+
 
     <Button
         android:id="@+id/sellerAddWaste"
@@ -179,7 +182,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Add Daily Wastage"
-        android:backgroundTint="#78A66C"/>
+
+        android:textColor="@color/white"
+        android:backgroundTint="@color/DarkGreenBackground"/>
+
 
     <Button
         android:id="@+id/sellerMyOrders"
@@ -188,7 +194,10 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="My Orders"
-        android:backgroundTint="#0CA81C"/>
+
+        android:textColor="@color/white"
+        android:backgroundTint="@color/DarkGreenBackground"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"

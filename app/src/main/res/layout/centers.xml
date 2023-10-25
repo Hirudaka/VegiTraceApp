@@ -6,13 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".Centers">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sellerProfileCardView"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/DarkGreenBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="center"
+            android:textColor="@color/white"
+            android:textSize="33sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginRight="0dp"
+            android:padding="6dp"
+            app:srcCompat="@drawable/baseline_account_facewhite" />
+    </androidx.cardview.widget.CardView>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="650dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -20,32 +49,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/sellerProfileCardView"
-                android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/DarkGreenBackground">
-
-                <TextView
-                    android:id="@+id/center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="center"
-                    android:textColor="@color/white"
-                    android:textSize="33sp" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="55dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="0dp"
-                    android:padding="6dp"
-                    app:srcCompat="@drawable/baseline_account_facewhite" />
-            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -56,19 +59,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView7"
+                        android:background="@drawable/bordered_image_view"
                         android:layout_width="190dp"
                         android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Beans"
-                        app:srcCompat="@drawable/greenbeans"
-                        android:background="@drawable/bordered_image_view"
-                        />
+                        app:srcCompat="@drawable/greenbeans" />
 
                     <TextView
                         android:id="@+id/textView10"
@@ -83,19 +85,19 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="4dp">
+                    android:orientation="vertical">
                     >
 
                     <ImageView
                         android:id="@+id/imageView5"
+                        android:background="@drawable/bordered_image_view"
                         android:layout_width="190dp"
                         android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:tag="Carrot"
-                        app:srcCompat="@drawable/carrots"
-                        android:background="@drawable/bordered_image_view"/>
+                        app:srcCompat="@drawable/carrots" />
 
                     <TextView
                         android:id="@+id/textView8"
@@ -118,19 +120,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_marginEnd="4dp"
-                    >
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView8"
+                        android:background="@drawable/bordered_image_view"
                         android:layout_width="190dp"
                         android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/cabbage"
-                        android:tag="Cabbage"
-                        android:background="@drawable/bordered_image_view"/>
+                        android:tag="Cabbage" />
 
                     <TextView
                         android:id="@+id/textView11"
@@ -146,19 +147,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_marginStart="4dp"
-                    >
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView9"
+                        android:background="@drawable/bordered_image_view"
                         android:layout_width="190dp"
                         android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:tag="BeetRoot"
-                        app:srcCompat="@drawable/beet"
-                        android:background="@drawable/bordered_image_view"/>
+                        app:srcCompat="@drawable/beet" />
 
                     <TextView
                         android:id="@+id/textView12"
@@ -174,25 +174,24 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_marginEnd="4dp"
-                    >
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView10"
+                        android:background="@drawable/bordered_image_view"
                         android:layout_width="190dp"
                         android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/eggplant"
-                        android:tag="EggPlant"
-                        android:background="@drawable/bordered_image_view"
-                        />
+                        android:tag="EggPlant" />
 
                     <TextView
                         android:id="@+id/textView13"
@@ -208,19 +207,18 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_marginStart="4dp"
-                    >
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView11"
+                        android:background="@drawable/bordered_image_view"
                         android:layout_width="190dp"
                         android:layout_height="190dp"
                         android:onClick="onVegetableClicked"
                         android:src="@drawable/corn"
-                        android:tag="Corn"
-                        android:background="@drawable/bordered_image_view"/>
+                        android:tag="Corn" />
 
                     <TextView
                         android:id="@+id/textView14"
@@ -234,52 +232,53 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/navBar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentBottom="true"
-                android:background="@color/DarkGreenBackground"
-                android:layout_marginBottom="0dp"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:id="@+id/navHomeUnClick"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@color/green"
-                    android:padding="7dp"
-                    app:srcCompat="@drawable/baseline_home_24" />
-
-                <ImageView
-                    android:id="@+id/navAddUnClick"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="7dp"
-                    app:srcCompat="@drawable/outline_add_circle_outline_24" />
-
-                <ImageView
-                    android:id="@+id/navReviewUnClick"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="7dp"
-                    app:srcCompat="@drawable/baseline_reviews_24" />
-
-                <ImageView
-                    android:id="@+id/navScanUnClick"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="7dp"
-                    app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
-            </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/navBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@color/DarkGreenBackground"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <ImageView
+            android:id="@+id/navHomeUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageView
+            android:id="@+id/navAddUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/outline_add_circle_outline_24" />
+
+        <ImageView
+            android:id="@+id/navReviewUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_reviews_24" />
+
+        <ImageView
+            android:id="@+id/navScanUnClick"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="7dp"
+            app:srcCompat="@drawable/baseline_qr_code_scanner_24" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

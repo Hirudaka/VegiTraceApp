@@ -64,8 +64,9 @@
 
                 <TextView
                     android:id="@+id/addwastageShop"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="19dp"
                     android:text="Shop No :"
@@ -78,6 +79,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="19dp"
                     android:hint="shop no"
+                    android:textColor="@color/black"
                     android:text=""
                     android:textSize="21sp" />
 
@@ -95,6 +97,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="21dp"
                     android:text="Owner :"
+                    android:textColor="@color/black"
                     android:textSize="21sp" />
 
                 <EditText
@@ -104,6 +107,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="19dp"
                     android:hint="owner name"
+                    android:textColor="@color/black"
                     android:text=""
                     android:textSize="21sp" />
 
@@ -122,6 +126,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="8dp"
                     android:text="Waste in KGs :"
+                    android:textColor="@color/black"
                     android:textSize="21sp" />
 
                 <EditText
@@ -131,6 +136,7 @@
                     android:layout_marginStart="21dp"
                     android:layout_marginTop="15dp"
                     android:hint="kg"
+                    android:textColor="@color/black"
                     android:text=""
                     android:textSize="21sp" />
 
@@ -142,7 +148,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="21dp"
-                android:text="Add Wastage" />
+                android:text="Add Wastage"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/DarkGreenBackground"/>
 
         </LinearLayout>
 
