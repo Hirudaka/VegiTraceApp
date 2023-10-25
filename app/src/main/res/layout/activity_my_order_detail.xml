@@ -35,26 +35,25 @@
 
         <ImageView
             android:id="@+id/VegimageView"
-            android:layout_width="154dp"
-            android:layout_height="162dp"
+            android:layout_width="127dp"
+            android:layout_height="165dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="70dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/bordered_image_view"
-            />
+            android:background="@drawable/bordered_image_view" />
 
         <LinearLayout
-            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
 
             <LinearLayout
-                android:layout_margin="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -64,7 +63,7 @@
                     android:layout_margin="0dp"
                     android:text="Farmer:"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/FarmertextView"
@@ -76,9 +75,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_margin="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -88,7 +87,7 @@
                     android:layout_margin="0dp"
                     android:text="Vegetable:"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/VegtextView"
@@ -100,9 +99,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_margin="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -112,7 +111,7 @@
                     android:layout_margin="0dp"
                     android:text="Price:"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/PricetextView"
@@ -124,9 +123,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_margin="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -136,7 +135,7 @@
                     android:layout_margin="0dp"
                     android:text="Quantity:"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/QuanttextView"
@@ -148,9 +147,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_margin="2dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="2dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -160,7 +159,7 @@
                     android:layout_margin="0dp"
                     android:text="Status:"
                     android:textSize="18sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/StatustextView"
@@ -176,9 +175,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Track"
                 android:backgroundTint="#68BD51"
-                />
+                android:text="Track" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView >
