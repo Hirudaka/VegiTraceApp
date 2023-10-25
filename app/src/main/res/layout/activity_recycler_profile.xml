@@ -33,7 +33,7 @@
 
         >
 
-    <LinearLayout
+        <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -197,7 +197,16 @@
             android:text="Edit Profile"
             android:layout_marginBottom="20dp"
             android:backgroundTint="#68BD51"/>
-    </LinearLayout>
+
+            <Button
+                android:id="@+id/recyclerLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Logout"
+                android:layout_marginBottom="20dp"
+                 />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <LinearLayout

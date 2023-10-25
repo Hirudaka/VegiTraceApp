@@ -1,6 +1,7 @@
 package com.example.vegitrace
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,7 +20,10 @@ class RecyclerProfile : AppCompatActivity() {
     private lateinit var emailTextView: TextView
     private lateinit var databaseReference: DatabaseReference
     private lateinit var editProfileButton: Button
+    private lateinit var logoutbtn: Button
 
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_profile)
@@ -31,11 +35,17 @@ class RecyclerProfile : AppCompatActivity() {
         nicTextView = findViewById(R.id.nicTextView)
         emailTextView = findViewById(R.id.emailTextView)
         editProfileButton = findViewById(R.id.recyclerEditPro)
+        logoutbtn = findViewById(R.id.recyclerLogout)
 
         // Set an OnClickListener for the "recyclerEditPro" button
         editProfileButton.setOnClickListener {
             // Create an Intent to navigate to the RecyclerProfileEdit activity
             val intent = Intent(this, RecyclerProfileEdit::class.java)
+            startActivity(intent)
+        }
+
+        logoutbtn.setOnClickListener {
+            val intent = Intent(this, Welcome::class.java)
             startActivity(intent)
         }
 

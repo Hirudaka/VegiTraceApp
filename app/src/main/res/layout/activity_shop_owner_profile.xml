@@ -184,6 +184,15 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="My Orders" />
+
+    <Button
+        android:id="@+id/shoplogout"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Logout" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"

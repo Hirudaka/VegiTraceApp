@@ -55,8 +55,15 @@ class ShopOwnerProfile : AppCompatActivity() {
         })
         val sellerEditProButton = binding.sellerEditPro
 
+        val logout = binding.shoplogout
+
         sellerEditProButton.setOnClickListener {
             val intent = Intent(this, ShopOwnerProfileEdit::class.java)
+            startActivity(intent)
+        }
+
+        logout.setOnClickListener{
+            val intent = Intent(this, Welcome::class.java)
             startActivity(intent)
         }
 
