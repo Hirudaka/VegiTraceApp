@@ -10,9 +10,9 @@
 
     <TextView
         android:id="@+id/BookingsTitle"
-        android:layout_width="412dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
         android:background="@color/DarkGreenBackground"
         android:text="Bookings"
         android:gravity="center"

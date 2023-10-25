@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -36,128 +37,192 @@
             app:srcCompat="@drawable/baseline_account_facewhite" />
     </androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/textshop"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addreviewcard"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
-        android:text="Shop No:"
-        android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="7dp"
+        android:backgroundTint="@color/OpacityBackground"
+        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView">
 
-    <TextView
-        android:id="@+id/textshop2"
-        android:layout_width="67dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="196dp"
-        android:text="From:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textshop3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="264dp"
-        android:text="To :"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textshop4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="308dp"
-        android:text="Farmer Email:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textshop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="34dp"
+            android:text="Shop No:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
-    <TextView
-        android:id="@+id/textshop5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="432dp"
-        android:text="Review:"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <EditText
+                    android:id="@+id/shopno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginEnd="15dp"
+                    android:hint="shop No"
+                    app:layout_constraintStart_toEndOf="@+id/textshop"
+                    app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
 
-    <EditText
-        android:id="@+id/shopno"
-        android:layout_width="243dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="20dp"
-        android:hint="shop No"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sellerProfileCardView" />
+            </LinearLayout>
 
-    <EditText
-        android:id="@+id/farmername"
-        android:layout_width="332dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:hint="Your Farmer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textshop4" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/ownername"
-        android:layout_width="309dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:hint="Your Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.297"
-        app:layout_constraintStart_toEndOf="@+id/textshop2"
-        app:layout_constraintTop_toBottomOf="@+id/shopno" />
+            <TextView
+                android:id="@+id/textshop2"
+                android:layout_width="67dp"
+                android:layout_height="23dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="36dp"
+                android:text="From :"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/farmermail"
-        android:layout_width="309dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="20dp"
-        android:hint="Farmer Email"
-        app:layout_constraintStart_toEndOf="@+id/textshop3"
-        app:layout_constraintTop_toBottomOf="@+id/ownername" />
+            <EditText
+                android:id="@+id/ownername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="17dp"
+                android:hint="Your Name"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.297"
+                app:layout_constraintStart_toEndOf="@+id/textshop2"
+                app:layout_constraintTop_toBottomOf="@+id/shopno" />
 
-    <EditText
-        android:id="@+id/review"
-        android:layout_width="400dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="27dp"
-        android:hint="Your Review"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textshop5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textshop3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="25dp"
+            android:text="To :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textshop2" />
+
+            <EditText
+                android:id="@+id/farmermail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="20dp"
+                android:hint="Farmer Email"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintStart_toEndOf="@+id/textshop3"
+                app:layout_constraintTop_toBottomOf="@+id/ownername" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textshop4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="17dp"
+            android:text="Farmer :"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textshop3" />
+
+            <EditText
+                android:id="@+id/farmername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="16dp"
+                android:hint="Your Farmer"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textshop4" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+
+        <TextView
+            android:id="@+id/textshop5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:text="Review:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/farmername" />
+
+            <EditText
+                android:id="@+id/review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="27dp"
+                android:hint="Your Review"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textshop5" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/buttonSubmitReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Submit Review"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/review"
+        app:layout_constraintTop_toBottomOf="@+id/addreviewcard"
         android:backgroundTint="#68BD51"
         />
 
@@ -210,11 +275,11 @@
         android:id="@+id/checkoutbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#68BD51"
         android:text="Checkout"
         app:layout_constraintStart_toEndOf="@+id/buttonSubmitReview"
-        app:layout_constraintTop_toBottomOf="@+id/review"
-        android:backgroundTint="#68BD51"/>
+        app:layout_constraintTop_toBottomOf="@+id/addreviewcard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
