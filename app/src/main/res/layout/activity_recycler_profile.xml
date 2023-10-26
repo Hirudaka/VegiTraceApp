@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MyProfileWast">
 
-    <LinearLayout
+        <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -196,8 +196,20 @@
             android:text="Edit Profile"
             android:textColor="@color/white"
             android:layout_marginBottom="20dp"
+
             android:backgroundTint="@color/DarkGreenBackground"/>
-    </LinearLayout>
+
+            <Button
+                android:id="@+id/recyclerLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Logout"
+                android:backgroundTint="@color/redback"
+                android:layout_marginBottom="20dp"
+                 />
+        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
     <LinearLayout

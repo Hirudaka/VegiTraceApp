@@ -213,10 +213,20 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:text="My Orders"
 
+        android:text="My Orders"
         android:textColor="@color/white"
-        android:backgroundTint="@color/DarkGreenBackground"/>
+        android:backgroundTint="@color/DarkGreenBackground"/>/>
+
+    <Button
+        android:id="@+id/shoplogout"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/redback"
+        android:text="Logout" />
+
 
     <View
         android:layout_width="match_parent"

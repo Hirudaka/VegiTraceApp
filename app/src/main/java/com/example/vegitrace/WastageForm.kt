@@ -84,7 +84,7 @@ class WastageForm : AppCompatActivity() {
 
                             Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
                             // Pass the wastageWeight back to the WastageOverview activity
-                            val intent = Intent(this, WastageOverview::class.java)
+                            val intent = Intent(this, WastageFormC2::class.java)
                             startActivity(intent)
 
                         }.addOnFailureListener {

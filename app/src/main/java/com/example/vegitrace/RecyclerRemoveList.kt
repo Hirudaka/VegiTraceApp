@@ -30,29 +30,32 @@ class RecyclerRemoveList : AppCompatActivity(), RecyclerRemoveAdapter.OnItemClic
         val currentUser = FirebaseAuth.getInstance().currentUser
         val currentUserID = currentUser?.uid
 
-        val databaseReference = FirebaseDatabase.getInstance().reference.child("Wastage")
-
         if (currentUserID != null) {
+            val databaseReference = FirebaseDatabase.getInstance().reference.child("Wastage")
+
+            // Create a query to retrieve wastage records for the current user
+            val query = databaseReference.orderByChild("currentUserId").equalTo(currentUserID)
+
             recyclerRemoveAdapter = RecyclerRemoveAdapter(this, wastageList, this, currentUserID)
             recyclerView.adapter = recyclerRemoveAdapter
-        }
 
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                wastageList.clear()
-                for (snapshot in dataSnapshot.children) {
-                    val wastage = snapshot.getValue(WasteForm::class.java)
-                    wastage?.let {
-                        wastageList.add(it)
+            query.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    wastageList.clear()
+                    for (snapshot in dataSnapshot.children) {
+                        val wastage = snapshot.getValue(WasteForm::class.java)
+                        if (wastage != null && wastage.currentUserId == currentUserID) {
+                            wastageList.add(wastage)
+                        }
                     }
+                    recyclerRemoveAdapter.notifyDataSetChanged()
                 }
-                recyclerRemoveAdapter.notifyDataSetChanged()
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors here
-            }
-        })
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Handle any errors here
+                }
+            })
+        }
 
         val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
         val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
@@ -70,8 +73,6 @@ class RecyclerRemoveList : AppCompatActivity(), RecyclerRemoveAdapter.OnItemClic
             val intent = Intent(this, RecyclerProfile::class.java)
             startActivity(intent)
         }
-
-
     }
 
     override fun onItemClick(position: Int) {

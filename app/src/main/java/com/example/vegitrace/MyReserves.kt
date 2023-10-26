@@ -2,6 +2,7 @@ package com.example.vegitrace
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +18,9 @@ import com.google.firebase.database.ValueEventListener
 class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener {
     private lateinit var MyreserverAdapter: MyReserveAdaptor
     private val revList = ArrayList<Order>()
-    private lateinit var user : String
+    private lateinit var userid : String
+    private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
+    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +33,13 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
 
         val currentFirebaseUser = FirebaseAuth.getInstance().currentUser
 
-        user = currentFirebaseUser!!.email.toString()
+        userid = currentFirebaseUser!!.uid.toString()
 
 
 
         // Initialize Firebase
         val databaseReference = FirebaseDatabase.getInstance().reference.child("orders")
+        val userId = firebaseAuth.currentUser?.uid
 
         // Set up the RecyclerView adapter
 
@@ -43,24 +47,38 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
         MyreserverAdapter = MyReserveAdaptor(this, revList, this)
         recyclerView.adapter = MyreserverAdapter
 
-        // Read data from Firebase and populate the orderList
-        databaseReference.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                revList.clear()
-                for (snapshot in dataSnapshot.children) {
-                    val order = snapshot.getValue(Order::class.java)
-                    if (order?.farmer == user && order?.status == "Preparing"){
-                    order?.let {
-                        revList.add(it)
-                    }}
-                }
-                MyreserverAdapter.notifyDataSetChanged()
-            }
+        if (userId != null){
+            val farmerNameRef = database.getReference("farmer").child(userId).child("name")
+            farmerNameRef.get().addOnSuccessListener { dataSnapshot ->
+                val farmerName = dataSnapshot.value as String
+                // Update the user's location in the database using the farmer's name as a unique identifier
+                Log.d("YourTag", "The value of fname is: $farmerName")
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                // Handle any errors here
+                // Read data from Firebase and populate the orderList
+                databaseReference.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        revList.clear()
+                        for (snapshot in dataSnapshot.children) {
+                            val order = snapshot.getValue(Order::class.java)
+                            if (order?.farmer == farmerName && order?.status == "Preparing") {
+                                order?.let {
+                                    revList.add(it)
+                                }
+                            }
+                        }
+                        MyreserverAdapter.notifyDataSetChanged()
+                    }
+
+                    override fun onCancelled(databaseError: DatabaseError) {
+                        // Handle any errors here
+                    }
+                })
             }
-        })
+        }
+
+
+
+
 
         val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
         val navAddUnClick = findViewById<ImageView>(R.id.navAddUnClick)
