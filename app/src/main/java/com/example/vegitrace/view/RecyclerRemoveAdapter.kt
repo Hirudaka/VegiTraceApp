@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vegitrace.R
 import com.example.vegitrace.model.WasteForm
@@ -51,7 +52,7 @@ class RecyclerRemoveAdapter(
 
         holder.wastageremovebtn.setOnClickListener {
             // Call the onItemClick method of the listener
-            listener.onItemClick(position)
+            showConfirmationDialog(position)
             Toast.makeText(holder.itemView.context, "Your Reservation is Deleted!!", Toast.LENGTH_LONG).show()
         }
     }
@@ -66,5 +67,22 @@ class RecyclerRemoveAdapter(
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
+    }
+
+    private fun showConfirmationDialog(position: Int) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Confirm Order")
+        builder.setMessage("Are you sure you want to Remove? this action cannot be revert. ")
+
+        // Add positive button for confirmation
+        builder.setPositiveButton("Confirm") { _, _ ->
+            listener.onItemClick(position)
+            // Perform the confirmation action here
+        }
+
+        // Add negative button to cancel the operation
+        builder.setNegativeButton("Cancel") { _, _ ->
+            // User canceled the confirmation, do nothing
+        }
     }
 }
