@@ -14,7 +14,7 @@ class WastageFormC2 : AppCompatActivity() {
         val wastageOkBtn = findViewById<Button>(R.id.wastageOkBtn)
 
         wastageOkBtn.setOnClickListener {
-            val intent = Intent(this, WastageHistory::class.java)
+            val intent = Intent(this, WastageOverview::class.java)
             startActivity(intent)
         }
         val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)

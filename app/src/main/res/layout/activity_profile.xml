@@ -227,7 +227,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#68BD51"
+                android:backgroundTint="@color/DarkGreenBackground"
                 android:text="reservations" />
         </LinearLayout>
 
@@ -242,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="50dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="#326C0E"
                 android:text="Share My Location" />
@@ -252,8 +253,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="10dp"
+                android:backgroundTint="@color/redback"
                 android:text="Logout" />
 
+        </LinearLayout>
         </LinearLayout>
 
 

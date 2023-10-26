@@ -50,7 +50,7 @@
             android:layout_height="136dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/TextBackground"
+            android:backgroundTint="@color/OpacityBackground"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -89,7 +89,7 @@
             android:layout_height="146dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/TextBackground"
+            android:backgroundTint="@color/OpacityBackground"
             app:cardCornerRadius="10dp">
 
             <LinearLayout
@@ -128,7 +128,7 @@
             android:layout_height="146dp"
             android:layout_marginStart="46dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/TextBackground"
+            android:backgroundTint="@color/OpacityBackground"
             app:cardCornerRadius="10dp">
 
             <LinearLayout

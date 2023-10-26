@@ -172,7 +172,7 @@
 
                 android:layout_marginBottom="10dp"
                 android:text="Remove"
-                android:backgroundTint="#68BD51"/>
+                android:backgroundTint="@color/DarkGreenBackground"/>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView >
