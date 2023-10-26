@@ -68,9 +68,8 @@ class SellerAddWaste : AppCompatActivity() {
 
                         Toast.makeText(this, "Form Successfully Added", Toast.LENGTH_LONG).show()
 
-                        calculateTotalWasteWeightAndRedirect()
-                        /*val intent = Intent(this, WastageOverview::class.java)
-                        startActivity(intent)*/
+                        val intent = Intent(this, SellerAfterWaste::class.java)
+                        startActivity(intent)
                     }.addOnFailureListener {
                         Toast.makeText(this, "Form failed to add", Toast.LENGTH_LONG).show()
                     }
@@ -110,27 +109,6 @@ class SellerAddWaste : AppCompatActivity() {
             val intent = Intent(this, ShopOwnerProfile::class.java)
             startActivity(intent)
         }
-    }private fun calculateTotalWasteWeightAndRedirect() {
-        var totalWasteWeight = 0 // Initialize the total to 0
-
-        // Fetch the data from Firebase and update totalWasteWeight
-        database.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (dataSnapshot in snapshot.children) {
-                    val waste = dataSnapshot.getValue(AddWaste::class.java)
-                    waste?.wasteweight?.let {
-                        totalWasteWeight += it
-                    }
-                }
-                // Create an Intent to navigate to WastageOverview activity
-                val intent = Intent(this@SellerAddWaste, WastageOverview::class.java)
-                intent.putExtra("totalWasteWeight", totalWasteWeight)
-                startActivity(intent)
-            }
-            override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@SellerAddWaste, "Failed to calculate total waste weight", Toast.LENGTH_LONG).show()
-            }
-        })
     }
     data class AddWaste(
         val shopno:String?=null,
