@@ -188,11 +188,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:text="Edit Profile"
 
         android:textColor="@color/black"
         android:backgroundTint="#E1BF58"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp">
 
 
     <Button
@@ -200,7 +207,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:text="Add Daily Wastage"
 
         android:textColor="@color/white"
@@ -212,11 +218,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-
         android:text="My Orders"
+        android:layout_marginStart="20dp"
         android:textColor="@color/white"
-        android:backgroundTint="@color/DarkGreenBackground"/>/>
+        android:backgroundTint="@color/DarkGreenBackground"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/shoplogout"
