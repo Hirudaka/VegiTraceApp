@@ -5,6 +5,7 @@ import android.provider.ContactsContract.CommonDataKinds.Im
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -55,16 +56,28 @@ class ShopOwnerProfile : AppCompatActivity() {
         })
         val sellerEditProButton = binding.sellerEditPro
 
-        val logout = binding.shoplogout
+        val logoutbtn = binding.shoplogout
 
         sellerEditProButton.setOnClickListener {
             val intent = Intent(this, ShopOwnerProfileEdit::class.java)
             startActivity(intent)
         }
 
-        logout.setOnClickListener{
-            val intent = Intent(this, Welcome::class.java)
-            startActivity(intent)
+        logoutbtn.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Logout")
+            builder.setMessage("Are you sure you want to log out?")
+
+            builder.setPositiveButton("Yes") { _, _ ->
+                val intent = Intent(this, Welcome::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            builder.setNegativeButton("No") { _, _ ->
+            }
+
+            builder.show()
         }
 
         val navHomeUnClick = findViewById<ImageView>(R.id.navHomeUnClick)
