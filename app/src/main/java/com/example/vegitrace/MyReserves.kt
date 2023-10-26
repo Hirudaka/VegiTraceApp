@@ -72,7 +72,9 @@ class MyReserves : AppCompatActivity(),  MyReserveAdaptor.OnButtonClickListener 
                     override fun onCancelled(databaseError: DatabaseError) {
                         // Handle any errors here
                     }
-                })}}
+                })
+            }
+        }
 
 
 
