@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.model.Recycler
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import androidx.appcompat.app.AlertDialog
 
 class RecyclerProfile : AppCompatActivity() {
     private lateinit var nameTextView: TextView
@@ -45,9 +46,22 @@ class RecyclerProfile : AppCompatActivity() {
         }
 
         logoutbtn.setOnClickListener {
-            val intent = Intent(this, Welcome::class.java)
-            startActivity(intent)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Logout")
+            builder.setMessage("Are you sure you want to log out?")
+
+            builder.setPositiveButton("Yes") { _, _ ->
+                val intent = Intent(this, Welcome::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            builder.setNegativeButton("No") { _, _ ->
+            }
+
+            builder.show()
         }
+
 
         // Initialize Firebase Database reference
         val userId = FirebaseAuth.getInstance().currentUser?.uid
