@@ -69,7 +69,7 @@ class FarmerLocation : AppCompatActivity(), OnMapReadyCallback {
                 currentLocation = location
                 Toast.makeText(applicationContext, "${currentLocation?.latitude}, ${currentLocation?.longitude}", Toast.LENGTH_LONG).show()
 
-                // Fetch the farmer's name using the current user's ID
+
                 val userId = firebaseAuth.currentUser?.uid
                 if (userId != null) {
                     val farmerNameRef = database.getReference("farmer").child(userId).child("name")
@@ -121,11 +121,11 @@ class FarmerLocation : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    // A function to create a default location if a location is not available
+
     private fun createDefaultLocation(): Location {
         val defaultLocation = Location("")
-        defaultLocation.latitude = 0.0 // Set a default latitude
-        defaultLocation.longitude = 0.0 // Set a default longitude
+        defaultLocation.latitude = 0.0
+        defaultLocation.longitude = 0.0
         return defaultLocation
     }
 
