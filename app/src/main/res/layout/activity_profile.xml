@@ -251,7 +251,7 @@
                 android:id="@+id/logout"
                 android:layout_width="126dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/redback"
                 android:text="Logout" />

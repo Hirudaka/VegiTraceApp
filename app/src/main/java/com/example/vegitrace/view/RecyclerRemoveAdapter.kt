@@ -40,6 +40,11 @@ class RecyclerRemoveAdapter(
             holder.phone.text = wastage.wastagePhone
             holder.weight.text = wastage.wastageWeight.toString()
             holder.date.text = wastage.wastageDate
+
+            holder.wastageremovebtn.setOnClickListener {
+                // Call the onItemClick method of the listener
+                showConfirmationDialog(position)
+            }
         } else {
             holder.name.text = wastage.wastageName
             holder.phone.text = "*Hidden Info*"
@@ -50,11 +55,6 @@ class RecyclerRemoveAdapter(
             holder.wastageremovebtn.isClickable = false
         }
 
-        holder.wastageremovebtn.setOnClickListener {
-            // Call the onItemClick method of the listener
-            showConfirmationDialog(position)
-            Toast.makeText(holder.itemView.context, "Your Reservation is Deleted!!", Toast.LENGTH_LONG).show()
-        }
     }
 
     override fun getItemCount(): Int {
@@ -71,18 +71,23 @@ class RecyclerRemoveAdapter(
 
     private fun showConfirmationDialog(position: Int) {
         val builder = AlertDialog.Builder(context)
-        builder.setTitle("Confirm Order")
-        builder.setMessage("Are you sure you want to Remove? this action cannot be revert. ")
+        builder.setTitle("Confirm Form Delete")
+        builder.setMessage("Are you sure you want to Remove? This action cannot be reverted. ")
 
         // Add positive button for confirmation
         builder.setPositiveButton("Confirm") { _, _ ->
             listener.onItemClick(position)
-            // Perform the confirmation action here
+            // Remove the item from the list and notify the adapter
+            wastages.removeAt(position)
+            notifyItemRemoved(position)
+            Toast.makeText(context, "Your Reservation is Deleted!!", Toast.LENGTH_LONG).show()
         }
 
         // Add negative button to cancel the operation
         builder.setNegativeButton("Cancel") { _, _ ->
             // User canceled the confirmation, do nothing
         }
+
+        builder.show()
     }
 }

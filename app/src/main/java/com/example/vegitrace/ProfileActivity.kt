@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vegitrace.model.Farmer
 import com.google.firebase.auth.FirebaseAuth
@@ -27,25 +28,34 @@ class ProfileActivity : AppCompatActivity() {
         // Retrieve the user's profile information from Firebase Database
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         val databaseRef = FirebaseDatabase.getInstance().getReference("farmer").child(userId.toString())
-        // Find the reservations button
+
         val reservationsButton = findViewById<Button>(R.id.reservation)
         val logoutbtn = findViewById<Button>(R.id.logout)
 
 // Set an OnClickListener for the reservations button
         reservationsButton.setOnClickListener {
-            // Define an Intent to start the ReservationsActivity
+
             val reservationsIntent = Intent(this, MyOrdersActivity::class.java)
 
-            // Start the ReservationsActivity
+
             startActivity(reservationsIntent)
         }
 
-       logoutbtn.setOnClickListener {
-            // Define an Intent to start the ReservationsActivity
-            val logoutIntent = Intent(this, Welcome::class.java)
+        logoutbtn.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Logout")
+            builder.setMessage("Are you sure you want to log out?")
 
-            // Start the ReservationsActivity
-            startActivity(logoutIntent)
+            builder.setPositiveButton("Yes") { _, _ ->
+                val intent = Intent(this, Welcome::class.java)
+                startActivity(intent)
+                finish()
+            }
+
+            builder.setNegativeButton("No") { _, _ ->
+            }
+
+            builder.show()
         }
 
 

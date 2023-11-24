@@ -31,13 +31,13 @@ class DisplayLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Initialize Firebase
         database = FirebaseDatabase.getInstance()
-        locationRef = database.getReference("locations") // Reference to your location data in Firebase
+        locationRef = database.getReference("locations")
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
-        // Set the farmer's name (modify this to get the desired farmer's name)
-        val farmerName = intent.getStringExtra("farmer")// Replace with the farmer's name you want to display
+
+        val farmerName = intent.getStringExtra("farmer")
 
 
     }
@@ -51,11 +51,11 @@ class DisplayLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             // Build a reference to the locations in the database for the specific farmer
             val farmerLocationRef = locationRef.child(farmerName!!)
 
-            // Retrieve location data from Firebase for the specific farmer
+
             locationRef.addValueEventListener(object : ValueEventListener {
-                // Inside your `onDataChange` function
+
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // Check if there is data available
+
                     if (dataSnapshot.exists()) {
                         val builder = LatLngBounds.Builder()
 
@@ -75,12 +75,12 @@ class DisplayLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
                         // Move the camera to show all markers
                         val bounds = builder.build()
-                        val padding = 100 // Adjust padding as needed
+                        val padding = 100
                         val cameraUpdate = CameraUpdateFactory.newLatLngBounds(bounds, padding)
                         mMap.animateCamera(cameraUpdate)
 
                     } else {
-                        // Handle the case when there's no data (e.g., show a message)
+
                     }
                 }
 
