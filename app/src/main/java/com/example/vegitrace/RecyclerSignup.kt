@@ -53,7 +53,6 @@ class RecyclerSignup : AppCompatActivity() {
                 Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show()
             }
         }
-
         binding.loginRedirectText.setOnClickListener {
             // Handle login redirection here
         }
