@@ -8,7 +8,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.example.vegitrace.databinding.ActivityRecyclersignupBinding
 import com.example.vegitrace.model.Recycler
-
 class RecyclerSignup : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclersignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
