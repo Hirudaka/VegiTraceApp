@@ -68,7 +68,6 @@ class RecyclerProfileEdit : AppCompatActivity() {
             Toast.makeText(this, "Profile Update Successful", Toast.LENGTH_SHORT).show()
             finish()
         }
-
         val historyButton = findViewById<ImageView>(R.id.navBookingUnClick)
         val wastageMainButton = findViewById<ImageView>(R.id.navHomeUnClick)
         val recyclerProfileButton = findViewById<ImageView>(R.id.navProfileUnClick)
