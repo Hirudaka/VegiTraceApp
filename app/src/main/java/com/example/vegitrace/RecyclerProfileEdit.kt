@@ -37,7 +37,6 @@ class RecyclerProfileEdit : AppCompatActivity() {
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         databaseReference = FirebaseDatabase.getInstance().reference.child("Recyclers").child(userId ?: "")
 
-
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
