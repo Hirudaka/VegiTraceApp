@@ -34,7 +34,6 @@ class RecyclerProfileEdit : AppCompatActivity() {
         nicEditText = findViewById(R.id.nicTextView)
         saveButton = findViewById(R.id.recyclerUpdatePro)
 
-
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         databaseReference = FirebaseDatabase.getInstance().reference.child("Recyclers").child(userId ?: "")
 
